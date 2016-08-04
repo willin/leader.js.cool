@@ -14,7 +14,8 @@
       "donate",
       "github",
       "-disqus",
-      "edit-link",
+      "duoshuo",
+      "-edit-link",
       "adsense",
       "-maxiang"
     ],
@@ -39,8 +40,8 @@
             "base": "https://coding.net/u/willin/p/leader.js.cool/git/edit/master/",
             "label": "编辑此页"
         },
-        "disqus": {
-          "shortName": "money-js-cool"
+        "duoshuo": {
+          "short_name": "leader-js"
         },
         "atoc": {
           "addClass": true,
