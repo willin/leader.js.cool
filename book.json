@@ -41,7 +41,8 @@
             "label": "编辑此页"
         },
         "duoshuo": {
-          "short_name": "leader-js"
+          "short_name": "leader-js",
+          "theme": "default"
         },
         "atoc": {
           "addClass": true,
