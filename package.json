@@ -1,0 +1,29 @@
+{
+  "name": "w2mn",
+  "version": "1.0.0",
+  "description": "百万富翁之路",
+  "main": "index.js",
+  "scripts": {
+    "start": "sh deploy.sh",
+    "test": "node_modules/.bin/gitbook serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@git.coding.net/willin/w2mn.git"
+  },
+  "keywords": [
+    "money",
+    "cool",
+    "w2mn",
+    "millionaire"
+  ],
+  "author": "Willin Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://coding.net/u/willin/p/w2mn/topic"
+  },
+  "homepage": "https://coding.net/u/willin/p/w2mn/git",
+  "dependencies": {
+    "gitbook-cli": "^2.2.0"
+  }
+}

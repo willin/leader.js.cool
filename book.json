@@ -1,0 +1,60 @@
+
+{
+    "title": "可替代的团队领袖培养计划",
+    "description": "Author: Willin Wang",
+    "language": "zh-cn",
+    "gitbook": "=2.5.2",
+    "structure": {
+        "readme": "INTRO.md"
+    },
+    "plugins": [
+      "addcssjs",
+      "atoc",
+      "fancybox",
+      "donate",
+      "github",
+      "-disqus",
+      "edit-link",
+      "adsense",
+      "-maxiang"
+    ],
+    "pluginsConfig": {
+        "donate": {
+          "wechat": "http://go.sh.gg/images/wx.png",
+          "alipay": "http://go.sh.gg/images/alipay.png",
+          "title": "如果您觉得受益，请打赏支持！",
+          "button": "赏"
+        },
+        "fontsettings": {
+            "family": "sans",
+            "size": 2
+        },
+        "fancybox":{
+
+        },
+        "github": {
+            "url": "https://coding.net/u/willin/p/leader.js.cool/git"
+        },
+        "edit-link": {
+            "base": "https://coding.net/u/willin/p/leader.js.cool/git/edit/master/",
+            "label": "编辑此页"
+        },
+        "disqus": {
+          "shortName": "money-js-cool"
+        },
+        "atoc": {
+          "addClass": true,
+          "className": "atoc"
+        },
+        "addcssjs": {
+          "js": ["_static/main.js"]
+        },
+        "adsense": {
+          "client": "ca-pub-5059418763237956",
+          "slot": "2139110924",
+          "format": "auto",
+          "element": ".page-inner section"
+        },
+        "introduction-text": "封面"
+    }
+}
