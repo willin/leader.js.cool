@@ -4,6 +4,12 @@ git add .
 git commit -m 'Gitbook Auto Published'
 git push origin master
 
+cd _private
+git add .
+git commit -m 'Gitbook Auto Published'
+git push origin master
+
+cd ..
 rm -rf _book
 node_modules/.bin/gitbook build
 cd _book
