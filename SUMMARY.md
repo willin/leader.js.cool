@@ -5,6 +5,7 @@
   - [产品设计](design/product.md)
   - [系统架构](design/architecture.md)
 - [项目](project/README.md)
+  - [结构](project/structure.md)
 - [运维](operation/README.md)
   - [CI工作流](operation/workflow.md)
   - [重启服务](operation/restarter.md)
