@@ -48,3 +48,9 @@
     ├── webpack.config.js
     └── webpack.config.prod.js
 ```
+
+## 测试：BDD
+
+![BDD](/_static/project/test.png)
+
+上图为BDD测试目录，非测试用例文件（或目录）以`_`开头。
