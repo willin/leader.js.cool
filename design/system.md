@@ -29,6 +29,29 @@
 
 然后可以搭配脑图、流程图、时序图、用例图等建模工具，设计核心业务模块的流程。
 
+### 示例
+
+思维导图（脑图）：
+
+![Image](/_static/design/mind.png)
+
+系统结构图：
+
+![Image](/_static/design/system.png)
+
+
+用例图：
+
+![Image](/_static/design/use-case.png)
+
+时序图：
+
+![Image](/_static/design/seq.png)
+
+流程图：
+
+![Image](/_static/design/flow.png)
+
 ## 第三步：设计数据库表结构
 
 建库建表非常关键。主要原则为，减少冗余数据、避免表字段过多、提高查询性能。
