@@ -157,3 +157,89 @@ describe('Demo', function () {
 	});
 });
 ```
+
+ES6 下的 BDD 测试示例对比：
+
+```js
+import {test, server, assert} from './_import';
+let location;
+test.before(async() => {
+  const response = await server.inject({
+    method: 'POST',
+    url: '/login',
+    payload: {
+      username: 'willin',
+      password: 'PASSWORD'
+    }
+  });
+  location = response.headers.location;
+});
+
+test('GET / 302', async() => {
+  const response = await server.inject({
+    method: 'GET',
+    url: '/'
+  });
+  assert.equal(response.statusCode, 302);
+});
+
+test('GET /login 200', async() => {
+  const response = await server.inject({
+    method: 'GET',
+    url: '/login'
+  });
+  assert.equal(response.statusCode, 200);
+});
+
+
+test('POST /login 302', async() => {
+  const response = await server.inject({
+    method: 'POST',
+    url: '/login',
+    payload: {
+      username: 'willin',
+      password: 'PASSWORD'
+    }
+  });
+  assert.equal(response.statusCode, 302);
+});
+
+test('POST /login 401', async() => {
+  const response = await server.inject({
+    method: 'POST',
+    url: '/login',
+    payload: {
+      username: 'willin',
+      password: 'Ww10842073305zZa28v3PO5Ok0L63IdA'
+    }
+  });
+  assert.equal(response.statusCode, 401);
+});
+
+test('POST /login Invalid Params 403', async() => {
+  const response = await server.inject({
+    method: 'POST',
+    url: '/login',
+    payload: {
+      username: 'willin'
+    }
+  });
+  assert.equal(response.statusCode, 403);
+});
+
+test('GET /doc 200', async() => {
+  const response = await server.inject({
+    method: 'GET',
+    url: location
+  });
+  assert.equal(response.statusCode, 200);
+});
+
+test('GET /doc 302', async() => {
+  const response = await server.inject({
+    method: 'GET',
+    url: '/doc?'
+  });
+  assert.equal(response.statusCode, 302);
+});
+```
