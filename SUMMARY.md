@@ -16,11 +16,10 @@
     - [ES6/7](project/js/es6.md)
     - [Benchmark](project/js/benchmark.md)
     - [Test](project/js/test.md)
+    - [React Redux](project/js/redux.md)
   - DB
     - [MySQL](project/db/mysql.md)
     - [Redis](project/db/redis.md)
-  - React
-    - [React](project/react/redux.md)
 - [运维](operation/README.md)
   - [CI工作流](operation/workflow.md)
   - [重启服务](operation/restarter.md)
