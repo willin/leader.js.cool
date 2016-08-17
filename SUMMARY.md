@@ -21,6 +21,7 @@
     - [MySQL](project/db/mysql.md)
     - [Redis](project/db/redis.md)
 - [运维](operation/README.md)
+  - [SHELL](operation/shell.md)
   - [CI工作流](operation/workflow.md)
   - [重启服务](operation/restarter.md)
   - [版本回退](operation/rollback.md)
