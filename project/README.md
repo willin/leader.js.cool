@@ -8,4 +8,4 @@
 
 ## 现有项目
 
-内部信息，登录Git访问： <https://code.aliyun.com/wulian/project>
+内部信息，登录Git访问： <http://172.18.2.179/doc/project>
