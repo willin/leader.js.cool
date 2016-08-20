@@ -20,6 +20,8 @@
   - DB
     - [MySQL](project/db/mysql.md)
     - [Redis](project/db/redis.md)
+  - Tool
+    - [守护进程PM2](project/tool/pm2.md)
 - [运维](operation/README.md)
   - [SHELL](operation/shell.md)
   - [CI工作流](operation/workflow.md)
