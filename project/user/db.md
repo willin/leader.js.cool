@@ -1,5 +1,7 @@
 # 数据库表结构设计
 
+ER图，略。
+
 ## 用户基本信息表
 
 示例：
@@ -29,6 +31,8 @@ CREATE TABLE `user` (
 
 ## 用户附加信息表
 
+将非基本信息，如开发者资料、用户详细资料、认证、等级等存入用户附加信息表（也可建多个附加信息表，如用户认证表、用户配置表等）。
+
 示例：
 
 ```sql
@@ -41,7 +45,10 @@ CREATE TABLE `usermeta` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 ```
 
-将非基本信息，如开发者资料、用户详细资料、认证、等级等存入用户附加信息表（也可建多个附加信息表，如用户认证表、用户配置表等）。
+说明：
+
+1. 如果需要按姓名或性别查找，将 `truename`或`gender` 字段加索引
+2. 查找一个用户是否已经完成实名认证，可以用 `SELECT t2.verified FROM user t1 LEFT JOIN usermeta t2 ON t1.uid=t2.uid WHERE username = ? LIMIT 1`方式查询
 
 ## 其他表
 
