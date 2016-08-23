@@ -53,3 +53,20 @@ CREATE TABLE `usermeta` (
 ## 其他表
 
 部分信息不需要存入数据库，如日志，可以存在log文件中；登录信息，可以用Redis等缓存存储。综合考虑性能、成本及服务器配置决定。
+
+
+再讲解一种，针对`开发者`的表设计。
+
+举例，开发者一般有两种类型，企业开发者、个人开发者。
+
+那么，可以在`usermeta`表里加一个开发者类型字段，`dev_type`：
+
+```sql
+`dev_type` enum('personal','enterprise') NOT NULL DEFAULT 'personal' COMMENT '开发者类型'
+```
+
+另外建两张表，为 `developer_personal` 和 `developer_enterprise` 分别存放个人开发者和企业开发者的相关信息字段。
+
+可以在系统的业务逻辑里加入一些限制，如个人开发者可以升级为企业开发者，企业开发者不能再改为个人开发者之类的。
+
+***Tips***：JavaScript中命名法则最好使用`驼峰法`，如`userActions`。而MySQL中不区分大小写，所以可以采用下划线命名法，如`user_actions`，在`SELECT`查询时使用`AS aliasName`设置别名即可。
