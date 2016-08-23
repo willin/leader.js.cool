@@ -48,7 +48,7 @@ CREATE TABLE `usermeta` (
 说明：
 
 1. 如果需要按姓名或性别查找，将 `truename`或`gender` 字段加索引
-2. 查找一个用户是否已经完成实名认证，可以用 `SELECT t2.verified FROM user t1 LEFT JOIN usermeta t2 ON t1.uid=t2.uid WHERE username = ? LIMIT 1`方式查询
+2. 查找一个用户是否已经完成实名认证，可以用 `SELECT t2.verified FROM user t1 LEFT JOIN usermeta t2 ON t1.uid=t2.uid WHERE t1.username = ? LIMIT 1`方式查询
 
 ## 其他表
 
