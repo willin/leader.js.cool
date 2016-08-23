@@ -20,7 +20,7 @@
   - DB
     - [MySQL](project/db/mysql.md)
     - [Redis](project/db/redis.md)
-  - Tool
+  - [Tool](project/tool/README.md)
     - [守护进程PM2](project/tool/pm2.md)
   - [开发指南](project/develop.md)
     - [功能模块设计](project/user/module.md)
