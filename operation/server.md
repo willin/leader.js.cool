@@ -39,6 +39,27 @@ sudo apt-get install zsh curl git
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
+### 配置ssh免密码登录
+
+```bash
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+cd ~/.ssh
+touch authorized_keys
+chmod 644 authorized_keys
+vi authorized_keys
+```
+
+插入你的`ssh`公钥。
+
+```bash
+# 不存在创建（注意是在本地，不是远程服务器）
+ssh-keygen
+# 一直按回车，结束
+# 存在直接查看
+cat ~/.ssh/id_rsa.pub
+```
+
 ### 安装node
 
 （示例，从官网获取最新版本源码编译安装）
