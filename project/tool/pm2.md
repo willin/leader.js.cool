@@ -78,3 +78,11 @@ pm2 delete app-name #删除一个进程
 
 pm2 kill #终止所有进程
 ```
+
+### 开机自启
+
+```bash
+pm2 startup
+```
+
+参考官方文档获取详细使用说明。

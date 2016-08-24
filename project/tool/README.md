@@ -19,3 +19,11 @@ brew install autojump
 ```
 
 配合 Oh My Zsh `autojump`插件使用。
+
+## HTTP/2 and SPDY indicator
+
+检查是否支持HTTP/2或SPDY的Chrome插件：  <https://chrome.google.com/webstore/detail/http2-and-spdy-indicator/mpbpobfflnpcgagjijhmgnchggcjblin>
+
+## Wappalyzer
+
+检查网页使用了哪些常见技术的Crhome插件： <https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg>

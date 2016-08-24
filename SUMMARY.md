@@ -30,6 +30,7 @@
     - [BDD实践](project/user/bdd.md)
 - [运维](operation/README.md)
   - [SHELL](operation/shell.md)
+  - [服务器配置](operation/server.md)
   - [CI工作流](operation/workflow.md)
   - [重启服务](operation/restarter.md)
   - [版本回退](operation/rollback.md)
