@@ -27,6 +27,7 @@
     - [功能模块设计](project/user/module.md)
     - [数据库设计](project/user/db.md)
     - [缓存设计](project/user/cache.md)
+    - [BDD实践](project/user/bdd.md)
 - [运维](operation/README.md)
   - [SHELL](operation/shell.md)
   - [CI工作流](operation/workflow.md)
