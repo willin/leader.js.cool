@@ -52,7 +52,7 @@ Package.json修改：
 
 ```js
 "scripts": {
-  "test": "./node_modules/.bin/nyc ./node_modules/.bin/ava"
+  "test": "NODE_ENV=test ./node_modules/.bin/nyc --reporter=text --reporter=html ./node_modules/.bin/ava -v --fail-fast"
 },
 "nyc": {
   "lines": 95,
@@ -82,4 +82,71 @@ Package.json修改：
 }
 ```
 
-参考项目init代码：  <https://coding.net/u/willin/p/bdd-practice/git/commit/7d97a6cc763049bba38d3c711e0047b73deb42b8>
+参考项目init代码：  <https://coding.net/u/willin/p/bdd-practice/git/tree/5c42541a2985b54619d09372ef05fc999b108f9a>
+
+## 用户登陆接口实现
+
+### 设计
+
+Route： `/user/login`
+
+Payload：
+
+```js
+{
+  username: joi.alternatives().try(
+    joi.string().email().max(32),
+    joi.number().integer().min(10000000000).max(19999999999),
+    joi.string().min(3).max(16)
+  ).required().description('手机号，邮箱，或用户名'),
+  password: joi.string().min(6).max(255).required().description('密码，密文'),
+  guid: joi.string().required().default('').description('设备唯一识别码')
+}
+```
+
+Result：
+
+登陆成功：
+
+```js
+{
+  status: 1,
+  data: {
+    token: 'Access Token',
+    expires: 3600 // Access Token有效期
+  }
+}
+```
+
+### 通用错误
+
+```js
+{
+  status: 0,
+  err_code: 500,
+  error_msg: 'Server Error'
+}
+```
+
+### 编码
+
+首先编写测试用例， `test/user/login.js`。注意测试的顺序：
+
+1. 200 登录成功
+2. 400 参数错误
+3. 401 用户名或密码错误，连续三次
+4. 403 超出限制，正确用户密码登录
+
+并且需要注意：
+
+1. 测试前需要添加测试数据（测试用户），且信息不能与其他测试用例冲突（并行执行测试）
+2. 测试后要删除测试数据
+3. 测试前也需要删除测试数据（以免前一次测试失败数据未删除而产生数据污染）
+
+检查测试用例是否覆盖完整，以及测试用例是否写错。
+
+这时候直接开始跑测试用例的话会报错。
+
+测试用例参考： <https://coding.net/u/willin/p/bdd-practice/git/commit/cb2f32432000bcb3dc8cf9eb54e0bbf709b5887f>
+
+根据测试用例，开始编写功能模块代码。
