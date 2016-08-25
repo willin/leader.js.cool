@@ -147,7 +147,7 @@ Result：
 
 这时候直接开始跑测试用例的话会报错。
 
-测试用例参考： <https://coding.net/u/willin/p/bdd-practice/git/commit/cb2f32432000bcb3dc8cf9eb54e0bbf709b5887f>
+测试用例参考： <https://coding.net/u/willin/p/bdd-practice/git/blob/master/test/user/login.js>
 
 根据测试用例，开始编写功能模块代码。
 
