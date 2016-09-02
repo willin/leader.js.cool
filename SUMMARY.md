@@ -29,6 +29,7 @@
     - [数据库设计](project/user/db.md)
     - [缓存设计](project/user/cache.md)
     - [BDD实践](project/user/bdd.md)
+    - [代码细节处理](project/user/particulars.md)
 - [运维](operation/README.md)
   - [SHELL](operation/shell.md)
   - [服务器配置](operation/server.md)
