@@ -5,6 +5,7 @@
   - [产品设计](design/product.md)
   - [系统架构](design/architecture.md)
   - [系统实践](design/system.md)
+  - [忽略细节，就是屎](design/shit.md)
 - [项目](project/README.md)
   - [结构](project/structure.md)
     - [HAPI](project/source/hapi.md)
