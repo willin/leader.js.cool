@@ -117,3 +117,7 @@ try { // 读取要异常捕获，不然篡改值可能导致程序崩
 ```js
 await redis.setex('xxxKey', 3600, JSON.stringify(xxxJSONVal));
 ```
+
+## 其他资料
+
+性能调优与故障排查： <https://github.com/JacksonTian/jsconfcn2016>
