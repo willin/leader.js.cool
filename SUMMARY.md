@@ -23,7 +23,9 @@
     - [Redis](project/db/redis.md)
   - Front-End
     - [Fetch AJAX](project/fe/fetch.md)
+    - [前端库](project/fe/packages.md)
   - [Tool](project/tool/README.md)
+    - [包管理NPM](project/tool/npm.md)
     - [Babel](project/tool/babel.md)
     - [守护进程PM2](project/tool/pm2.md)
   - [开发指南](project/develop.md)
