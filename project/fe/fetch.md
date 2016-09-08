@@ -29,5 +29,5 @@ fetch(req).then(function(res) {
 
 ## 参考资料
 
-接口文档： <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API>
-介绍： <https://github.com/camsong/blog/issues/2>
+* 接口文档： <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API>
+* 介绍： <https://github.com/camsong/blog/issues/2>
