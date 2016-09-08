@@ -49,4 +49,7 @@ npm run start
 npm run test
 ```
 
-避免使用`npm install -g`安装的`CLI`工具，推荐使用`./node_modules/.bin/CLI`方式。
+避免使用`npm install -g`安装的`CLI`工具，推荐：
+
+* 通过`npm install --save-dev CLI`安装
+* 使用`./node_modules/.bin/CLI`
