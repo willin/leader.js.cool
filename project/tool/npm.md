@@ -11,7 +11,7 @@ npm init
 ```bash
 # 产品环境依赖
 npm install -S package-name
-# 开发环境依赖，如Wepack及插件，不需要在产品环境中引用的
+# 开发环境依赖，如Webpack及插件，不需要在产品环境中引用的
 npm install -D package-name
 # 选择依赖，如Demo中使用的
 npm install -O package-name
