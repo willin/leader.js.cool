@@ -28,6 +28,7 @@
     - [包管理NPM](project/tool/npm.md)
     - [Babel](project/tool/babel.md)
     - [守护进程PM2](project/tool/pm2.md)
+    - [造轮子(NPM)篇](project/tool/tool.md)
   - [开发指南](project/develop.md)
     - [功能模块设计](project/user/module.md)
     - [数据库设计](project/user/db.md)
