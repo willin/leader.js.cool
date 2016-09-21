@@ -40,11 +40,19 @@ let bar = await barPromise;
 
 ## Proxy
 
-```bash
-node --harmony-proxies
-```
+经测试Node v6.1.0之后版本已集成。
 
 示例代码：
+
+
+```js
+const proxy = new Proxy({}, {
+  get: (target, property) => [target, property]
+});
+
+console.log(proxy.func);          // [ {}, 'func' ]
+console.log(proxy.func('123'));   // TypeError: proxy.func is not a function
+```
 
 ```js
 const proxy = new Proxy({}, {

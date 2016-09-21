@@ -227,3 +227,54 @@ pm2 jlist
 ```
 
 其中每一列数据都有 `rows[i].monit.cpu`，值范围 0~100。可以用`later`写定时脚本监控并重启。
+
+示例代码：
+
+```js
+import { exec } from 'child_process';
+import numeral from 'numeral';
+
+exec('pm2 jlist', (err, stdout, stderr) => {
+  if (stderr) {
+    console.log(stderr);
+  }
+  const result = stdout.split('\n');
+
+  // 如果不存在 PM2 进程，将会打初始化日志
+  while (result[0].indexOf('[PM2]') === 0) {
+    result.shift();
+  }
+  let items = [];
+  try {
+    items = JSON.parse(result[0]);
+  } catch (e) { /* eslint no-empty:0 */ }
+  // console.log(items);
+
+  // 演示
+  const item = items[0];
+
+  const uptimeTmp = numeral((new Date() - item.pm2_env.pm_uptime) / 1000).format('00:00:00').split(':').map(Number);
+  const uptime = `${parseInt(uptimeTmp[0] / 24, 10)}天${uptimeTmp[0] % 24}时${uptimeTmp[1]}分${uptimeTmp[2]}秒`.replace('0天', '').replace('0时', '').replace('0分', '').replace('0秒', '');
+
+  console.log(item.pid);
+  // 41965
+  console.log(item.name);
+  // app-name
+  console.log(item.pm_id);
+  // 0
+  console.log(`${item.monit.cpu}%`);
+  // 91%
+  console.log(numeral(item.monit.memory).format('0.0b'));
+  // 126.8MB
+  console.log(uptime);
+  // 6秒
+  console.log(item.pm2_env.restart_time);
+  // 0
+  if (item.monit.cpu > 90) {
+    exec(`pm2 restart ${item.pm_id}`, (err2, stdout2, stderr2) => {
+      console.log(stdout2);
+      console.log(stderr2);
+    });
+  }
+});
+```
