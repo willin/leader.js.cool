@@ -17,6 +17,10 @@
 
 包括自动化测试、持续集成（CI）等。
 
+四、基础知识
+
+网络通讯、开发环境、运维测试等基础常识
+
 ---
 
 源码：<https://coding.net/u/willin/p/leader.js.cool/git>
