@@ -42,5 +42,9 @@
   - [CI工作流](operation/workflow.md)
   - [重启服务](operation/restarter.md)
   - [版本回退](operation/rollback.md)
-- [基础](basic/README.md)
-  - [HTTP](basic/http.md)
+- [能力](basic/README.md)
+  - [问题处理能力](basic/solving.md)
+  - 基础常识
+    - [HTTP](basic/http.md)
+
+

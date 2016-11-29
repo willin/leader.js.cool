@@ -17,12 +17,16 @@
 
 包括自动化测试、持续集成（CI）等。
 
-四、基础知识
+四、能力培养及基础常识
 
-网络通讯、开发环境、运维测试等基础常识
+各方面能力的培养及网络通讯、开发环境、运维测试等基础常识。
 
 ---
 
 源码：<https://coding.net/u/willin/p/leader.js.cool/git>
 
 欢迎Coding上进行反馈交流。
+
+&copy; Willin Wang
+
+
