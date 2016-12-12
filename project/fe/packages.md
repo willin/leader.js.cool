@@ -2,6 +2,8 @@
 
 尽量使用`Vanilla JS`提升性能，避免使用`jQuery`、`EXTJS`、`Zepto`等。
 
+《你可能用不上jQuery》：<http://youmightnotneedjquery.com/>
+
 ## 数据可视化
 
 D3.js： <https://d3js.org/>
