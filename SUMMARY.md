@@ -14,7 +14,9 @@
     - [Electron](project/source/electron.md)
     - [UDP](project/source/udp.md)
     - [NativeScript](project/source/nativescript.md)
+    - [Koa](project/source/koa.md)
   - JavaScript
+    - [Promise](project/js/promise.md)
     - [ES6/7](project/js/es6.md)
     - [Benchmark](project/js/benchmark.md)
     - [Test](project/js/test.md)
@@ -26,7 +28,9 @@
     - [Fetch AJAX](project/fe/fetch.md)
     - [前端库](project/fe/packages.md)
   - [Tool](project/tool/README.md)
+    - [代码管理GIT](project/tool/git.md)
     - [包管理NPM](project/tool/npm.md)
+    - [文档GitBook](project/tool/gitbook.md)
     - [Babel](project/tool/babel.md)
     - [守护进程PM2](project/tool/pm2.md)
     - [造轮子(NPM)篇](project/tool/tool.md)
@@ -45,6 +49,9 @@
 - [能力](basic/README.md)
   - [问题处理能力](basic/solving.md)
   - 基础常识
+    - [在线资源](basic/online.md)
+    - [离线资源](basic/offline.md)
+    - [OS X](basic/osx.md)
     - [HTTP](basic/http.md)
-
-
+    - [Hexo静态博客搭建](basic/hexo.md)
+    - [翻|越G|F|W](basic/ss.md)
