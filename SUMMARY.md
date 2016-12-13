@@ -48,6 +48,8 @@
   - [版本回退](operation/rollback.md)
 - [能力](basic/README.md)
   - [问题处理能力](basic/solving.md)
+  - 原则
+    - [招聘原则](basic/hire.md)
   - 基础常识
     - [在线资源](basic/online.md)
     - [离线资源](basic/offline.md)
