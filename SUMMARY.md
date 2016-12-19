@@ -15,7 +15,7 @@
     - [UDP](project/source/udp.md)
     - [NativeScript](project/source/nativescript.md)
     - [Koa](project/source/koa.md)
-  - JavaScript
+  - [JavaScript](project/js/README.md)
     - [Promise](project/js/promise.md)
     - [ES6/7](project/js/es6.md)
     - [Benchmark](project/js/benchmark.md)
