@@ -16,6 +16,7 @@
     - [NativeScript](project/source/nativescript.md)
     - [Koa](project/source/koa.md)
   - [JavaScript](project/js/README.md)
+    - [Tricks](project/js/tricks.md)
     - [Promise](project/js/promise.md)
     - [ES6/7](project/js/es6.md)
     - [Benchmark](project/js/benchmark.md)
@@ -46,7 +47,7 @@
   - [CI工作流](operation/workflow.md)
   - [重启服务](operation/restarter.md)
   - [版本回退](operation/rollback.md)
-- [能力](basic/README.md)
+- [常识能力原则思想](basic/README.md)
   - [问题处理能力](basic/solving.md)
   - 原则
     - [招聘原则](basic/hire.md)
