@@ -33,6 +33,10 @@ sudo mkdir -v /etc/resolver
 sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/cxl'
 ```
 
+## Parallels 全屏禁止触发角
+
+在 `配置` -> `安全` -> `退出windows全屏模式时候需要密码` 打勾即可
+
 ## 百度网盘下载工具 Aria2
 
 ### 通过Brew安装Aria2
