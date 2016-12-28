@@ -30,7 +30,7 @@
     - [前端库](project/fe/packages.md)
   - [Tool](project/tool/README.md)
     - [代码管理GIT](project/tool/git.md)
-    - [包管理NPM](project/tool/npm.md)
+    - [包管理](project/tool/pkg.md)
     - [文档GitBook](project/tool/gitbook.md)
     - [Babel](project/tool/babel.md)
     - [守护进程PM2](project/tool/pm2.md)

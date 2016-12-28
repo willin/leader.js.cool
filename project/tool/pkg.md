@@ -1,4 +1,4 @@
-# NPM
+# 包管理 NPM
 
 ## 初始化项目
 
@@ -53,3 +53,61 @@ npm run test
 
 * 通过`npm install --save-dev CLI`安装
 * 使用`./node_modules/.bin/CLI`
+
+# 包管理 Yarn
+
+<https://yarnpkg.com/>
+
+## 安装 Yarn
+
+前置条件Brew（Mac OS X）
+
+
+```bash
+brew update
+brew install yarn
+```
+
+完成后用 `Sublime Text` 或其他编辑工具根据你使用的环境打开 `.zshrc` / `.bashrc` / `.profile`，添加一行：
+
+```bash
+export PATH="$PATH:`yarn global bin`"
+```
+
+## 使用
+
+### 新建项目
+
+```bash
+yarn init
+```
+
+### 安装依赖
+
+```bash
+yarn add [package]
+yarn add [package]@[version]
+yarn add [package]@[tag]
+```
+
+### 更新依赖
+
+```bash
+yarn upgrade [package]
+yarn upgrade [package]@[version]
+yarn upgrade [package]@[tag]
+```
+
+### 删除依赖
+
+```bash
+yarn remove [package]
+```
+
+### 安装项目所有依赖
+
+```bash
+yarn
+```
+
+前提项目目录下存在 `yarn.lock` 文件，npm添加的项目无法直接安装，需要通过yarn安装生成该lock文件。
