@@ -16,7 +16,8 @@
     "-duoshuo",
     "-edit-link",
     "adsense",
-    "-maxiang"
+    "-maxiang",
+    "sitemap"
   ],
   "pluginsConfig": {
     "donate": {
@@ -55,6 +56,9 @@
       "slot": "2139110924",
       "format": "auto",
       "element": ".page-inner section"
+    },
+    "sitemap": {
+        "hostname": "https://leader.js.cool/"
     },
     "introduction-text": "封面"
   }
