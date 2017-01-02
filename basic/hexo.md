@@ -8,7 +8,7 @@
 
 **1. 安装nvm**
 
-使用crul方式安装：
+使用curl方式安装：
 
 > $curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash
 
