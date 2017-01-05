@@ -332,3 +332,64 @@ git push #将代码push到raw分支上
 ```
 
 登陆相应网址进行效果查看。
+
+## 7. 附加 自动部署脚本
+
+
+在项目文件夹下新建一个`cmd`文件（文件名随意），并为其增加执行权限。
+
+```
+touch cmd
+chmod +x cmd
+```
+
+`cmd`文件源码:
+
+```bash
+#!/bin/bash
+pushd $(dirname "${0}") > /dev/null
+DIR=$(pwd -L)
+popd > /dev/null
+DATE=$(date +"%Y-%m-%d %H:%M")
+
+# get action
+ACTION=$1
+
+# help
+usage() {
+  echo "Usage: ./cmd {commit|build|clean}"
+  exit 1;
+}
+
+# start app
+commit() {
+	git add .
+	git commit -m 'Post Auto Commit'
+	git push
+}
+
+build() {
+	hexo d -g
+}
+
+# stop app
+clean() {
+	rm -rf .deploy_git
+	rm -rf public
+}
+
+case "$ACTION" in
+  commit)
+    commit
+  ;;
+  build)
+    build
+  ;;
+  clean)
+    clean
+  ;;
+  *)
+    usage
+  ;;
+esac
+```
