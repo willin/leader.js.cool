@@ -8,7 +8,7 @@
   },
   "plugins": [
     "addcssjs",
-    "atoc",
+    "-atoc",
     "fancybox",
     "donate",
     "github",
@@ -17,6 +17,7 @@
     "-edit-link",
     "adsense",
     "-maxiang",
+    "wordcount",
     "sitemap"
   ],
   "pluginsConfig": {

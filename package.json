@@ -1,28 +1,27 @@
 {
-  "name": "w2mn",
-  "version": "1.0.0",
-  "description": "百万富翁之路",
+  "name": "leader",
+  "version": "2.0.0",
+  "description": "不可替代的团队领袖培养计划",
   "main": "index.js",
   "scripts": {
-    "start": "sh deploy.sh",
+    "start": "./cmd",
     "test": "node_modules/.bin/gitbook serve"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@git.coding.net/willin/w2mn.git"
+    "url": "git+ssh://git@git.coding.net/willin/leader.js.cool.git"
   },
   "keywords": [
-    "money",
+    "leader",
     "cool",
-    "w2mn",
-    "millionaire"
+    "jsw2mn"
   ],
   "author": "Willin Wang",
   "license": "MIT",
   "bugs": {
-    "url": "https://coding.net/u/willin/p/w2mn/topic"
+    "url": "https://coding.net/u/willin/p/leader.js.cool/topic"
   },
-  "homepage": "https://coding.net/u/willin/p/w2mn/git",
+  "homepage": "https://coding.net/u/willin/p/leader.js.cool/git",
   "dependencies": {
     "gitbook-cli": "^2.2.0"
   }
