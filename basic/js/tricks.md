@@ -1,5 +1,23 @@
 # Tricks
 
+你也许并不需要jQuery之类的库来协助开发。
+
+## 事件委派
+
+如对 AJAX 请求返回结果中的按钮进行 `click` 事件绑定：
+
+```js
+var handleClick = function (e) {
+	if (e.target && e.target.nodeName.toLowerCase() === 'button') {
+		// Codes Here
+    
+	}
+}
+
+parentNode.addEventListener('click', handleClick);
+```
+
+
 ## Deep Clone
 
 问题现象：

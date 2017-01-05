@@ -44,7 +44,6 @@
     - [产品设计](experience/design/product.md)
     - [系统架构](experience/design/architecture.md)
     - [系统架构设计实践](experience/design/system.md)
-    - [原生还是框架*](experience/design/choose.md)
   - [项目](experience/project/README.md)
     - [项目结构](experience/project/structure.md)
     - [开发指南](experience/project/develop.md)
