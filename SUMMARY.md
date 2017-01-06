@@ -61,10 +61,11 @@
     - [版本回退](experience/operation/rollback.md)
 - [思想篇](mind/README.md)
   - 能力
+    - [学习能力](mind/capability/study.md)
     - [问题处理能力](mind/capability/solving.md)
   - 原则
     - [招聘原则](mind/tenet/hire.md)
   - 思维模式
     - [忽略细节，就是屎](mind/thinking/shit.md)
-    - [辩证思维*](mind/thinking/dialectical.md)
+    - [辩证思维](mind/thinking/dialectical.md)
 
