@@ -7,18 +7,18 @@
     "readme": "INTRO.md"
   },
   "links": {
-        "sharing": {
-            "all": null,
-            "facebook": null,
-            "google": null,
-            "twitter": null,
-            "weibo": null
-        },
-        "sidebar": {
-            "个人主页": "https://willin.wang/",
-            "书籍源码": "https://coding.net/u/willin/p/leader.js.cool/git"
-        }
+    "sharing": {
+      "all": null,
+      "facebook": null,
+      "google": null,
+      "twitter": null,
+      "weibo": null
     },
+    "sidebar": {
+      "个人主页": "https://willin.wang/",
+      "书籍源码": "https://coding.net/u/willin/p/leader.js.cool/git"
+    }
+  },
   "plugins": [
     "addcssjs",
     "autotheme",
