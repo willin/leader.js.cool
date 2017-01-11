@@ -68,4 +68,4 @@
   - 思维模式
     - [忽略细节，就是屎](mind/thinking/shit.md)
     - [辩证思维](mind/thinking/dialectical.md)
-
+    - [木桶效应](mind/thinking/buckets.md)
