@@ -19,6 +19,9 @@
     - [小技巧](basic/js/tricks.md)
     - [Fetch AJAX](basic/js/fetch.md)
     - [ES Next](basic/js/es.md)
+    - [Map](basic/js/map.md)
+    - [Reduce](basic/js/reduce.md)
+    - [正则替换](basic/js/regexp.md)
   - Node.js
     - [包管理](basic/node/pkg.md)
     - [Hexo静态博客搭建](basic/node/hexo.md)
@@ -38,6 +41,9 @@
     - [NativeScript](basic/framework/nativescript.md)
     - [Koa](basic/framework/koa.md)
     - [React Redux](basic/framework/redux.md)
+  - 算法入门（使用ES 6）
+    - [奇数求和](basic/algorithm/sum-of-odd-numbers.md)
+    - [查找杂散数](basic/algorithm/find-the-stray-number.md)
 - [经验篇](experience/README.md)
   - [设计](experience/design/README.md)
     - [需求分析](experience/design/requirements.md)
