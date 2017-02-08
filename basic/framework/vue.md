@@ -37,7 +37,7 @@ Hosts.js： <https://github.com/js-cool/Hosts.js>
 * Babel
 * ESLint
 
-## 进阶适用
+## 进阶使用
 
 * 理解 Flux 模型： <http://www.infoq.com/cn/news/2014/05/facebook-mvc-flux/>
 * Facebook Flux（基于 React）： <http://www.ruanyifeng.com/blog/2016/01/flux.html>
