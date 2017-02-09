@@ -23,8 +23,11 @@
 
 2016.8.3晚写下了本书的第一行话，当时想的名字为《可替代的团队领袖培养计划》，其寓意是希望这些知识经验在团队内部分享，能够培养出更优秀的人才，每个人都能够替代我做得更好。如果能够因此有所建树，则将会成为不可替代的团队领袖。
 
-源码：<https://coding.net/u/willin/p/leader.js.cool/git>
+源码：
 
-欢迎Coding上进行反馈交流。
+* <https://github.com/js-cool/leader.js.cool>
+* <https://coding.net/u/willin/p/leader.js.cool/git>
+
+欢迎进行反馈交流。
 
 &copy; Willin Wang
