@@ -3,10 +3,10 @@
 你离技术经理，只差这本书： <http://leader.js.cool>
 
 ```
-info: found 59 pages
-info: found 60 asset files
-Completed counting with 25441 words.
-info: >> generation finished with success in 11.8s !
+info: found 67 pages
+info: found 61 asset files
+Completed counting with 28505 words.
+info: >> generation finished with success in 10.6s !
 ```
 
 ### 安装
