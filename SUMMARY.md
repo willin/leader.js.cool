@@ -67,6 +67,8 @@
     - [CI工作流](experience/operation/workflow.md)
     - [重启服务](experience/operation/restarter.md)
     - [版本回退](experience/operation/rollback.md)
+  - 进阶
+    - [元编程构造简单优雅解决方案](experience/advanced/meta.md)
 - [思想篇](mind/README.md)
   - 能力
     - [学习能力](mind/capability/study.md)
