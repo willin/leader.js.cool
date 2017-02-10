@@ -76,6 +76,6 @@
     - [辩证思维](mind/thinking/dialectical.md)
     - [克服强迫症](mind/thinking/ocd.md)
     - [木桶效应](mind/thinking/buckets.md)
-- 团队建设
-  - [招聘原则](team/hire.md)
-  - [会议原则](team/meeting.md)
+  - 团队建设
+    - [招聘原则](mind/team/hire.md)
+    - [会议原则](mind/team/meeting.md)
