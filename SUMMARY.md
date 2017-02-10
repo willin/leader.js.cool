@@ -69,6 +69,7 @@
     - [版本回退](experience/operation/rollback.md)
   - 进阶
     - [元编程构造简单优雅解决方案](experience/advanced/meta.md)
+    - [Electron桌面应用](experience/advanced/desktop-app.md)
 - [思想篇](mind/README.md)
   - 能力
     - [学习能力](mind/capability/study.md)

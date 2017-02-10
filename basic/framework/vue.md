@@ -22,21 +22,6 @@
 * Vue-Cli： <https://github.com/vuejs/vue-cli> （命令行工具）
 * 官方示例： <https://cn.vuejs.org/v2/examples/>
 
-## 示例项目
-
-Hosts.js： <https://github.com/js-cool/Hosts.js>
-
-技术栈包含：
-
-* Electron （仅 OS X 平台）
-* Webpack 2
-* Vue 2
-* Vuex
-* Vue-Router
-* Vue-Material （UI组件）
-* Babel
-* ESLint
-
 ## 进阶使用
 
 * 理解 Flux 模型： <http://www.infoq.com/cn/news/2014/05/facebook-mvc-flux/>
