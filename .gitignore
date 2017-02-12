@@ -2,5 +2,6 @@ _book/
 _private/
 node_modules/
 
+demo*
 .DS_Store
 *.log

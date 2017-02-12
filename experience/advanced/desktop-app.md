@@ -148,6 +148,65 @@ if (process.env.NODE_ENV === 'development') {
 }
 ```
 
+## 设计核心模块
 
+### Hosts 分级列表
+
+特点：
+
+* 支持顶级项目
+* 支持二级目录项目
+* 目录不含有启动状态，目录下的子项目有
+* 支持排序
+
+```js
+[
+  {
+    name: 'Default',
+    order: 1,
+    id: 'xxx',
+    type: 'item',
+    enabled: true
+  },
+  {
+    namename: 'Folder',
+    order: 2,
+    id: 'xxx',
+    type: 'folder',
+    children: [
+      {
+        name: 'Sub Item 1',
+        order: 1,
+        id: 'xxx',
+        type: 'item',
+        enabled: false
+      },
+      {
+        name: 'Sub Item 2',
+        order: 2,
+        id: 'xxx',
+        type: 'item',
+        enabled: true
+      },
+    ]
+  }
+]
+```
+
+排序算法：
+
+1. 对顶级项目进行排序
+2. 对子菜单项目进行排序
+
+```js
+const reorder = arr => arr.sort(x => x.order).map(x => {
+  if (x.type === 'folder') {
+    x.children = x.children.sort(y => y.order);
+  }
+  return x;
+});
+```
+
+---
 
 Hosts.js项目源码： <https://github.com/js-cool/Hosts.js>

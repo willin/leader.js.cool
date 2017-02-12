@@ -68,12 +68,13 @@
     - [重启服务](experience/operation/restarter.md)
     - [版本回退](experience/operation/rollback.md)
   - 进阶
-    - [元编程构造简单优雅解决方案](experience/advanced/meta.md)
+    - [元编程构造优雅解决方案](experience/advanced/meta.md)
     - [Electron桌面应用](experience/advanced/desktop-app.md)
 - [思想篇](mind/README.md)
   - 能力
     - [学习能力](mind/capability/study.md)
     - [问题处理能力](mind/capability/solving.md)
+    - [新人成长*](mind/capability/growth.md)
   - 思维模式
     - [忽略细节，就是屎](mind/thinking/shit.md)
     - [辩证思维](mind/thinking/dialectical.md)
@@ -82,3 +83,4 @@
   - 团队建设
     - [招聘原则](mind/team/hire.md)
     - [会议原则](mind/team/meeting.md)
+    - [人才理念*](mind/team/concept.md)
