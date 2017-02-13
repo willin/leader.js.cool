@@ -35,7 +35,7 @@
   },
   "plugins": [
     "addcssjs",
-    "autotheme",
+    "-autotheme",
     "-atoc",
     "fancybox",
     "donate",
@@ -46,6 +46,7 @@
     "adsense",
     "-maxiang",
     "wordcount",
+    "-theme-material",
     "sitemap"
   ],
   "pluginsConfig": {

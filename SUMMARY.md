@@ -72,9 +72,10 @@
     - [Electron桌面应用](experience/advanced/desktop-app.md)
 - [思想篇](mind/README.md)
   - 能力
+    - [好员工的定义](mind/capability/define-good-employee.md)
+    - [新人成长](mind/capability/growth.md)
     - [学习能力](mind/capability/study.md)
     - [问题处理能力](mind/capability/solving.md)
-    - [新人成长*](mind/capability/growth.md)
   - 思维模式
     - [忽略细节，就是屎](mind/thinking/shit.md)
     - [辩证思维](mind/thinking/dialectical.md)

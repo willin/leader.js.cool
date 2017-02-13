@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "./cmd",
-    "test": "node_modules/.bin/gitbook serve"
+    "test": "gulp",
+    "build": "gitbook build"
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,10 @@
   "homepage": "https://coding.net/u/willin/p/leader.js.cool/git",
   "dependencies": {
     "gitbook-cli": "^2.2.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.7",
+    "gulp": "^3.9.1",
+    "gulp-run": "^1.7.1"
   }
 }
