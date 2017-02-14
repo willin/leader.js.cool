@@ -236,7 +236,7 @@ const deleteItem = (arr, id, pid = '') => {
   if(id==='default') return false;
   let index;
   if (pid === '') {
-    index = arr.findIndex((x) => x.id === id);
+    index = arr.findIndex(x => x.id === id);
     // 异常捕获
     if (index === -1) return false;
     // 子菜单超过两个项目禁止删除
@@ -244,7 +244,7 @@ const deleteItem = (arr, id, pid = '') => {
     arr.splice(index, 1);
     return reorderItems(arr);
   }
-  index = arr.findIndex((x) => x.id === pid);
+  index = arr.findIndex(x => x.id === pid);
   // 异常捕获
   if (index === -1) return false;
   arr[index].children = deleteItem(arr[index].children, id);
@@ -276,7 +276,7 @@ const insertItem = (arr, name, pid = '', type = 'item') => {
     item.order = arr.length;
     arr.push(item);
   } else {
-    const index = arr.findIndex((x) => x.id === pid);
+    const index = arr.findIndex(x => x.id === pid);
     // 异常捕获
     if (index === -1) return false;
     item.order = arr[index].length;
@@ -288,9 +288,54 @@ const insertItem = (arr, name, pid = '', type = 'item') => {
 
 ### 位置调整算法
 
+1. Default 不能移动
+2. 编程过程中的异常捕获，实际操作中不会发生
+
 #### 上移
 
+```js
+const moveUpItem = (arrOrigin, id, pid = '') => {
+  if (id === 'default') return arrOrigin;
+  const arr = reorderItems(arrOrigin);
+  let index;
+  if (pid === '') {
+    index = arr.findIndex(x => x.id === id);
+    if (index === -1) return false;
+    if (index - 1 === -1) return arr;
+    arr[index].order -= 1;
+    arr[index - 1].order += 1;
+    return arr;
+  }
+  index = arr.findIndex(x => x.id === pid);
+  // 异常捕获
+  if (index === -1) return false;
+  arr[index].children = moveUpItem(arr[index].children, id);
+  return reorderItems(arr);
+};
+```
+
 #### 下移
+
+```js
+const moveDownItem = (arrOrigin, id, pid = '') => {
+  if (id === 'default') return arrOrigin;
+  const arr = reorderItems(arrOrigin);
+  let index;
+  if (pid === '') {
+    index = arr.findIndex(x => x.id === id);
+    if (index === -1) return false;
+    if (index + 1 === arr.length) return arr;
+    arr[index].order += 1;
+    arr[index + 1].order -= 1;
+    return arr;
+  }
+  index = arr.findIndex(x => x.id === pid);
+  // 异常捕获
+  if (index === -1) return false;
+  arr[index].children = moveUpItem(arr[index].children, id);
+  return reorderItems(arr);
+};
+```
 
 ### 优化
 
