@@ -13,11 +13,10 @@ build() {
   git push coding master
 
   node_modules/.bin/gitbook build
-  cd _book
-  git add .
-  git commit -m "Gitbook Auto Deployed"
-  git push -f coding master:coding-pages
-  git push -f origin master:gh-pages
+  cd $DIR/_book && git add .
+  cd $DIR/_book && git commit -m "Gitbook Auto Deployed"
+  cd $DIR/_book && git push -f coding master:coding-pages
+  cd $DIR/_book && git push -f origin master:gh-pages
 }
 
 clean() {
@@ -28,14 +27,13 @@ clean() {
 
   rm -rf _book
   node_modules/.bin/gitbook build
-  cd _book
-  git init
-  git add .
-  git commit -m "Gitbook Auto Deployed"
-  git remote add origin git@github.com:js-cool/leader.js.cool.git
-  git remote add coding git@git.coding.net:willin/leader.js.cool.git
-  git push -f coding master:coding-pages
-  git push -f origin master:gh-pages
+  cd $DIR/_book && git init
+  cd $DIR/_book && git add .
+  cd $DIR/_book && git commit -m "Gitbook Auto Deployed"
+  cd $DIR/_book && git remote add origin git@github.com:js-cool/leader.js.cool.git
+  cd $DIR/_book && git remote add coding git@git.coding.net:willin/leader.js.cool.git
+  cd $DIR/_book && git push -f coding master:coding-pages
+  cd $DIR/_book && git push -f origin master:gh-pages
 }
 
 case "$ACTION" in
