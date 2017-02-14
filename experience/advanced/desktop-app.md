@@ -263,6 +263,7 @@ const insertItem = (arr, name, pid = '', type = 'item') => {
   if (type === 'folder' && pid !== '') return false;
   const item = {
     name,
+    type,
     order: -1,
     id: uuid.v4(),
   };
