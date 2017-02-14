@@ -163,49 +163,138 @@ if (process.env.NODE_ENV === 'development') {
 [
   {
     name: 'Default',
-    order: 1,
-    id: 'xxx',
+    order: 2,
+    id: 'default',
     type: 'item',
     enabled: true
   },
   {
     namename: 'Folder',
-    order: 2,
-    id: 'xxx',
+    order: 1,
+    id: 'xxx1',
     type: 'folder',
     children: [
       {
-        name: 'Sub Item 1',
-        order: 1,
-        id: 'xxx',
+        name: 'Sub Item 2',
+        order: 2,
+        id: 'xxxs2',
         type: 'item',
         enabled: false
       },
       {
-        name: 'Sub Item 2',
-        order: 2,
-        id: 'xxx',
+        name: 'Sub Item 1',
+        order: 1,
+        id: 'xxxs1',
         type: 'item',
         enabled: true
       },
+      {
+        name: 'Sub Item 4',
+        order: 4,
+        id: 'xxxs4',
+        type: 'item',
+        enabled: true
+      },
+      {
+        name: 'Sub Item 3',
+        order: 3,
+        id: 'xxxs3',
+        type: 'item',
+        enabled: true
+      }
     ]
   }
 ]
 ```
 
-排序算法：
+### 排序算法
 
 1. 对顶级项目进行排序
 2. 对子菜单项目进行排序
 
 ```js
-const reorder = arr => arr.sort(x => x.order).map(x => {
-  if (x.type === 'folder') {
-    x.children = x.children.sort(y => y.order);
+const reorderItems = arr => arr.sort((x, y) => x.order - y.order > 0 ? 1 : -1).map((i, iIndex) => {
+  i.order = iIndex + 1;
+  if (i.type === 'folder') {
+    i.children = i.children.sort((x, y) => x.order - y.order > 0 ? 1 : -1).map((j, jIndex) => {
+      j.order = jIndex + 1;
+      return j;
+    });
   }
-  return x;
+  return i;
 });
 ```
+
+### 删除元素算法
+
+1. 默认项禁止删除
+2. 编程过程中的异常捕获，实际操作中不会发生
+3. 子菜单超过两个项目禁止删除
+
+```js
+const deleteItem = (arr, id, pid = '') => {
+  if(id==='default') return false;
+  let index;
+  if (pid === '') {
+    index = arr.findIndex((x) => x.id === id);
+    // 异常捕获
+    if (index === -1) return false;
+    // 子菜单超过两个项目禁止删除
+    if (typeof arr[index].children === 'object' && arr[index].children.length > 1) return false;
+    arr.splice(index, 1);
+    return reorderItems(arr);
+  }
+  index = arr.findIndex((x) => x.id === pid);
+  // 异常捕获
+  if (index === -1) return false;
+  arr[index].children = deleteItem(arr[index].children, id);
+  return reorderItems(arr);
+};
+```
+
+### 添加元素算法
+
+1. 不能建立二级目录
+2. 编程过程中的异常捕获，实际操作中不会发生
+
+```js
+const uuid = require('uuid');
+const insertItem = (arr, name, pid = '', type = 'item') => {
+  if (type === 'folder' && pid !== '') return false;
+  const item = {
+    name,
+    order: -1,
+    id: uuid.v4(),
+  };
+  if (type === 'item') {
+    item.enabled = false;
+  } else {
+    item.children = [];
+  }
+  if (pid === '') {
+    item.order = arr.length;
+    arr.push(item);
+  } else {
+    const index = arr.findIndex((x) => x.id === pid);
+    // 异常捕获
+    if (index === -1) return false;
+    item.order = arr[index].length;
+    arr[index].children.push(item);
+  }
+  return reorderItems(arr);
+};
+```
+
+### 位置调整算法
+
+#### 上移
+
+#### 下移
+
+### 优化
+
+* 以 class 形式封装
+* 抛出简单的外部接口
 
 ---
 
