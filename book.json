@@ -15,8 +15,9 @@
       "weibo": null
     },
     "sidebar": {
-      "个人主页": "https://willin.wang/",
-      "书籍源码": "https://coding.net/u/willin/p/leader.js.cool/git"
+      "作者": "https://willin.wang/",
+      "Github": "https://github.com/js-cool/leader.js.cool",
+      "Coding": "https://coding.net/u/willin/p/leader.js.cool/git"
     }
   },
   "pdf": {
