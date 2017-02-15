@@ -150,6 +150,49 @@ if (process.env.NODE_ENV === 'development') {
 
 ## 设计核心模块
 
+### i18n
+
+国际化支持，没有什么难度，根据语言参数找到对应的翻译文件，配置默认语言（英文）：
+
+```js
+import { readdirSync } from 'fs';
+
+const locales = readdirSync(__dirname);
+
+/*
+ try `zh-CN` first
+ then `zh`
+ or otherwise `default`
+ */
+module.exports = (lang = 'default') => {
+  let locale = locales.filter(x => x.indexOf(lang) !== -1)[0];
+  /* eslint import/no-dynamic-require:0,global-require:0 */
+  if (locale !== undefined) {
+    const file = require(`./${locale}`);
+    return file;
+  }
+  const langPrefix = lang.split('-')[0];
+  locale = locales.filter(x => x.indexOf(langPrefix) !== -1)[0];
+  if (locale !== undefined) {
+    const file = require(`./${locale}`);
+    return file;
+  }
+  const file = require('./default');
+  return file;
+};
+```
+
+目录结构
+
+```
+.
+├── default.js
+├── index.js
+└── zh-CN.js
+```
+
+如有其它语言，添加对应语言文件即可。
+
 ### Hosts 分级列表
 
 特点：
