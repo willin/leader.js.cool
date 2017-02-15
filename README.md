@@ -3,9 +3,9 @@
 你离技术经理，只差这本书： <http://leader.js.cool>
 
 ```
-info: found 74 pages
+info: found 75 pages
 info: found 62 asset files
-Completed counting with 35714 words.
+Completed counting with 36960 words.
 info: >> generation finished with success in 10.6s !
 ```
 

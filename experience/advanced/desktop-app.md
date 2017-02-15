@@ -21,7 +21,7 @@
 
 ## 配置 Vue2 + Webpack2
 
-需要注意`Webpack` 2.x.x 版本与 1.x.x 版本发生了不少改动。可以参考迁移文档： <https://webpack.js.org/guides/migrating/> 进行学习。
+需要注意`Webpack` 2.x.x 版本与 1.x.x 版本发生了不少改动[^1]。
 
 ### 坑1： extract-text-webpack-plugin
 
@@ -193,7 +193,7 @@ module.exports = (lang = 'default') => {
 
 如有其它语言，添加对应语言文件即可。
 
-### Hosts 分级列表
+### Hosts.js[^2] 分级列表
 
 特点：
 
@@ -643,6 +643,7 @@ const data = categories.reload();
 console.log(JSON.stringify(data, null, 2));
 ```
 
----
 
-Hosts.js项目源码： <https://github.com/js-cool/Hosts.js>
+
+[^1]: 可以参考迁移文档： <https://webpack.js.org/guides/migrating/> 进行学习。
+[^2]: Hosts.js项目源码： <https://github.com/js-cool/Hosts.js>
