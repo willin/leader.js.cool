@@ -337,10 +337,268 @@ const moveDownItem = (arrOrigin, id, pid = '') => {
 };
 ```
 
+新增了重命名和切换启用状态的两个方法，不再展开。
+
 ### 优化
 
 * 以 class 形式封装
 * 抛出简单的外部接口
+
+```js
+/* eslint class-methods-use-this: [2, { "exceptMethods": ["_deleteItem","_moveUpItem","_moveDownItem"] }] */
+
+import { existsSync, mkdirSync, writeFileSync, readFileSync } from 'fs';
+import uuid from 'uuid';
+import locales from '../locales';
+
+module.exports = class Category {
+  constructor(lang) {
+    this.locale = locales(lang);
+    this.DIR_PATH = `${process.env.HOME}/.hosts.js`;
+    this.FILE_PATH = `${this.DIR_PATH}/.category.js`;
+    this.init();
+  }
+
+  init() {
+    const defaultData = [{
+      name: this.locale.default,
+      order: 1,
+      id: 'default',
+      type: 'item',
+      enabled: true
+    }];
+    if (!existsSync(this.DIR_PATH)) {
+      mkdirSync(this.DIR_PATH);
+    }
+    if (!existsSync(this.FILE_PATH)) {
+      this.data = defaultData;
+    } else {
+      const data = readFileSync(this.FILE_PATH, 'utf-8');
+      try {
+        this.data = JSON.parse(data);
+      } catch (e) {
+        this.data = defaultData;
+      }
+    }
+  }
+
+  reorder() {
+    this.data = this.data.sort((x, y) => x.order - y.order > 0 ? 1 : -1)
+      .map((i, iIndex) => {
+        i.order = iIndex + 1;
+        if (i.type === 'folder') {
+          i.children = i.children.sort((x, y) => x.order - y.order > 0 ? 1 : -1).map((j, jIndex) => {
+            j.order = jIndex + 1;
+            return j;
+          });
+        }
+
+        return i;
+      });
+    return true;
+  }
+
+  _deleteItem(arr, id) {
+    const index = arr.findIndex(x => x.id === id);
+    // 异常捕获
+    if (index === -1) return false;
+    // 子菜单超过两个项目禁止删除
+    if (typeof arr[index].children === 'object' && arr[index].children.length > 1) return false;
+    arr.splice(index, 1);
+    return arr;
+  }
+
+  _moveUpItem(arr, id) {
+    const index = arr.findIndex(x => x.id === id);
+    if (index === -1) return false;
+    if (index - 1 === -1) return false;
+    arr[index].order -= 1;
+    arr[index - 1].order += 1;
+    return arr;
+  }
+
+  _moveDownItem(arr, id) {
+    const index = arr.findIndex(x => x.id === id);
+    if (index === -1) return false;
+    if (index + 1 === arr.length) return false;
+    arr[index].order += 1;
+    arr[index + 1].order -= 1;
+    return arr;
+  }
+
+  delete(id, pid = '') {
+    if (pid === '') {
+      const data = this._deleteItem(this.data, id);
+      if (data === false) return false;
+      this.data = data;
+    } else {
+      const index = this.data.findIndex(x => x.id === pid);
+      // 异常捕获
+      if (index === -1) return false;
+      const data = this._deleteItem(this.data[index].children, id);
+      if (data === false) return false;
+      this.data[index].children = data;
+    }
+    return this.reorder();
+  }
+
+  insert(name, pid = '', type = 'item') {
+    if (['item', 'folder'].indexOf(type) === -1) return false;
+    if (type === 'folder' && pid !== '') return false;
+    const item = {
+      name,
+      type,
+      id: uuid.v4()
+    };
+    if (type === 'item') {
+      item.enabled = false;
+    } else {
+      item.children = [];
+    }
+    if (pid === '') {
+      item.order = this.data.length + 1;
+      this.data.push(item);
+    } else {
+      const index = this.data.findIndex(x => x.id === pid);
+      // 异常捕获
+      if (index === -1) return false;
+      item.order = this.data[index].children.length + 1;
+      this.data[index].children.push(item);
+    }
+    return this.reorder();
+  }
+
+  moveUp(id, pid = '') {
+    if (id === 'default') return false;
+    let index;
+    if (pid === '') {
+      index = this.data.findIndex(x => x.id === id);
+      if (index === 1 || index === -1) return false;
+      const data = this._moveUpItem(this.data, id);
+      if (data === false) return false;
+      this.data = data;
+      return this.reorder();
+    }
+    index = this.data.findIndex(x => x.id === pid);
+    // 异常捕获
+    if (index === -1) return false;
+    const data = this._moveUpItem(this.data[index].children, id);
+    if (data === false) return false;
+    this.data[index].children = data;
+    return this.reorder();
+  }
+
+  moveDown(id, pid = '') {
+    if (id === 'default') return false;
+    if (pid === '') {
+      const data = this._moveDownItem(this.data, id);
+      if (data === false) return false;
+      this.data = data;
+      return this.reorder();
+    }
+    const index = this.data.findIndex(x => x.id === pid);
+    // 异常捕获
+    if (index === -1) return false;
+    const data = this._moveDownItem(this.data[index].children, id);
+    if (data === false) return false;
+    this.data[index].children = data;
+    return this.reorder();
+  }
+
+  rename(name, id, pid = '') {
+    if (pid === '') {
+      const index = this.data.findIndex(x => x.id === id);
+      // 异常捕获
+      if (index === -1) return false;
+      this.data[index].name = name;
+    } else {
+      const index = this.data.findIndex(x => x.id === pid);
+      // 异常捕获
+      if (index === -1) return false;
+      const indexChildren = this.data[index].children.findIndex(x => x.id === id);
+      // 异常捕获
+      if (indexChildren === -1) return false;
+      this.data[index].children[indexChildren].name = name;
+    }
+    return this.reorder();
+  }
+
+  toggle(id, pid = '') {
+    if (id === 'default') return false;
+    if (pid === '') {
+      const index = this.data.findIndex(x => x.id === id);
+      // 异常捕获
+      if (index === -1 || !Reflect.has(this.data[index], 'enabled')) return false;
+      this.data[index].enabled = !this.data[index].enabled;
+    } else {
+      const index = this.data.findIndex(x => x.id === pid);
+      // 异常捕获
+      if (index === -1) return false;
+      const indexChildren = this.data[index].children.findIndex(x => x.id === id);
+      // 异常捕获
+      if (indexChildren === -1) return false;
+      this.data[index].children[indexChildren].enabled = !this.data[index].children[indexChildren].enabled;
+    }
+    return true;
+  }
+
+  reload() {
+    return this.data;
+  }
+
+  save() {
+    writeFileSync(this.FILE_PATH, JSON.stringify(this.data, null, 2));
+    return true;
+  }
+};
+```
+
+该文件源码如有更新，在： <https://github.com/js-cool/Hosts.js/blob/master/src/lib/category.js> 上查看。
+
+#### Demo
+
+测试添加：
+
+```js
+import Category from './category';
+
+const categories = new Category();
+
+// 增加目录：
+categories.insert('目录名称', '', 'folder');
+
+// 增加项目：
+categories.insert('项目名称');
+categories.insert('项目名称', '目录 id');
+
+// 删除项目：
+categories.delete('根目录项目 id');
+categories.delete('项目 id', '目录 id');
+
+// 向上移动
+categories.moveUp('根目录项目 id');
+categories.moveUp('项目 id', '目录 id');
+
+// 向下移动
+categories.moveDown('根目录项目 id');
+categories.moveDown('项目 id', '目录 id');
+
+// 重命名
+categories.rename('项目名称', '根目录项目 id');
+categories.rename('项目名称', '项目 id', '目录 id');
+
+// 切换启用状态
+categories.toggle('根目录项目 id');
+categories.toggle('项目 id', '目录 id');
+
+// 保存更改到配置文件
+categories.save();
+
+// 获取最新的列表数据
+const data = categories.reload();
+
+console.log(JSON.stringify(data, null, 2));
+```
 
 ---
 
