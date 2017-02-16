@@ -86,4 +86,4 @@
   - 团队建设
     - [招聘原则](mind/team/hire.md)
     - [会议原则](mind/team/meeting.md)
-    - [人才理念*](mind/team/concept.md)
+    - [人才理念](mind/team/concept.md)
