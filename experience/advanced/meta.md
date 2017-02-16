@@ -2,6 +2,8 @@
 
 ECMAScript 6中引入了相关 API —— `Proxy`[^1]。
 
+[^1]: 参考文档： <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy>
+
 搭配`Reflect`使用例子：
 
 ```js
@@ -9,7 +11,7 @@ var loggedObj = new Proxy(obj, {
   set: function(target, name, value, receiver) {
     var success = Reflect.set(target,name, value, receiver);
     if (success) {
-      log('property ' + name + ' on ' + target + ' set to ' + value);
+      console.log('property ' + name + ' on ' + target + ' set to ' + value);
     }
     return success;
   },
@@ -35,6 +37,8 @@ var loggedObj = new Proxy(obj, {
 本章节以 ***腾讯云/QCloud*** 为例。
 
 ### 云服务器 CVM[^2]
+
+[^2]: 文档说明：<https://www.qcloud.com/document/api/213/6978>
 
 请求形式：
 
@@ -174,5 +178,3 @@ trade.DescribeUserInfo(params).then((userInfo) => {
 
 完整项目源码： <https://github.com/willin/wqcloud>
 
-[^1]: 参考文档： <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy>
-[^2]: 文档说明：<https://www.qcloud.com/document/api/213/6978>
