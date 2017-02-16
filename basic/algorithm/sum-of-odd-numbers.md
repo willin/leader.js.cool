@@ -1,8 +1,6 @@
 # 奇数求和
 
-## 题目
-
-<https://www.codewars.com/kata/sum-of-odd-numbers>
+## 题目 [^1]
 
 Given the triangle of consecutive odd numbers:
 
@@ -20,6 +18,8 @@ Calculate the row sums of this triangle from the row index (starting at index 1)
 rowSumOddNumbers(1); // 1
 rowSumOddNumbers(2); // 3 + 5 = 8
 ```
+
+[^1]: <https://www.codewars.com/kata/sum-of-odd-numbers>
 
 ## 解题思路
 

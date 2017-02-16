@@ -1,8 +1,8 @@
-# React and Redux
-
-中文文档： <https://github.com/camsong/redux-in-chinese>
+# React and Redux [^1]
 
 > view层发出actions通知触发store里的reducer从而来更新state；state的改变会将更新反馈给我们的view层，从而让我们的view层发生相应的反应给用户。
+
+[^1]: 中文文档： <https://github.com/camsong/redux-in-chinese>
 
 ## 流程图
 

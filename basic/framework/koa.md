@@ -14,9 +14,9 @@ npm install -g babel-cli
 npm install koa@v2.0.0-alpha.3
 ```
 
-(更新本文时的最新版本为2.0 alpha)
+(更新本文时的最新版本为2.0 alpha [^1])
 
-最新版本: [https://github.com/koajs/koa](https://github.com/koajs/koa)
+[^1]: 最新版本: <https://github.com/koajs/koa>
 
 ## 带async的示例
 

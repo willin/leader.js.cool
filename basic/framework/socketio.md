@@ -1,6 +1,6 @@
-# Socket.IO
+# Socket.IO [^1]
 
-<http://socket.io/>
+[^1]: <http://socket.io/>
 
 ## Server
 

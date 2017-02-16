@@ -23,6 +23,9 @@
 
 需要注意`Webpack` 2.x.x 版本与 1.x.x 版本发生了不少改动[^1]。
 
+
+[^1]: 可以参考迁移文档： <https://webpack.js.org/guides/migrating/> 进行学习。
+
 ### 坑1： extract-text-webpack-plugin
 
 该插件 NPM 最新版本为1.0.1，不支持 Webpack2，所以需要通过安装 RC3 版本来获得对应支持。
@@ -194,6 +197,8 @@ module.exports = (lang = 'default') => {
 如有其它语言，添加对应语言文件即可。
 
 ### Hosts.js[^2] 分级列表
+
+[^2]: Hosts.js项目源码： <https://github.com/js-cool/Hosts.js>
 
 特点：
 
@@ -600,8 +605,6 @@ module.exports = class Category {
 
 #### Demo
 
-测试添加：
-
 ```js
 import Category from './category';
 
@@ -642,8 +645,3 @@ const data = categories.reload();
 
 console.log(JSON.stringify(data, null, 2));
 ```
-
-
-
-[^1]: 可以参考迁移文档： <https://webpack.js.org/guides/migrating/> 进行学习。
-[^2]: Hosts.js项目源码： <https://github.com/js-cool/Hosts.js>

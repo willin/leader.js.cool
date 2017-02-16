@@ -1,8 +1,8 @@
-# Electron
+# Electron [^1]
 
 目前支持：Mac、Win、Linux三个平台。
 
-快速示例： <https://github.com/electron/electron-quick-start>
+[^1]: 快速示例： <https://github.com/electron/electron-quick-start>
 
 ## 打包工具
 

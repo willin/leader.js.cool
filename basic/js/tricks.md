@@ -101,8 +101,6 @@ window.addEventListener('scroll', debounce(testFunc));
 
 ### Benchmark测试
 
-<!-- more -->
-
 benchmark脚本：
 
 ```js

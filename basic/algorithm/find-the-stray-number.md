@@ -1,8 +1,6 @@
 # 查找散杂数
 
-## 题目
-
-<https://www.codewars.com/kata/find-the-stray-number>
+## 题目 [^1]
 
 You are given an odd-length array of integers, in which all of them are the same, except for one single number.
 
@@ -17,6 +15,8 @@ Examples:
 
 [17, 17, 3, 17, 17, 17, 17] => 3
 ```
+
+[^1]: <https://www.codewars.com/kata/find-the-stray-number>
 
 ## 思路一
 
