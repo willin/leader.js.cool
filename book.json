@@ -48,6 +48,7 @@
     "-maxiang",
     "wordcount",
     "-theme-material",
+    "highlight",
     "sitemap"
   ],
   "pluginsConfig": {
