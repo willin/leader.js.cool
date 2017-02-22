@@ -2,7 +2,7 @@
   "title": "不可替代的团队领袖培养计划",
   "description": "Author: Willin Wang",
   "language": "zh-cn",
-  "gitbook": "=3.2.0",
+  "gitbook": "=3.2.2",
   "structure": {
     "readme": "INTRO.md"
   },
