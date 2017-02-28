@@ -49,8 +49,10 @@
     "wordcount",
     "theme-material",
     "highlight",
+    "-lunr",
     "-fontsettings",
     "-sharing",
+    "-search",
     "sitemap"
   ],
   "pluginsConfig": {
