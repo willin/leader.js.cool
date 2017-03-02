@@ -73,6 +73,7 @@
   - [CI工作流](experience/operation/workflow.md)
   - [重启服务](experience/operation/restarter.md)
   - [版本回退](experience/operation/rollback.md)
+  - [CertBot证书](experience/operation/certbot.md)
 - 进阶
   - [元编程构造优雅解决方案](experience/advanced/meta.md)
   - [Electron桌面应用](experience/advanced/desktop-app.md)

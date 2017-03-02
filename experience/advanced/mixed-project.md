@@ -25,9 +25,10 @@
 CREATE TABLE `data` (
   `user` char(16) NOT NULL DEFAULT '' COMMENT '用户',
   `active` int(3) unsigned NOT NULL COMMENT '活跃时间（秒）',
-  `efficiency` decimal(3,2) NOT NULL COMMENT '效率（%）',
+  `efficiency` decimal(5,2) NOT NULL COMMENT '效率（%）',
   `date` int(10) unsigned NOT NULL COMMENT '数据时间（转时间戳）',
-  KEY `whereorder` (`user`,`date`)
+  KEY `whereorder` (`user`,`date`),
+  KEY `date` (`date`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 ```
 

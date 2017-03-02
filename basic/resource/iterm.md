@@ -12,6 +12,63 @@
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
+## 为所有用户安装 Oh My Zsh
+
+首先要确认 zsh 已经安装（Ubuntu）：
+
+```
+sudo apt-get install zsh
+```
+
+1.以`Root`用户安装
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+2.修改`/etc/adduser.conf`
+
+```bash
+DSHELL=/bin/bash #也可能是 sh
+```
+
+为:
+
+```bash
+DSHELL=/bin/zsh
+```
+
+3.修改`/etc/default/useradd`
+
+```bash
+SHELL=/bin/sh
+```
+
+为:
+
+```bash
+SHELL=/bin/zsh
+```
+
+4.复制配置到新用户目录
+
+```
+cp -r .oh-my-zsh /etc/skel/
+cp .zshrc /etc/skel 
+```
+
+5.新建用户后，修改用户目录下的 `/home/username/.zshrc`
+
+```
+export ZSH=/root/.oh-my-zsh
+```
+
+为:
+
+```
+export ZSH=/home/username/.oh-my-zsh
+```
+
 ## 配置iTerm主题
 
 推荐使用`Solarized`, 下载地址: <http://ethanschoonover.com/solarized/files/solarized.zip>
@@ -35,4 +92,3 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 搜索 `plugins=` 增改弃用的插件
 
 可用插件列表: <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins>
-
