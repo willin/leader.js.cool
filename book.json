@@ -57,9 +57,36 @@
   ],
   "pluginsConfig": {
     "autotheme": {
-      "white": [9, 10, 11, 12, 13, 14, 15, 16],
-      "sepia": [6, 7, 8, 17, 18, 19],
-      "night": [20, 21, 22, 23, 0, 1, 2, 3, 4, 5]
+      "white": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "sepia": [
+        6,
+        7,
+        8,
+        17,
+        18,
+        19
+      ],
+      "night": [
+        20,
+        21,
+        22,
+        23,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     },
     "donate": {
       "wechat": "http://go.sh.gg/images/wx.png",
@@ -71,9 +98,7 @@
       "family": "sans",
       "size": 2
     },
-    "fancybox": {
-
-    },
+    "fancybox": {},
     "github": {
       "url": "https://coding.net/u/willin/p/leader.js.cool/git"
     },
@@ -90,16 +115,18 @@
       "className": "atoc"
     },
     "addcssjs": {
-      "js": ["_static/main.js"]
+      "js": [
+        "_static/main.js"
+      ]
     },
     "adsense": {
       "client": "ca-pub-5059418763237956",
-      "slot": "2139110924",
+      "slot": "4848822846",
       "format": "auto",
       "element": ".page-inner section"
     },
     "sitemap": {
-        "hostname": "https://leader.js.cool/"
+      "hostname": "https://leader.js.cool/"
     },
     "introduction-text": "封面"
   }
