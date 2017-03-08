@@ -9,6 +9,7 @@
 - 必备神器
   - [Brew](basic/resource/brew.md)
   - [iTerm](basic/resource/iterm.md)
+  - [Dnsmasq](basic/resource/dnsmasq.md)
   - [IDE](basic/resource/ide.md)
   - [科学上网](basic/resource/ss.md)
   - [在线资源](basic/resource/online.md)
