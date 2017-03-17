@@ -46,7 +46,7 @@
     "-edit-link",
     "adsense",
     "-maxiang",
-    "wordcount",
+    "-wordcount",
     "theme-material",
     "highlight",
     "-lunr",
@@ -130,7 +130,7 @@
       "hostname": "https://leader.js.cool/"
     },
     "page-footer-ex": {
-      "copyright":"Willin Wang",
+      "copyright":"&copy; Willin Wang 免费域名：<a target='_blank' href='https://js.cool'>js.cool</a>",
       "update_label":"更新时间",
       "update_format":"YYYY-MM-DD HH:mm:ss"
     },

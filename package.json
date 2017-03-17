@@ -6,7 +6,7 @@
   "scripts": {
     "start": "./cmd",
     "test": "gulp",
-    "build:doc": "gitbook build"
+    "build": "gitbook build"
   },
   "repository": {
     "type": "git",
