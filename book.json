@@ -53,6 +53,7 @@
     "-fontsettings",
     "-sharing",
     "-search",
+    "page-footer-ex",
     "sitemap"
   ],
   "pluginsConfig": {
@@ -127,6 +128,11 @@
     },
     "sitemap": {
       "hostname": "https://leader.js.cool/"
+    },
+    "page-footer-ex": {
+      "copyright":"Willin Wang",
+      "update_label":"更新时间",
+      "update_format":"YYYY-MM-DD HH:mm:ss"
     },
     "introduction-text": "封面"
   }
