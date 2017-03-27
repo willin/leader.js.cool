@@ -74,7 +74,7 @@ WHERE --xxx;
 
 * 避免使用自增ID；
 * 避免使用`datetime`，而用`int`(Unix Timestamp)；
-* 避免使用`varchar`，而用`char`；
+* `char`与`varchar`的选择，追求极致查询性能用`char`，追求空间成本用`varchar`；
 * 避免使用`text`，而用`blob`；
 * 避免使用`外键`；
 * 不允许空 `null`；
@@ -141,6 +141,46 @@ WHERE --xxx;
     connection.query(sql, next);
   });
 ```
+
+### Char vs VarChar
+
+```
+  90 op/s » insert with_char
+  97 op/s » insert with_varchar
+  308 op/s » select with_char
+  298 op/s » select with_varchar
+```
+
+查询性能平分秋色。多次测试发现`char`的查询性能略高于`varchar`。
+而主要区别在于：
+
+* VarChar存储空间：27.5MB
+* Varchar索引空间：19.5MB
+* Char 存储空间：34.6MB
+* Char 索引空间：51.6MB
+
+
+MyISAM 引擎查询性能结果：
+
+```
+  64 op/s » insert with_char
+  43 op/s » insert with_varchar
+  210 op/s » select with_char
+  185 op/s » select with_varchar
+```
+
+MyISAM下查询性能`char`更优。（实例代码中将`ENGINE`替换，并删除已有表跑测试即可）
+
+### Blob vs Text
+
+```
+  101 op/s » insert with_text
+  104 op/s » insert with_blob
+  167 op/s » select with_text
+  180 op/s » select with_blob
+```
+
+`Blob`略高一筹。存储方面两者基本使用相同。
 
 ## 其他
 
