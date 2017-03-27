@@ -73,11 +73,74 @@ WHERE --xxx;
 基于 `MyISAM` 引擎。
 
 * 避免使用自增ID；
+* 避免使用`datetime`，而用`int`(Unix Timestamp)；
 * 避免使用`varchar`，而用`char`；
 * 避免使用`text`，而用`blob`；
 * 避免使用`外键`；
 * 不允许空 `null`；
 * 如果查询的WHERE条件有多个字段，应该创建`联合索引`。
+
+## 百万量级性能比较
+
+项目源码： <https://github.com/js-benchmark/mysql>
+
+### GUID 插入性能损耗
+
+毫无疑问，使用自增 ID 的查询性能更好。
+
+但使用 GUID 后插入性能损耗是多少呢？
+
+```
+  insert with_id ................................. 131 op/s
+  insert with_guid ............................... 75 op/s
+```
+
+结果来自于百万条数据，每千条为拆分进行的插入性能（下文的插入同）。
+
+### 时间戳（Timestamp） vs 日期时间（DateTime）
+
+```
+  insert with_timestamp .......................... 123 op/s
+  insert with_datetime ........................... 66 op/s
+  select with_timestamp .......................... 538 op/s
+  select with_datetime ........................... 430 op/s
+```
+
+插入和查询均为 `Timestamp` 更优。
+
+```js
+  bench('insert with_timestamp', (next) => {
+    let sql = 'INSERT INTO `with_timestamp`(timestamp) VALUES ';
+    for (let i = 0; i < 1000; i += 1) {
+      sql += `(${parseInt((new Date() / 1000) - (i * 86400), 10)})`;
+      if (i !== 999) {
+        sql += ',';
+      }
+    }
+    connection.query(sql, next);
+  });
+
+  bench('insert with_datetime', (next) => {
+    let sql = 'INSERT INTO `with_datetime`(datetime) VALUES ';
+    for (let i = 0; i < 1000; i += 1) {
+      sql += `('${new Date(new Date() - (i * 86400000)).format('yyyy-MM-dd hh:mm:ss')}')`;
+      if (i !== 999) {
+        sql += ',';
+      }
+    }
+    connection.query(sql, next);
+  });
+
+  bench('select with_timestamp', (next) => {
+    const sql = `SELECT * FROM \`with_timestamp\` WHERE \`timestamp\` > ${parseInt((new Date() / 1000) - (2 * 86400), 10)} AND \`timestamp\` < ${parseInt((new Date() / 1000) - 86400, 10)}`;
+    connection.query(sql, next);
+  });
+
+  bench('select with_datetime', (next) => {
+    const sql = `SELECT * FROM \`with_datetime\` WHERE \`datetime\` BETWEEN '${new Date(new Date() - (2 * 86400000)).format('yyyy-MM-dd hh:mm:ss')}' AND '${new Date(new Date() - 86400000).format('yyyy-MM-dd hh:mm:ss')}'`;
+    connection.query(sql, next);
+  });
+```
 
 ## 其他
 

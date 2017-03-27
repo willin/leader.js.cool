@@ -60,6 +60,7 @@
   - [系统架构](experience/design/architecture.md)
   - [系统架构设计实践](experience/design/system.md)
 - [项目](experience/project/README.md)
+  - [分治原则](experience/project/divide.md)
   - [项目结构](experience/project/structure.md)
   - [开发指南](experience/project/develop.md)
   - [功能模块设计](experience/project/user/module.md)
