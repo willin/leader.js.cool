@@ -35,11 +35,11 @@
     "paperSize": "a4"
   },
   "plugins": [
+    "page-footer-ex",
     "addcssjs",
     "-autotheme",
     "-atoc",
     "fancybox",
-    "donate",
     "-github",
     "-disqus",
     "-duoshuo",
@@ -52,8 +52,8 @@
     "-lunr",
     "-fontsettings",
     "-sharing",
+    "donate",
     "search",
-    "page-footer-ex",
     "sitemap"
   ],
   "pluginsConfig": {
@@ -126,13 +126,13 @@
           "client": "ca-pub-5059418763237956",
           "slot": "4848822846",
           "format": "auto",
-          "location": ".markdown-section>p:nth-child(3)",
+          "location": ".markdown-section>:nth-child(1)",
           "style": "display: block; height: 90px; margin:15px 0;"
         }, {
           "client": "ca-pub-5059418763237956",
           "slot": "4848822846",
           "format": "auto",
-          "location": ".markdown-section>p:nth-child(6)",
+          "location": ".gitbook-donate",
           "style": "display: block; height: 90px; margin:15px 0;"
         }
       ]
