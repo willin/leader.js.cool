@@ -36,23 +36,23 @@
   },
   "plugins": [
     "addcssjs",
-    "-autotheme",
+    "autotheme",
     "-atoc",
-    "-fancybox",
+    "fancybox",
     "donate",
     "-github",
     "-disqus",
     "-duoshuo",
     "-edit-link",
     "adsense",
-    "-maxiang",
+    "maxiang",
     "-wordcount",
-    "theme-material",
+    "-theme-material",
     "highlight",
     "-lunr",
     "-fontsettings",
     "-sharing",
-    "-search",
+    "search",
     "page-footer-ex",
     "sitemap"
   ],
@@ -130,8 +130,8 @@
       "hostname": "https://leader.js.cool/"
     },
     "page-footer-ex": {
-      "copyright":"&copy; Willin Wang 免费域名：<a target='_blank' href='https://js.cool'>js.cool</a>",
-      "update_label":"更新时间",
+      "copyright":"&copy; <a href='https://willin.js.cool/' target='_blank'>Willin Wang</a>",
+      "update_label":"本章节更新时间",
       "update_format":"YYYY-MM-DD HH:mm:ss"
     },
     "introduction-text": "封面"
