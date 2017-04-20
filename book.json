@@ -126,13 +126,13 @@
           "client": "ca-pub-5059418763237956",
           "slot": "4848822846",
           "format": "auto",
-          "location": ".markdown-section>:nth-child(3)",
+          "location": ".markdown-section>p:nth-child(3)",
           "style": "display: block; height: 90px; margin:15px 0;"
         }, {
           "client": "ca-pub-5059418763237956",
           "slot": "4848822846",
           "format": "auto",
-          "location": ".markdown-section>:nth-child(6)",
+          "location": ".markdown-section>p:nth-child(6)",
           "style": "display: block; height: 90px; margin:15px 0;"
         }
       ]
