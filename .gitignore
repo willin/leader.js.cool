@@ -5,3 +5,4 @@ node_modules/
 demo*
 .DS_Store
 *.log
+*.log.*
