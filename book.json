@@ -44,7 +44,7 @@
     "-disqus",
     "-duoshuo",
     "-edit-link",
-    "adsense",
+    "google-adsense",
     "maxiang",
     "-wordcount",
     "-theme-material",
@@ -120,11 +120,22 @@
         "_static/main.js"
       ]
     },
-    "adsense": {
-      "client": "ca-pub-5059418763237956",
-      "slot": "4848822846",
-      "format": "auto",
-      "element": ".page-inner section"
+    "google-adsense": {
+      "ads": [
+        {
+          "client": "ca-pub-5059418763237956",
+          "slot": "4848822846",
+          "format": "auto",
+          "location": ".markdown-section>:nth-child(3)",
+          "style": "display: block; height: 90px; margin:15px 0;"
+        }, {
+          "client": "ca-pub-5059418763237956",
+          "slot": "4848822846",
+          "format": "auto",
+          "location": ".markdown-section>:nth-child(6)",
+          "style": "display: block; height: 90px; margin:15px 0;"
+        }
+      ]
     },
     "sitemap": {
       "hostname": "https://leader.js.cool/"
