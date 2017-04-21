@@ -142,7 +142,7 @@
     },
     "page-footer-ex": {
       "copyright":"&copy; <a href='https://willin.js.cool/' target='_blank'>Willin Wang</a>",
-      "update_label":"本章节更新时间",
+      "update_label":"更新时间",
       "update_format":"YYYY-MM-DD HH:mm:ss"
     },
     "introduction-text": "封面"
