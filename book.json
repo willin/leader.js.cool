@@ -126,7 +126,7 @@
           "client": "ca-pub-5059418763237956",
           "slot": "4848822846",
           "format": "auto",
-          "location": ".book-header",
+          "location": ".markdown-section>p:nth-child(1)",
           "style": "display: block; height: 90px; margin:15px 0;"
         }, {
           "client": "ca-pub-5059418763237956",
