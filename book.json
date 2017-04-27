@@ -49,7 +49,7 @@
     "-wordcount",
     "-theme-material",
     "highlight",
-    "-lunr",
+    "lunr",
     "-fontsettings",
     "-sharing",
     "donate",
