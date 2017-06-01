@@ -105,7 +105,7 @@ data.rows.forEach(async (item) => {
 `model/data.js` 片段：
 
 ```js
-const { pool, format } = require('wulian-mysql');
+const { pool, format } = require('@dwing/mysql');
 const { mysql: mysqlOptions } = require('../config');
 const { isEmpty } = require('../lib');
 

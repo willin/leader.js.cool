@@ -5,7 +5,7 @@
 一般Redis里存储的数据需要一个默认的TTL，即到期删除，尽可能避免无用数据长期存储。
 
 ```js
-import redis from 'wulian-redis';
+const redis = require('@dwing/redis');
 
 const client = redis({
   host: '127.0.0.1',

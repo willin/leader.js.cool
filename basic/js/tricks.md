@@ -152,3 +152,18 @@ suite('iterator', function () {
 `foreach` 和 `for ... of` 差不多。
 
 `map` 性能最低。
+
+## 触发 react onchange 事件并赋值
+
+```js
+  var setValue = function (element, value) {
+    element.value = value;
+    if ('createEvent' in document) {
+      var event = new Event('input', { bubbles: true });
+      element.dispatchEvent(event);
+    }
+    else {
+      element.fireEvent('onchange');
+    }
+  };
+```

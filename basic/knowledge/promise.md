@@ -159,3 +159,27 @@ Input Number Too Large
 =============
 1
 ```
+
+## What's Next?
+
+ES7 Async/Await:
+
+```js
+(async() => {
+  const result = await promiseFN();
+  console.log(result);
+})();
+```
+
+多个异步方法优化:
+
+```js
+(async() => {
+  const tasks = [];
+  tasks.push(promiseFN1());
+  tasks.push(promiseFN2());
+  tasks.push(promiseFN3());
+  const result = await Promise.all(tasks);
+  console.log(result[0], result[1], result[2]);
+})();
+```

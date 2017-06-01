@@ -48,8 +48,9 @@
   - [Vue](basic/framework/vue.md)
   - [React Redux](basic/framework/redux.md)
   - [NativeScript](basic/framework/nativescript.md)
-- 算法入门（使用ES 6）
+- 算法入门（使用ES 6/7）
   - [奇数求和](basic/algorithm/sum-of-odd-numbers.md)
+  - [查找单数](basic/algorithm/find-the-odd-int.md)
   - [查找杂散数](basic/algorithm/find-the-stray-number.md)
 
 ## 经验篇

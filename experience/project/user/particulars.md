@@ -44,7 +44,7 @@ for(let i = 0; i < xxx1.length; i++) {
 ```js
 exports.Func = async() => {
   // 避免方法内require
-  const redisClient = require('wulian-redis');
+  const redisClient = require('@dwing/redis');
 
   // 没必要放在方法里，可以放到外边，多个方法共用
   const redis = redisClient({
@@ -57,8 +57,8 @@ exports.Func = async() => {
 ## MySQL 编码细节
 
 ```js
-import {pool} from 'wulian-mysql';
-import {isEmpty} from 'wulian-common';
+const {pool} = require('@dwing/mysql');
+const {isEmpty} = require('@dwing/common');
 
 (async() => { // 包裹在async中
   const client = await pool({ // mysql有await，redis没有
@@ -88,7 +88,7 @@ return result.affectedRows;
 ## Redis 编码细节
 
 ```js
-import redisClient from 'wulian-redis';
+const redisClient = require('wulian-redis');
 const redis = redisClient({
   // config
 });

@@ -62,12 +62,12 @@ npm run test
 
 ### 安装 Yarn
 
-前置条件Brew（Mac OS X）
-
-
 ```bash
+# 前置条件Brew（Mac OS X）
 brew update
 brew install yarn
+# 或 直接使用npm
+npm i -g yarn
 ```
 
 完成后用 `Sublime Text` 或其他编辑工具根据你使用的环境打开 `.zshrc` / `.bashrc` / `.profile`，添加一行：

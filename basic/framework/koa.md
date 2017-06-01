@@ -2,16 +2,10 @@
 
 ## 前置条件
 
-### 1. Babel
+koa 2.0以上版本
 
 ```
-npm install -g babel-cli
-```
-
-### 2. koa 2.0以上版本
-
-```
-npm install koa@v2.0.0-alpha.3
+npm install koa
 ```
 
 (更新本文时的最新版本为2.0 alpha [^1])
@@ -44,14 +38,3 @@ app.use(ctx => {
 app.listen(3000);
 ```
 
-***注:*** 需要Stage-3支持
-
-```
-npm install babel-preset-stage-3
-```
-
-执行:
-
-```
-babel-node --presets stage-3 app.js
-```
