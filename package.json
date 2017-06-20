@@ -1,12 +1,10 @@
 {
   "name": "leader",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "不可替代的团队领袖培养计划",
   "main": "index.js",
   "scripts": {
-    "start": "./cmd",
-    "test": "gulp",
-    "build": "gitbook build"
+    "start": "docsify serve . --port 3456 --open"
   },
   "repository": {
     "type": "git",
@@ -23,12 +21,7 @@
     "url": "https://coding.net/u/willin/p/leader.js.cool/topic"
   },
   "homepage": "https://coding.net/u/willin/p/leader.js.cool/git",
-  "dependencies": {
-    "gitbook-cli": "^2.2.0"
-  },
   "devDependencies": {
-    "browser-sync": "^2.18.7",
-    "gulp": "^3.9.1",
-    "gulp-run": "^1.7.1"
+   "docsify-cli": "^4.1.8"
   }
 }
