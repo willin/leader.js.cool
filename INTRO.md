@@ -33,3 +33,8 @@
 如果还想看视频类的，可以到我的斗鱼直播间来一波正义的订阅： <https://www.douyu.com/200058>
 
 &copy; Willin Wang
+
+## CHANGELOG
+
+- 2017.06.20: 将本书的网站从`GitBook`转移到了`Docsify`
+- 2016.08.03: 创建本书
