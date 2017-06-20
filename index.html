@@ -14,7 +14,7 @@
 </body>
 <script type="text/javascript">
 window.$docsify = {
-  name: 'leader.js.cool',
+  name: '《团队领袖培养计划》',
   repo: 'https://github.com/js-cool/leader.js.cool.git',
   loadSidebar: true,
   subMaxLevel: 2,
@@ -67,10 +67,11 @@ window.$docsify = {
         var paragraphs = main.getElementsByTagName('p');
         var ads = [];
         if(paragraphs.length > 15) {
-          ads.push(Math.ceil(Math.random()*paragraphs.length));
+          ads.push(paragraphs[Math.ceil(Math.random() * 15)]);
         }
         ads.push(paragraphs[paragraphs.length-1]);
         for(var i = 0; i < ads.length; i += 1) {
+          console.log(ads[i]);
           ads[i].insertAdjacentHTML('afterend', '<ins class="adsbygoogle" style="display:block;margin: 1.5em auto;" data-ad-client="ca-pub-5059418763237956" data-ad-slot="9518721243" data-ad-format="auto"></ins>');
           (adsbygoogle = window.adsbygoogle || []).push({});   
         }

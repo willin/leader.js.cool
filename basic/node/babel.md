@@ -50,3 +50,5 @@ babel src --out-dir dist
 ```
 
 源目录`src`，目标目录`dist`。
+
+p.s. 从 Node.js `7.6.0` 版本开始,再也没用过 `Babel` 执行后端代码.

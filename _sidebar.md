@@ -1,4 +1,3 @@
-- [前言](INTRO.md)
 - [版权](COPYRIGHT.md)
 - 知识篇
   - [操作系统(OS X)](basic/osx.md)
@@ -28,6 +27,7 @@
     - [包管理](basic/node/pkg.md)
     - [Hexo静态博客搭建](basic/node/hexo.md)
     - [GitBook静态文档生成](basic/node/gitbook.md)
+    - [Docsify流程图序列图](basic/node/docsify.md)
     - [Babel](basic/node/babel.md)
     - [Test](basic/node/test.md)
     - [Benchmark](basic/node/benchmark.md)
