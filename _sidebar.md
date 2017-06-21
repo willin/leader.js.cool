@@ -25,13 +25,15 @@
     - [正则替换](basic/js/regexp.md)
   - Node.js
     - [包管理](basic/node/pkg.md)
-    - [Hexo静态博客搭建](basic/node/hexo.md)
-    - [GitBook静态文档生成](basic/node/gitbook.md)
-    - [Docsify流程图序列图](basic/node/docsify.md)
     - [Babel](basic/node/babel.md)
     - [Test](basic/node/test.md)
     - [Benchmark](basic/node/benchmark.md)
     - [造轮子(NPM)篇](basic/node/npm.md)
+  - Markdown
+    - [Hexo静态博客搭建](basic/md/hexo.md)
+    - [GitBook到Docsify](basic/md/gitbook-to-docsify.md)
+    - [Docsify流程图序列图](basic/md/docsify.md)
+    - [GitBook静态文档生成](basic/md/gitbook.md)
   - DB
     - [MySQL](basic/db/mysql.md)
     - [Redis](basic/db/redis.md)
