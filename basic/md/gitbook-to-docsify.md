@@ -44,8 +44,6 @@ npm i -g docsify-cli
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-  <link rel="stylesheet" href="//unpkg.com/mermaid/dist/mermaid.min.css">
-  <style>.markdown-section{max-width:95% !important;}</style>
 </head>
 <body>
   <div id="app"></div>
