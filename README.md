@@ -30,7 +30,7 @@
 * Github: <https://github.com/js-cool/leader.js.cool>
 * Coding: <https://coding.net/u/willin/p/leader.js.cool/git>
 
-欢迎进行反馈交流。
+欢迎进行反馈交流。同时非常期待您在 Github 上 Follow 我([@willin](https://github.com/willin)).
 
 &copy; Willin Wang
 
