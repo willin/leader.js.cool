@@ -94,7 +94,8 @@ console.log(result);
 将打印出来
 
 ```js
-{ '/basic/_sidebar.md': '/_sidebar.md',
+{ 
+  '/basic/_sidebar.md': '/_sidebar.md',
   '/basic/algorithm/_sidebar.md': '/_sidebar.md',
   '/basic/db/_sidebar.md': '/_sidebar.md',
   '/basic/framework/_sidebar.md': '/_sidebar.md',
