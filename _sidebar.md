@@ -1,6 +1,7 @@
 - [版权](COPYRIGHT.md)
 - 知识篇
   - [操作系统(OS X)](basic/osx.md)
+  - [优雅地使用iPad开发](basic/pad.md)
   - 必备神器
     - [Brew](basic/resource/brew.md)
     - [OhMyZsh](basic/resource/zsh.md)
@@ -29,6 +30,7 @@
     - [Test](basic/node/test.md)
     - [Benchmark](basic/node/benchmark.md)
     - [造轮子(NPM)篇](basic/node/npm.md)
+    - [CPU调度](basic/node/cpu.md)
   - Markdown
     - [Hexo静态博客搭建](basic/md/hexo.md)
     - [GitBook到Docsify](basic/md/gitbook-to-docsify.md)
@@ -73,6 +75,10 @@
     - [重启服务](experience/operation/restarter.md)
     - [版本回退](experience/operation/rollback.md)
     - [CertBot证书](experience/operation/certbot.md)
+  - Azure(Node.js)
+    - [IoT Hub](experience/azure/iot-hub.md)
+    - [Storage](experience/azure/storage.md)
+    - [WebAPP](experience/azure/web-app.md)
   - 进阶
     - [元编程构造优雅解决方案](experience/advanced/meta.md)
     - [Electron桌面应用](experience/advanced/desktop-app.md)

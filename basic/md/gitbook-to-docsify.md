@@ -67,7 +67,7 @@ window.$docsify = {
 
 注意这里的 `alias`, 是设置别名用的. 我们需要为每个创建的目录重定向`_sidebar.md`, 因为 Docsify 默认是从当前目录下去找这个文件的.
 
-写一个简单脚本遍历一下,在根目录创建 `demo.js`
+写一个简单脚本遍历一下,在根目录创建 `sidebar.js`
 
 ```js
 const fs = require('fs');
