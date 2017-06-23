@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@git.coding.net/willin/leader.js.cool.git"
+    "url": "git+ssh://git@github.com:willin/leader.js.cool.git"
   },
   "keywords": [
     "leader",
