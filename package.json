@@ -1,8 +1,8 @@
 {
-  "name": "leader",
+  "name": "leader.js.cool",
   "version": "3.0.0",
   "description": "不可替代的团队领袖培养计划",
-  "main": "index.js",
+  "main": "config.js",
   "scripts": {
     "start": "docsify serve . --port 3456 --open"
   },
