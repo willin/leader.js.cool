@@ -32,6 +32,10 @@
 
 欢迎进行反馈交流。同时非常期待您在 Github 上 Follow 我([@willin](https://github.com/willin)).
 
+iOS用户可以使用`Safari`将本书添加到主屏幕：
+
+![homescreen](https://user-images.githubusercontent.com/1890238/27512999-4c20f87e-591b-11e7-8682-a5fb52635d00.jpg)
+
 &copy; Willin Wang
 
 ## CHANGELOG
