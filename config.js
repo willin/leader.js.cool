@@ -1,3 +1,30 @@
+function getTimestamp() {
+  return parseInt(new Date() / 1000, 10);
+}
+function setReadState() {
+  localStorage.setItem('leader.url', location.href);
+  localStorage.setItem('leader.time', getTimestamp());
+  localStorage.setItem('leader.top', document.documentElement.scrollTop || document.body.scrollTop);
+  setTimeout(setReadState, 5000);
+}
+function getReadState() {
+  if (window.localStorage) {
+    var time = ~~localStorage.getItem('leader.time');
+    if (getTimestamp() - time > 300) {
+      var url = localStorage.getItem('leader.url');
+      if (url && location.href != url) {
+        location.href = url;
+        setTimeout(function () {
+          var top = ~~localStorage.getItem('leader.top');
+          window.scrollTo(0, top);
+        }, 300);
+      }
+      setTimeout(setReadState, 5000);
+    }
+  }
+}
+
+// Docsify配置
 window.$docsify = {
   name: '《团队领袖培养计划》',
   repo: 'https://github.com/js-cool/leader.js.cool.git',
@@ -35,11 +62,12 @@ window.$docsify = {
   plugins: [
     function (hook, vm) {
       hook.ready(function () {
-        mermaid.initialize({ startOnLoad: false });
+        if (mermaid) { mermaid.initialize({ startOnLoad: false }); }
         var adScript = document.createElement('script');
         adScript.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
         adScript.setAttribute('async', true);
         document.body.appendChild(adScript);
+        getReadState();
       });
       hook.beforeEach(function (md) {
         var url = 'https://github.com/js-cool/leader.js.cool/blob/master' + vm.route.file
@@ -50,7 +78,7 @@ window.$docsify = {
           + editUrl
       });
       hook.doneEach(function () {
-        mermaid.init(undefined, '.mermaid');
+        if (mermaid) { mermaid.init(undefined, '.mermaid') };
         var main = document.getElementById('main');
         var paragraphs = main.getElementsByTagName('p');
         var ads = [];
@@ -78,6 +106,7 @@ window.$docsify = {
     }
   }
 };
+// 离线浏览
 if (typeof navigator.serviceWorker !== 'undefined') {
   navigator.serviceWorker.register('sw.js');
 }

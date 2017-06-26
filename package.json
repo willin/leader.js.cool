@@ -1,6 +1,6 @@
 {
   "name": "leader.js.cool",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "description": "不可替代的团队领袖培养计划",
   "main": "config.js",
   "scripts": {
