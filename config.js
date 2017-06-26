@@ -14,10 +14,7 @@ function getReadState() {
       var url = localStorage.getItem('leader.url');
       if (url && location.href != url) {
         location.href = url;
-        setTimeout(function () {
-          var top = ~~localStorage.getItem('leader.top');
-          window.scrollTo(0, top);
-        }, 300);
+        setTimeout(window.scrollTo(0, ~~localStorage.getItem('leader.top')), 300);
       }
       setTimeout(setReadState, 5000);
     }
@@ -62,12 +59,12 @@ window.$docsify = {
   plugins: [
     function (hook, vm) {
       hook.ready(function () {
+        getReadState();
         if (mermaid) { mermaid.initialize({ startOnLoad: false }); }
         var adScript = document.createElement('script');
         adScript.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
         adScript.setAttribute('async', true);
         document.body.appendChild(adScript);
-        getReadState();
       });
       hook.beforeEach(function (md) {
         var url = 'https://github.com/js-cool/leader.js.cool/blob/master' + vm.route.file
