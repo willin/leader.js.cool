@@ -20,6 +20,7 @@ function getReadState() {
     }
   }
 }
+getReadState();
 
 // Docsify配置
 window.$docsify = {
@@ -59,7 +60,6 @@ window.$docsify = {
   plugins: [
     function (hook, vm) {
       hook.ready(function () {
-        getReadState();
         if (mermaid) { mermaid.initialize({ startOnLoad: false }); }
         var adScript = document.createElement('script');
         adScript.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
