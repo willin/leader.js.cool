@@ -20,7 +20,6 @@ function getReadState() {
     }
   }
 }
-getReadState();
 
 // Docsify配置
 window.$docsify = {
@@ -59,8 +58,9 @@ window.$docsify = {
   },
   plugins: [
     function (hook, vm) {
-      hook.ready(function () {
-        if (mermaid) { mermaid.initialize({ startOnLoad: false }); }
+      hook.init(function () {
+        getReadState();
+        if (typeof mermaid !== 'undefined') { mermaid.initialize({ startOnLoad: false }); }
         var adScript = document.createElement('script');
         adScript.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
         adScript.setAttribute('async', true);
@@ -75,7 +75,7 @@ window.$docsify = {
           + editUrl
       });
       hook.doneEach(function () {
-        if (mermaid) { mermaid.init(undefined, '.mermaid') };
+        if (typeof mermaid !== 'undefined') { mermaid.init(undefined, '.mermaid') };
         var main = document.getElementById('main');
         var paragraphs = main.getElementsByTagName('p');
         var ads = [];
