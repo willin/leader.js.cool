@@ -3,14 +3,12 @@ function getTimestamp() {
 }
 function setReadState() {
   localStorage.setItem('leader.url', location.href);
-  localStorage.setItem('leader.time', getTimestamp());
   localStorage.setItem('leader.top', document.documentElement.scrollTop || document.body.scrollTop);
   setTimeout(setReadState, 5000);
 }
 function getReadState() {
   if (window.localStorage) {
-    var time = ~~localStorage.getItem('leader.time');
-    if (getTimestamp() - time > 300) {
+    if (document.referrer === '') {
       var url = localStorage.getItem('leader.url');
       if (url && location.href != url) {
         location.href = url;
