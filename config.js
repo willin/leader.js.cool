@@ -22,7 +22,7 @@ function getReadState() {
 // Docsify配置
 window.$docsify = {
   name: '《团队领袖培养计划》',
-  repo: 'https://github.com/js-cool/leader.js.cool.git',
+  repo: 'https://github.com/willin/leader.js.cool.git',
   loadSidebar: true,
   subMaxLevel: 2,
   formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}',
@@ -65,7 +65,7 @@ window.$docsify = {
         document.body.appendChild(adScript);
       });
       hook.beforeEach(function (md) {
-        var url = 'https://github.com/js-cool/leader.js.cool/blob/master' + vm.route.file
+        var url = 'https://github.com/willin/leader.js.cool/blob/master' + vm.route.file
         var editUrl = '[:memo: 编辑本章节](' + url + ')\n'
         return md
           + '\n----\n'
