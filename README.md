@@ -47,6 +47,8 @@ iOS用户可以使用`Safari`将本书添加到主屏幕：
 
 ---
 
-你离技术经理，只差这本书： <http://leader.js.cool>
+你离技术经理，只差这本书： <https://leader.js.cool>
+
+另外还有一本关于提高效率,优化算法等设计模式改善的: 《简约而不简单》 <https://less.js.cool>
 
 如果还想看视频类的，可以到我的斗鱼直播间来一波正义的订阅： <https://www.douyu.com/200058>
