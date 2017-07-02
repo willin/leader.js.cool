@@ -52,6 +52,7 @@
     - [奇数求和](basic/algorithm/sum-of-odd-numbers.md)
     - [查找单数](basic/algorithm/find-the-odd-int.md)
     - [查找杂散数](basic/algorithm/find-the-stray-number.md)
+    - [无限层级目录算法](basic/algorithm/categories.md)
 - 经验篇
   - [设计](experience/design/README.md)
     - [需求分析](experience/design/requirements.md)
