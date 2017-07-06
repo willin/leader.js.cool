@@ -60,4 +60,3 @@ module.exports = server;
 * 打印错误： <https://github.com/hapijs/good>
 * 静态文件引用： <https://github.com/hapijs/inert>
 
-其中，用户鉴权可参考： <https://code.aliyun.com/shgg/push/blob/master/lib/auth.js>

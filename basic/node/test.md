@@ -8,12 +8,8 @@ BDD（优先）+TDD（完全代码覆盖）
 
 ## 测试框架
 
-* v2: mocha + istanbul
-* v3: ava + nyc
-
-下文示例来自v2中的测试，源码位于: <https://code.aliyun.com/shgg/v2/tree/c605998dc59d1b3e1d91681cc9b0c9daec4ef341/test>
-
-(内部代码，须登录Git)
+* ES5: mocha + istanbul
+* ES6: ava + nyc
 
 ## TDD
 
