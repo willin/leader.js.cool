@@ -27,6 +27,27 @@ fetch(req).then(function(res) {
 });  
 ```
 
+## 跨域 Cookie 设置
+
+`credentials` 凭证参数
+
+```js
+fetch('a.com/api', {credentials: 'include'}).then(function(res) {
+    // ...
+});
+```
+
+或
+
+```js
+var req = new Request('/data.json', {method: 'POST', cache: 'reload', credentials: 'include'});  
+fetch(req).then(function(res) {  
+  return res.json();
+}).then(function(data){
+  console.log(data);
+});  
+```
+
 ## 参考资料
 
 * 接口文档： <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API>
