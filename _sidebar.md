@@ -86,6 +86,7 @@
     - [混合Web应用实践](experience/advanced/mixed-project.md)
     - [基于接口快速搭建前后分离项目](experience/advanced/webapp-proxy.md)
     - [Vue + Koa前后端分离实践](experience/advanced/vue-webapp.md)
+    - [MySQL向GraphQL迁移](experience/advanced/mysql-graphql.md)
 - 思想篇
   - 能力
     - [好员工的定义](mind/capability/define-good-employee.md)
