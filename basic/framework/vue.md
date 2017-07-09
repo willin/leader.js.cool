@@ -1,6 +1,6 @@
-# Vue [^1]
+# Vue
 
-[^1]: 官方文档： <https://cn.vuejs.org/>
+官方文档： <https://cn.vuejs.org/>
 
 特色是单文件组件（模块化开发）。
 

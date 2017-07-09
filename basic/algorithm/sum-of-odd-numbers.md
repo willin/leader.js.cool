@@ -1,6 +1,6 @@
 # 奇数求和
 
-## 题目 [^1]
+## 题目
 
 Given the triangle of consecutive odd numbers:
 
@@ -19,7 +19,7 @@ rowSumOddNumbers(1); // 1
 rowSumOddNumbers(2); // 3 + 5 = 8
 ```
 
-[^1]: <https://www.codewars.com/kata/sum-of-odd-numbers>
+题目地址: <https://www.codewars.com/kata/sum-of-odd-numbers>
 
 ## 解题思路
 

@@ -8,9 +8,7 @@ koa 2.0以上版本
 npm install koa
 ```
 
-(更新本文时的最新版本为2.0 alpha [^1])
-
-[^1]: 最新版本: <https://github.com/koajs/koa>
+(更新本文时的最新版本为2.0 alpha, 最新版本: <https://github.com/koajs/koa> )
 
 ## 带async的示例
 

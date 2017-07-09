@@ -1,6 +1,6 @@
 # 查找散杂数
 
-## 题目 [^1]
+## 题目 
 
 Given an array, find the int that appears an odd number of times.
 
@@ -14,7 +14,7 @@ Examples:
 [1,1,2,-2,5,2,4,4,-1,-2,5] => -1
 ```
 
-[^1]: <https://www.codewars.com/kata/find-the-odd-int>
+题目地址: <https://www.codewars.com/kata/find-the-odd-int>
 
 ## 思路
 

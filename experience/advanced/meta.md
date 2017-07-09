@@ -1,8 +1,8 @@
 # 元编程构造简单优雅解决方案
 
-ECMAScript 6中引入了相关 API —— `Proxy`[^1]。
+ECMAScript 6中引入了相关 API —— `Proxy`。
 
-[^1]: 参考文档： <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy>
+参考文档： <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy>
 
 搭配`Reflect`使用例子：
 
@@ -36,9 +36,9 @@ var loggedObj = new Proxy(obj, {
 
 本章节以 ***腾讯云/QCloud*** 为例。
 
-### 云服务器 CVM[^2]
+### 云服务器 CVM
 
-[^2]: 文档说明：<https://www.qcloud.com/document/api/213/6978>
+文档说明：<https://www.qcloud.com/document/api/213/6978>
 
 请求形式：
 
