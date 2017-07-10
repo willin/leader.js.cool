@@ -39,6 +39,7 @@
   - DB
     - [MySQL](basic/db/mysql.md)
     - [Redis](basic/db/redis.md)
+    - [GraphQL](basic/db/graphql.md)
   - 常用框架
     - [HAPI](basic/framework/hapi.md)
     - [Socket.IO](basic/framework/socketio.md)
