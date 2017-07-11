@@ -17,6 +17,7 @@
     - [GIT](basic/knowledge/git.md)
     - [Promise](basic/knowledge/promise.md)
     - [Docker 加速](basic/knowledge/docker.md)
+    - [Web中文字体](basic/knowledge/fonts.md)
   - Vanilla JS
     - [小技巧](basic/js/tricks.md)
     - [Fetch AJAX](basic/js/fetch.md)
@@ -77,6 +78,7 @@
     - [重启服务](experience/operation/restarter.md)
     - [版本回退](experience/operation/rollback.md)
     - [CertBot证书](experience/operation/certbot.md)
+    - [CloudFlare](experience/operation/cloudflare-nginx.md)
   - Azure(Node.js)
     - [IoT Hub](experience/azure/iot-hub.md)
     - [Storage](experience/azure/storage.md)
