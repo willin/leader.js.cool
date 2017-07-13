@@ -92,7 +92,6 @@
     - [MySQL向GraphQL迁移](experience/advanced/mysql-graphql.md)
 - 思想篇
   - 能力
-    - [好员工的定义](mind/capability/define-good-employee.md)
     - [新人成长](mind/capability/growth.md)
     - [学习能力](mind/capability/study.md)
     - [问题处理能力](mind/capability/solving.md)
@@ -102,6 +101,8 @@
     - [克服强迫症](mind/thinking/ocd.md)
     - [木桶效应](mind/thinking/buckets.md)
   - 团队建设
+    - [好员工的定义](mind/team/define-good-employee.md)
+    - [优秀工程师/程序员](mind/team/define-good-engineer.md)
     - [招聘原则](mind/team/hire.md)
     - [会议原则](mind/team/meeting.md)
     - [人才理念](mind/team/concept.md)
