@@ -28,6 +28,7 @@
   - Node.js
     - [包管理](basic/node/pkg.md)
     - [Babel](basic/node/babel.md)
+    - [Flow](basic/node/flow.md)
     - [Test](basic/node/test.md)
     - [Benchmark](basic/node/benchmark.md)
     - [造轮子(NPM)篇](basic/node/npm.md)
