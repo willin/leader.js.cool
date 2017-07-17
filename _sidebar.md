@@ -91,6 +91,7 @@
     - [基于接口快速搭建前后分离项目](experience/advanced/webapp-proxy.md)
     - [Vue + Koa前后端分离实践](experience/advanced/vue-webapp.md)
     - [MySQL向GraphQL迁移](experience/advanced/mysql-graphql.md)
+    - [GraphQL鉴权](experience/advanced/graphql-authorization.md)
 - 思想篇
   - 能力
     - [新人成长](mind/capability/growth.md)
