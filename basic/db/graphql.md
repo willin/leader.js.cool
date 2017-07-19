@@ -91,17 +91,13 @@ const PORT = 3000;
 // koaBody is needed just for POST.
 app.use(koaBody());
 
-router.post('/graphql', graphqlKoa({ endpointURL: '/graphql', schema }));
-router.get('/graphql', graphqlKoa({ endpointURL: '/graphql', schema }));
-router.post('/graphiql', graphiqlKoa({ endpointURL: '/graphql', schema }));
-router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql', schema }));
+router.all('/graphql', graphqlKoa({ schema }));
+router.all('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }));
 
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.listen(PORT);
 ```
-
-!> <del>注意: 本来是想用`koa`做的, 但在本文更新的时候, `graphql-server-koa` 有 Bug, 跑起来之后会报错 `NO SCHEMA AVAILABLE`, 所以又写了一个 `express` 的 Server, 可运行.</del><br> Koa 需要在参数中添加 `endpointURL`
 
 # 连接 SQL 数据库
 
