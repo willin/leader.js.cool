@@ -27,6 +27,7 @@
     - [正则替换](basic/js/regexp.md)
   - Node.js
     - [包管理](basic/node/pkg.md)
+    - [Yarn进阶](basic/node/yarn.md)
     - [Babel](basic/node/babel.md)
     - [Flow](basic/node/flow.md)
     - [Test](basic/node/test.md)
