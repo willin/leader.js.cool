@@ -112,6 +112,7 @@ client.open()
 注意:
 
 - 客户端传的`properties`,在消息体中是`message.applicationProperties`
+- `startAfterTime`或`startAfterOffset`参数来决定启动时间, 可用记录上一次消息的`offset`/`enqueued-time`来保证中断重启能够继续从未处理的消息开始读取
 - `message`包含的属性如下:
 
 ```js
