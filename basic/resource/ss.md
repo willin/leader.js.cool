@@ -1,82 +1,82 @@
-## Shadowsock 服务器端
+## Shad0ws0cks 服务器端
 
-一键安装脚本网站： <https://shadowsocks.be/>
+一键安装脚本网站： <https://shad0ws0cks.be/>
 
 使用root用户登录，运行以下命令：
 
 ```bash
-wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
-chmod +x shadowsocks-all.sh
-./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
+wget --no-check-certificate -O shad0ws0cks-all.sh https://raw.githubusercontent.com/teddysun/shad0ws0cks_install/master/shad0ws0cks-all.sh
+chmod +x shad0ws0cks-all.sh
+./shad0ws0cks-all.sh 2>&1 | tee shad0ws0cks-all.log
 ```
 
 ### 启动脚本
 
 启动脚本后面的参数含义，从左至右依次为：启动，停止，重启，查看状态。
 
-Shadowsocks-Python 版：
+Shad0ws0cks-Python 版：
 
 ```bash
-/etc/init.d/shadowsocks-python start | stop | restart | status
+/etc/init.d/shad0ws0cks-python start | stop | restart | status
 ```
 
-ShadowsocksR 版：
+Shad0ws0cksR 版：
 
 ```bash
-/etc/init.d/shadowsocks-r start | stop | restart | status
+/etc/init.d/shad0ws0cks-r start | stop | restart | status
 ```
 
-Shadowsocks-Go 版：
+Shad0ws0cks-Go 版：
 
 ```bash
-/etc/init.d/shadowsocks-go start | stop | restart | status
+/etc/init.d/shad0ws0cks-go start | stop | restart | status
 ```
 
-Shadowsocks-libev 版：
+Shad0ws0cks-libev 版：
 
 ```bash
-/etc/init.d/shadowsocks-libev start | stop | restart | status
+/etc/init.d/shad0ws0cks-libev start | stop | restart | status
 ```
 
 ### 各版本默认配置文件
 
-Shadowsocks-Python 版：
+Shad0ws0cks-Python 版：
 
 ```bash
-/etc/shadowsocks-python/config.json
+/etc/shad0ws0cks-python/config.json
 ```
 
-ShadowsocksR 版：
+Shad0ws0cksR 版：
 
 ```bash
-/etc/shadowsocks-r/config.json
+/etc/shad0ws0cks-r/config.json
 ```
 
-Shadowsocks-Go 版：
+Shad0ws0cks-Go 版：
 
 ```bash
-/etc/shadowsocks-go/config.json
+/etc/shad0ws0cks-go/config.json
 ```
 
-Shadowsocks-libev 版：
+Shad0ws0cks-libev 版：
 
 ```bash
-/etc/shadowsocks-libev/config.json
+/etc/shad0ws0cks-libev/config.json
 ```
 
-## Shadowsocks 客户端
+## Shad0ws0cks 客户端
 
 > Across the Great Wall we can reach every corner in the world.
 
-Shadowsocks是一款轻量级socks代理软件，速度快，而且可以跨平台使用。 在这里假定我们已经获取到账号.
+Shad0ws0cks是一款轻量级socks代理软件，速度快，而且可以跨平台使用。 在这里假定我们已经获取到账号.
 
 下载：
 
-Shadowsocks-windows: <https://github.com/Shadowsocks/Shadowsocks-windows/releases>
+Shad0ws0cks-windows: <https://github.com/Shad0ws0cks/Shad0ws0cks-windows/releases>
 
-os-x: <https://github.com/Shadowsocks/ShadowsocksX-NG/releases>
+os-x: <https://github.com/Shad0ws0cks/Shad0ws0cksX-NG/releases>
 
-找到安装包解压，右键Shadowsocks.exe，以管理员身份运行，在任务栏里面找到图标，右键，服务器->编辑服务器
+找到安装包解压，右键Shad0ws0cks.exe，以管理员身份运行，在任务栏里面找到图标，右键，服务器->编辑服务器
 
 ![](/_static/basic/ss/image1.png)
 
@@ -91,7 +91,7 @@ os-x: <https://github.com/Shadowsocks/ShadowsocksX-NG/releases>
 这里讲一下Chrome 下的 SwichyOmega：
 
 下载：
-SwichyOmega:[https://github.comShadowsocks/FelisCatus/SwitchyOmega/releases](https://github.com/FelisCatus/SwitchyOmega/releases)
+SwichyOmega:[https://github.comShad0ws0cks/FelisCatus/SwitchyOmega/releases](https://github.com/FelisCatus/SwitchyOmega/releases)
 
 ![](/_static/basic/ss/image3.png)
 
@@ -105,7 +105,7 @@ SwichyOmega:[https://github.comShadowsocks/FelisCatus/SwitchyOmega/releases](htt
 
 ![](/_static/basic/ss/image5.png)
 
-按照选择的代理服务器要求填写以上红线部分，这里用的是Shadowsocks，所以代理协议选择socks5，代理端口号为刚刚在编辑服务器时设置的本机端口号。
+按照选择的代理服务器要求填写以上红线部分，这里用的是Shad0ws0cks，所以代理协议选择socks5，代理端口号为刚刚在编辑服务器时设置的本机端口号。
 
 点击选择自动代理情景模式
 
@@ -135,3 +135,7 @@ SwichyOmega:[https://github.comShadowsocks/FelisCatus/SwitchyOmega/releases](htt
 ![](/_static/basic/ss/image11.png)
 
 点击proxy，此时，就可以访问临时需要翻墙的网站了。图标为![](/_static/basic/ss/image12.png)时为直接连接，图标为![](/_static/basic/ss/image13.png)时为代理模式。
+
+p.s.
+
+将 `Shad0ws0cks` 中的 `0` 全部 替换为 `o`.
