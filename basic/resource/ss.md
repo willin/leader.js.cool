@@ -130,11 +130,11 @@ SwichyOmega:[https://github.comShad0ws0cks/FelisCatus/SwitchyOmega/releases](htt
 
 就可以添加到自动代理模式。
 
-但是，有些网站有时候抽风需要翻墙访问，有时候不需要，那就可以临时设置代理模式，默认是直接连接，如下：
+但是，有些网站有时候抽风需要fan墙访问，有时候不需要，那就可以临时设置代理模式，默认是直接连接，如下：
 
 ![](/_static/basic/ss/image11.png)
 
-点击proxy，此时，就可以访问临时需要翻墙的网站了。图标为![](/_static/basic/ss/image12.png)时为直接连接，图标为![](/_static/basic/ss/image13.png)时为代理模式。
+点击proxy，此时，就可以访问临时需要fan墙的网站了。图标为![](/_static/basic/ss/image12.png)时为直接连接，图标为![](/_static/basic/ss/image13.png)时为代理模式。
 
 p.s.
 
