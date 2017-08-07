@@ -84,6 +84,7 @@
     - [CloudFlare](experience/operation/cloudflare-nginx.md)
   - Azure(Node.js)
     - [IoT Hub](experience/azure/iot-hub.md)
+    - [IoT Hub路由](experience/azure/iot-hub-route.md)
     - [Storage](experience/azure/storage.md)
     - [WebAPP](experience/azure/web-app.md)
   - 进阶
