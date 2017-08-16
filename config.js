@@ -10,7 +10,7 @@ function getReadState() {
   if (window.localStorage) {
     if (document.referrer === '') {
       var url = localStorage.getItem('leader.url');
-      if (url && location.href != url) {
+      if (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) && url && location.href !== url) {
         location.href = url;
         setTimeout(window.scrollTo(0, ~~localStorage.getItem('leader.top')), 300);
       }
