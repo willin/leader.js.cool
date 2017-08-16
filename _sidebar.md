@@ -95,6 +95,7 @@
     - [混合Web应用实践](experience/advanced/mixed-project.md)
     - [基于接口快速搭建前后分离项目](experience/advanced/webapp-proxy.md)
     - [Vue + Koa前后端分离实践](experience/advanced/vue-webapp.md)
+    - [手把手发布Vue组件](experience/advanced/vue-components.md)
     - [MySQL向GraphQL迁移](experience/advanced/mysql-graphql.md)
     - [GraphQL鉴权](experience/advanced/graphql-authorization.md)
 - 思想篇
