@@ -36,12 +36,25 @@ NPM包位于: https://www.npmjs.com/package/vchart
 
 用简单的`http-server` 运行并调试.
 
+```js
+"scripts": {
+  "start": "npm run prepare && http-server -c0 .",
+  "prepare": "webpack --progress --hide-modules"
+}
+```
+
 代码提交: https://github.com/willin/vchart/commit/0b875fcea03e2afed9955887e0b79097d2111adb
 
 ## 3. 完成组件功能并测试
 
+## 4. 完善文档, 并提供演示
+
+演示地址: https://vchart.js.cool
+
+3/4两步合并提交的代码: https://github.com/willin/vchart/commit/58b46ece2f19f7f5e07009dc46a71da3855c5bbf
+
 ## 参考资源
 
-https://github.com/gionkunz/chartist-js
-https://github.com/Yopadd/vue-chartist (注入式)
-https://github.com/lakb248/vue-chartist (组件式)
+- https://github.com/gionkunz/chartist-js
+- https://github.com/Yopadd/vue-chartist (注入式)
+- https://github.com/lakb248/vue-chartist (组件式)
