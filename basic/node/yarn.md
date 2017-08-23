@@ -1,5 +1,23 @@
 # Yarn 进阶使用
 
+## 批量升级所有依赖项并更新 package.json
+
+```js
+const pack = require('./package.json');
+const { execSync } = require('child_process');
+
+const list = [...Object.keys(pack.devDependencies), ...Object.keys(pack.dependencies)];
+// 忽略的项目 (不用升级)
+const ignore = ['eslint', 'babel-cli'];
+
+list.forEach((item) => {
+  if (!ignore.includes(item)) {
+    console.log(`yarn upgrade ${item}`);
+    execSync(`yarn upgrade ${item}`);
+  }
+});
+```
+
 ## 忽略 Node.js 要求
 
 比如, 有一些包指定了 Node.js 版本的要求, 如:
