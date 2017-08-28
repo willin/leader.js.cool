@@ -90,6 +90,7 @@
     - [Storage](experience/azure/storage.md)
     - [WebAPP](experience/azure/web-app.md)
   - 进阶
+    - [开源项目翻译正确姿势](experience/advanced/translate.md)
     - [元编程构造优雅解决方案](experience/advanced/meta.md)
     - [Electron桌面应用](experience/advanced/desktop-app.md)
     - [混合Web应用实践](experience/advanced/mixed-project.md)
