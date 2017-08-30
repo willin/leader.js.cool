@@ -1,5 +1,26 @@
 # ES Next
 
+## Pipeline Operator (Proposal)
+
+目前处于草稿阶段: <https://github.com/tc39/proposal-pipeline-operator>
+
+```js
+function doubleSay(str) {
+  return `${str}, ${str}`;
+}
+function capitalize(str) {
+  return str[0].toUpperCase() + str.substring(1);
+}
+function exclaim(str) {
+  return `${str}!`;
+}
+
+let result = "hello" |> doubleSay |> capitalize |> exclaim;
+
+result |> console.log;
+//=> "Hello, hello!"
+```
+
 ## Async (ES 7)
 
 ```js
