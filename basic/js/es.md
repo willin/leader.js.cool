@@ -21,6 +21,8 @@ result |> console.log;
 //=> "Hello, hello!"
 ```
 
+项目模板: <https://github.com/willin/esnext-pipeline-biolerplate>
+
 ## Async (ES 7)
 
 ```js
