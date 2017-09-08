@@ -99,6 +99,7 @@
     - [手把手发布Vue组件](experience/advanced/vue-components.md)
     - [MySQL向GraphQL迁移](experience/advanced/mysql-graphql.md)
     - [GraphQL鉴权](experience/advanced/graphql-authorization.md)
+    - [服务端代码打包](experience/advanced/webpack-server.md)
 - 思想篇
   - 能力
     - [新人成长](mind/capability/growth.md)
