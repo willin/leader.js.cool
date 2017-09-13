@@ -1,5 +1,4 @@
-function getTimestamp() {
-  return parseInt(new Date() / 1000, 10);
+function getTimestamp() {return parseInt(new Date() / 1000, 10);
 }
 function setReadState() {
   localStorage.setItem('leader.url', location.href);
@@ -19,7 +18,7 @@ function getReadState() {
   }
 }
 
-// Docsify配置
+// Docsify 配置
 window.$docsify = {
   name: '《团队领袖培养计划》',
   repo: 'https://github.com/willin/leader.js.cool.git',
@@ -69,7 +68,7 @@ window.$docsify = {
         var editUrl = '[:memo: 编辑本章节](' + url + ')\n'
         return md
           + '\n----\n'
-          + '最后更新 {docsify-updated} '
+          + '最后更新 {docsify-updated}'
           + editUrl
       });
       hook.doneEach(function () {
@@ -82,7 +81,7 @@ window.$docsify = {
         }
         ads.push(paragraphs[paragraphs.length - 1]);
         for (var i = 0; i < ads.length; i += 1) {
-          ads[i].insertAdjacentHTML('afterend', '<ins class="adsbygoogle" style="display:block;margin: 1.5em auto;" data-ad-client="ca-pub-5059418763237956" data-ad-slot="9518721243" data-ad-format="auto"></ins>');
+          ads[i].insertAdjacentHTML('afterend', '<ins class="adsbygoogle"style="display:block;margin: 1.5em auto;"data-ad-client="ca-pub-5059418763237956"data-ad-slot="9518721243"data-ad-format="auto"></ins>');
           (adsbygoogle = window.adsbygoogle || []).push({});
         }
         ga('send', 'pageview', location.hash.replace('#', ''));
@@ -97,7 +96,7 @@ window.$docsify = {
           html = '<div class="mermaid">' + code + '</div>';
         }
         var hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup)
-        return html + '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>'
+        return html + '<pre v-pre data-lang="' + lang + '"><code class="lang-'+ lang +'">'+ hl +'</code></pre>'
       }
     }
   }

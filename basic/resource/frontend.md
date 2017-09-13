@@ -1,6 +1,6 @@
 # 前端资源
 
-《你可能用不上jQuery》：<http://youmightnotneedjquery.com/>
+《你可能用不上 jQuery》：<http://youmightnotneedjquery.com/>
 
 ## 数据可视化
 
@@ -10,7 +10,12 @@ D3.js： <https://d3js.org/>
 
 Three.js： <http://threejs.org/>
 
-## VR虚拟现实
+## 动画
+
+- Anime-js: <http://animejs.com/>
+- Animate.css: <http://daneden.github.io/animate.css/>
+
+## VR 虚拟现实
 
 A-Frame： <https://aframe.io/>
 
@@ -23,4 +28,4 @@ A-Frame： <https://aframe.io/>
 
 * Skrollr： <https://github.com/Prinzhorn/skrollr>
 
-（已可用3D效果替代）
+（已可用 3D 效果替代）
