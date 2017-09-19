@@ -86,3 +86,69 @@ const proxy = new Proxy({}, {
 console.log(proxy.func);          // [Function]
 console.log(proxy.func('123'));   // [ {}, 'func', '123' ]
 ```
+
+## ES 6 作用域
+
+以 For 循环为例：
+
+```js
+var funcs = [];
+
+for (var i = 0; i < 10; i += 1) {
+  funcs.push(function(){ console.log(i); });
+}
+
+funcs.forEach(func => func());
+// 输出 10 十次
+```
+
+闭包：
+
+```js
+var funcs = [];
+
+for (var i = 0; i < 10; i += 1) {
+  funcs.push((function(value){ console.log(value); }(i));
+}
+
+funcs.forEach(func => func());
+// 0 到 9 依次输出
+```
+
+在 ES6 中可以简化为：
+
+```js
+const funcs = [];
+
+for (let i = 0; i < 10; i += 1) {
+  funcs.push(() => console.log(i));
+}
+
+funcs.forEach(func => func());
+// 0 到 9 依次输出
+```
+
+## Function 创建函数
+
+```js
+var add = new Function("first", "second = first", "return first + second");
+console.log(add(1, 1));// 2
+console.log(add(1));// 2
+```
+
+```js
+var pickFirst = new Function("..args", "return args[0]");
+console.log(pickFirst(1,2)); // 1
+```
+
+## ES6 中互换值
+
+```js
+let a = 1;
+let b = 2;
+
+[a, b] = [b, a];
+
+console.log(a, b); // 2 1
+```
+
