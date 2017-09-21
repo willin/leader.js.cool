@@ -25,6 +25,7 @@
     - [Map](basic/js/map.md)
     - [Reduce](basic/js/reduce.md)
     - [正则替换](basic/js/regexp.md)
+    - [异常捕获](basic/js/try-catch.md)
   - Node.js
     - [包管理](basic/node/pkg.md)
     - [Yarn进阶](basic/node/yarn.md)
