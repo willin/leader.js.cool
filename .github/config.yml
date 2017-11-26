@@ -15,6 +15,7 @@ newPRWelcomeComment: |
 # Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
 
 # Comment to be posted to on pull requests merged by a first time user
-firstPRMergeComment: >
+firstPRMergeComment: |
   恭喜您，新朋友，这是第一次合并您的代码呢! 🎉🎉🎉
+  💖 如果您在（或期望来）南京，又恰巧在看工作机会，可以把您的简历发送至 i@sh.gg
 # It is recommend to include as many gifs and emojis as possiblec
