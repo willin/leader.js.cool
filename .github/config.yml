@@ -1,0 +1,20 @@
+# Configuration for new-issue-welcome - https://github.com/behaviorbot/new-issue-welcome
+
+# Comment to be posted to on first time issues
+newIssueWelcomeComment: |
+  👋 欢迎你，新朋友！如果您是为本书勘误，请说明出现的具体位置。
+  🎉 如果您在（或期望来）南京，又恰巧在看工作机会，可以把您的简历发送至 i@sh.gg
+
+# Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
+
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment: |
+  💖 欢迎你，新朋友！这是您的第一次代码提交，请耐心等待合并处理。
+  🎉 如果您在（或期望来）南京，又恰巧在看工作机会，可以把您的简历发送至 i@sh.gg
+  
+# Configuration for first-pr-merge - https://github.com/behaviorbot/first-pr-merge
+
+# Comment to be posted to on pull requests merged by a first time user
+firstPRMergeComment: >
+  恭喜您，新朋友，这是第一次合并您的代码呢! 🎉🎉🎉
+# It is recommend to include as many gifs and emojis as possiblec
