@@ -55,13 +55,13 @@ depth | 层级深度
 
 测试数据, 一个复杂组织目录(根据 `oid = 47378` 查出):
 
-<a href="/basic/algorithm/categories/test2.json" target="_blank">test2.json</a>
+<a href="/basic/algorithm/_categories/test2.json" target="_blank">test2.json</a>
 
 ## 树形结构生成
 
 期望结果:
 
-<a href="/basic/algorithm/categories/tree2.json" target="_blank">tree2.json</a>
+<a href="/basic/algorithm/_categories/tree2.json" target="_blank">tree2.json</a>
 
 循环算法:
 
