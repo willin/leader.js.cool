@@ -3,4 +3,4 @@
 git add .
 git commit -m 'Docsify Auto Published'
 git push origin master
-git push coding master
+git push gitee master
