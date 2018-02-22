@@ -34,7 +34,7 @@
 源码：
 
 * Github: <https://github.com/willin/leader.js.cool>
-* Coding: <https://coding.net/u/willin/p/leader.js.cool/git>
+* OSChina: <https://gitee.com/willin/leader.js.cool>
 
 欢迎进行反馈交流。同时非常期待您在 Github 上 Follow 我 ([@willin](https://github.com/willin)).
 

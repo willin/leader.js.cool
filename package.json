@@ -18,9 +18,9 @@
   "author": "Willin Wang",
   "license": "MIT",
   "bugs": {
-    "url": "https://coding.net/u/willin/p/leader.js.cool/topic"
+    "url": "https://gitee.com/willin/leader.js.cool/issues"
   },
-  "homepage": "https://coding.net/u/willin/p/leader.js.cool/git",
+  "homepage": "https://leader.js.cool/",
   "devDependencies": {
    "docsify-cli": "^4.1.8"
   }
