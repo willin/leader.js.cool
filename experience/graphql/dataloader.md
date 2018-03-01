@@ -145,8 +145,8 @@ CountLoader.loadMany([
 最终会拼成：
 
 ```sql
-SELECT xxx as code FROM TABLE1 WHERE xxx 
-UNION SELECT xxx as code FROM TABLE2 WHERE xxx 
+SELECT xxx as code, COUNT(1) as count FROM TABLE1 WHERE xxx 
+UNION SELECT xxx as code, COUNT(1) as count FROM TABLE2 WHERE xxx 
 -- ...
 ```
 
