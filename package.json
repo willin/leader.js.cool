@@ -1,6 +1,6 @@
 {
   "name": "leader.js.cool",
-  "version": "3.0.9",
+  "version": "3.1.0",
   "description": "不可替代的团队领袖培养计划",
   "main": "config.js",
   "scripts": {
@@ -13,12 +13,13 @@
   "keywords": [
     "leader",
     "cool",
-    "jsw2mn"
+    "js",
+    "w2mn"
   ],
   "author": "Willin Wang",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitee.com/willin/leader.js.cool/issues"
+    "url": "https://github.com/willin/leader.js.cool/issues"
   },
   "homepage": "https://leader.js.cool/",
   "devDependencies": {
