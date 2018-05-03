@@ -19,6 +19,7 @@
     - [Docker 加速](basic/knowledge/docker.md)
     - [Web中文字体](basic/knowledge/fonts.md)
     - [Github部署SPA路由单页应用](basic/knowledge/github-pages-spa-router.md)
+    - [Travis-CI每日构建](basic/knowledge/travis-ci.md)
   - Vanilla JS
     - [小技巧](basic/js/tricks.md)
     - [Fetch AJAX](basic/js/fetch.md)
