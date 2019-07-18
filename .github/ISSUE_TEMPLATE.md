@@ -1,2 +1,2 @@
-<!-- Love leader? Please consider supporting our collective:
-👉  https://opencollective.com/leader/donate -->
+<!-- Love willin? Please consider supporting our collective:
+👉  https://opencollective.com/willin/donate -->
