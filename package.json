@@ -4,7 +4,8 @@
   "description": "不可替代的团队领袖培养计划",
   "main": "config.js",
   "scripts": {
-    "start": "docsify serve . --port 3456 --open"
+    "start": "docsify serve . --port 3456 --open",
+    "postinstall": "opencollective-postinstall"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,13 @@
   },
   "homepage": "https://leader.js.cool/",
   "devDependencies": {
-   "docsify-cli": "^4.1.8"
+    "docsify-cli": "^4.1.8"
+  },
+  "dependencies": {
+    "opencollective-postinstall": "^2.0.2"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/leader"
   }
 }
