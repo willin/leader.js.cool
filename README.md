@@ -65,7 +65,7 @@ p.s.
 ## Contributors
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/undefined/undefinedgraphs/contributors"><img src="https://opencollective.com/willin/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/willin/leader.js.cool/graphs/contributors"><img src="https://opencollective.com/willin/contributors.svg?width=890&button=false" /></a>
 
 ## Backers
 
