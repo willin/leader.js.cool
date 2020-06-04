@@ -65,7 +65,7 @@ window.$docsify = {
       });
       hook.beforeEach(function (md) {
         var url = 'https://github.com/willin/leader.js.cool/blob/master' + vm.route.file
-        var editUrl = '[:memo: 编辑本章节](' + url + ')\n'
+        var editUrl = '[编辑本章节](' + url + ')\n'
         return md
           + '\n----\n'
           + '最后更新 {docsify-updated}'

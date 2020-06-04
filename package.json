@@ -1,6 +1,6 @@
 {
   "name": "leader.js.cool",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "不可替代的团队领袖培养计划",
   "main": "config.js",
   "scripts": {
@@ -24,9 +24,7 @@
   },
   "homepage": "https://leader.js.cool/",
   "devDependencies": {
-    "docsify-cli": "^4.1.8"
-  },
-  "dependencies": {
+    "docsify-cli": "^4.1.8",
     "opencollective-postinstall": "^2.0.2"
   },
   "collective": {
