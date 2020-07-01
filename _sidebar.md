@@ -43,7 +43,8 @@
     - [Docsify流程图序列图](basic/md/docsify.md)
     - [GitBook静态文档生成](basic/md/gitbook.md)
   - DB
-    - [MySQL](basic/db/mysql.md)
+    - [MySQL 5.x](basic/db/mysql.md)
+    - [MySQL 8.0](basic/db/mysql8.md)
     - [Redis](basic/db/redis.md)
     - [GraphQL](basic/db/graphql.md)
   - 常用框架
