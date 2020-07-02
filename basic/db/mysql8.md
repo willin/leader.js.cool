@@ -101,9 +101,55 @@ main();
 
 其他示例可以参考项目： <https://github.com/shiwangme/mysql8-x-devapi-demo>
 
+## Tips
+
+### Count / 记录总数
+
+Collection 总记录数：
+
+```js
+const session = await mysqlx.getSession().then((session) => session.getSchema('SCHEMA_NAME').getCollection('COLLECTION_NAME'));
+const total = await session.count();
+```
+
+根据条件查询的结果条数：
+
+```js
+const counter = await session.find().fields(['COUNT(1) as count']).execute();
+const total = counter.fetchOne().count;
+```
+
+### Pagination / 分页
+
+以 `Koa` 分页请求为例：
+
+```js
+const { page, size } = ctx.query;
+const session = await Card.getSession();
+
+// 计算页数
+// const counter = await session.find().fields(['COUNT(1) as count']).execute();
+// const total = counter.fetchOne().count;
+const total = await session.count();
+
+const pages = Math.ceil(total / size);
+
+// 执行 Select
+const query = session
+  .find()
+  .sort(['$.created_at DESC'])
+  .limit(size)
+  .offset((page - 1) * size);
+
+const result = await query.execute();
+const list = result.fetchAll();
+
+ctx.success({ page, size, total, pages, list });
+```
+
 ## Model 封装
 
-封装 `Add`、`Modify`、`Remove`和`getSession`，不包含 `Find `。
+封装 `Add`、`Modify`、`Remove`、`FindOne`和`getSession`，不包含 `Find `。
 
 
 ### Utils.js
@@ -174,6 +220,17 @@ class Model {
     //   getAutoIncrementValue: [Function: getAutoIncrementValue],
     //   getGeneratedIds: [Function: getGeneratedIds]
     // }
+  }
+
+  async findOne(key, val) {
+    const session = await mysqlx.getSession();
+    const db = session.getSchema(DB_NAME).getCollection(this.TABLE);
+    return db
+      .find(`${key} = :${key}`)
+      .bind(key, val)
+      .limit(1)
+      .execute()
+      .then((x) => x.fetchOne());
   }
 
   async modify(id, item) {
