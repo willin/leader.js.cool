@@ -46,6 +46,42 @@ await db.getCollection(TABLE).createIndex('card_id', {
 ]
 ```
 
+## 创建唯一索引
+
+目前（2020.07）还不能够创建文档类型的唯一索引。
+
+```js
+await db.getCollection(TABLE).createIndex('card_id', {
+  unique: true,
+  fields: [
+    {
+      field: '$.card_id',
+      type: 'TEXT(40)',
+      required: true
+    }
+  ]
+});
+```
+
+目前会报错：
+
+```bash
+Error: Unique indexes are currently not supported.
+    at Object.createIndex (/XXX/node_modules/@mysql/xdevapi/lib/DevAPI/Collection.js:347:39)
+    at module.exports (/XXX/db/user.js:17:8)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async module.exports (/XXX/db/index.js:20:3)
+```
+
+该部分源码位于： <https://github.com/mysql/mysql-connector-nodejs/blob/master/lib/DevAPI/Collection.js#L346-L348>
+
+```js
+if (constraint.unique === true) {
+    return Promise.reject(new Error('Unique indexes are currently not supported.'));
+}
+```
+
+
 ## 文档数据操作
 
 示例代码：
