@@ -59,6 +59,7 @@
     - [NativeScript](basic/framework/nativescript.md)
     - [Phantom/Request](basic/framework/crawler.md)
     - [Nuxt.js](basic/framework/nuxt.md)
+    - [Nest.js](basic/framework/nest.md)
   - [算法入门（使用ES 6/7）](basic/algorithm/README.md)
     - [奇数求和](basic/algorithm/sum-of-odd-numbers.md)
     - [查找单数](basic/algorithm/find-the-odd-int.md)

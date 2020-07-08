@@ -58,29 +58,3 @@ iOS 用户可以使用 `Safari` 将本书添加到主屏幕：
 p.s.
 
 最近经常收到未备注昵称或网址的捐赠，请留下你的代号，以便于鸣谢。谢谢~
-
-## Contributors
-
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/willin/leader.js.cool/graphs/contributors"><img src="https://opencollective.com/willin/contributors.svg?width=890&button=false" /></a>
-
-## Backers
-
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/willin#backer)]
-
-<a href="https://opencollective.com/willin#backers" target="_blank"><img src="https://opencollective.com/willin/backers.svg?width=890"></a>
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/willin#sponsor)]
-
-<a href="https://opencollective.com/willin/sponsor/0/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/willin/sponsor/1/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/willin/sponsor/2/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/willin/sponsor/3/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/willin/sponsor/4/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/willin/sponsor/5/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/willin/sponsor/6/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/willin/sponsor/7/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/willin/sponsor/8/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/willin/sponsor/9/website" target="_blank"><img src="https://opencollective.com/willin/sponsor/9/avatar.svg"></a>
