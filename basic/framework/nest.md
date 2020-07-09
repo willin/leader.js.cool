@@ -99,3 +99,54 @@ bootstrap();
 
 Module 代码可以参考 Express Swagger 的示例项目： <https://github.com/nestjs/nest/tree/master/sample/11-swagger>
 
+
+## E2E Testing
+
+依然没有找到文档，参考一个示例的测试源码吧： <https://github.com/nestjs/nest/blob/master/integration/hello-world/e2e/fastify-adapter.spec.ts>
+
+```js
+import { Test, TestingModule } from '@nestjs/testing';
+import { AppModule } from './../src/app.module';
+// 新增引用
+import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
+import { expect } from 'chai';
+
+describe('AppController (e2e)', () => {
+  let app: NestFastifyApplication;
+
+  beforeEach(async () => {
+    const moduleFixture: TestingModule = await Test.createTestingModule({
+      imports: [AppModule]
+    }).compile();
+
+    // 修改 app 创建
+    app = moduleFixture.createNestApplication<NestFastifyApplication>(new FastifyAdapter());
+
+    await app.init();
+  });
+
+  it('/ (GET)', () => {
+    // return request(app.getHttpServer())
+    //   .get('/')
+    //   .expect(200)
+    //   .expect('Hello World!');
+
+    // 改用 inject 方式，不用 supertest
+    return app
+      .inject({
+        method: 'GET',
+        url: '/'
+      })
+      .then(({ payload }) => expect(payload).to.be.eql('Hello World!'));
+  });
+});
+```
+
+## Graphql
+
+- 中文文档： <https://docs.nestjs.cn/7/graphql>
+- 英文文档： <https://docs.nestjs.com/graphql/quick-start>
+
+依赖于`apollo-server`。
+
+TBD.
