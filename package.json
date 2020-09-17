@@ -7,8 +7,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages"
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.6.0",
@@ -38,7 +37,6 @@
     "url": "https://opencollective.com/willin"
   },
   "devDependencies": {
-    "prettier": "^2.1.2",
-    "push-dir": "^0.4.1"
+    "prettier": "^2.1.2"
   }
 }

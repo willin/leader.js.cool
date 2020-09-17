@@ -14,9 +14,16 @@ jobs:
       - uses: actions/setup-node@v2-beta
         with:
           node-version: '14'
-      - name: Fetch events
+      - name: Generate
         run: |-
           sudo timedatectl set-timezone Asia/Shanghai
           npm install
           npm run generate
           npm run deploy
+      - name: Commit and push
+        run: |-
+          git config --global user.email "i@js.cool" && git config --global user.name "Github Bot"
+          cd dist
+          git init
+          git add . && git commit -m ":memo: Auto Generate" || exit 0
+          git push --force "https://${GITHUB_TOKEN}@github.com/willin/leader.js.cool.git" master:gh-pages
