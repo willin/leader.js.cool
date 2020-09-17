@@ -25,4 +25,6 @@ jobs:
           cd dist
           git init
           git add . && git commit -m ":memo: Auto Generate" || exit 0
-          git push --force "https://${GITHUB_TOKEN}@github.com/willin/leader.js.cool.git" master:gh-pages
+          git push --force "https://${GH_TOKEN}@github.com/willin/leader.js.cool.git" master:gh-pages
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
