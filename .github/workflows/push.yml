@@ -17,9 +17,8 @@ jobs:
       - name: Generate
         run: |-
           sudo timedatectl set-timezone Asia/Shanghai
-          npm install
-          npm run generate
-          npm run deploy
+          yarn install
+          yarn generate
       - name: Commit and push
         run: |-
           git config --global user.email "i@js.cool" && git config --global user.name "Github Bot"
