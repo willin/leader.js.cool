@@ -1,0 +1,22 @@
+name: Generate leader.js.cool
+
+on:
+  push:
+    branches: master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+      - name: Fetch events
+        run: |-
+          sudo timedatectl set-timezone Asia/Shanghai
+          npm install
+          npm run generate
+          npm run deploy

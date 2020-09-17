@@ -1,6 +1,12 @@
-node_modules/
+node_modules
+*.iml
+.idea
+.nuxt
+.DS_Store
+coverage
+dist
+sw.*
 
 demo*
-.DS_Store
 *.log
 *.log.*
