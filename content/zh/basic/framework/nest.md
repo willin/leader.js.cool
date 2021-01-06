@@ -18,6 +18,46 @@ npm i -g @nestjs/cli --ignore-engines
 yarn global add @nestjs/cli --ignore-engines
 ```
 
+## 小技巧
+
+### 异步方法优化
+
+减少不必要的 async/await 包裹。示例代码如下：
+
+```ts
+function test() {
+  const deferred = {
+    promise: undefined,
+    resolve: undefined
+  };
+  deferred.promise = new Promise((resolve) => {
+    deferred.resolve = resolve;
+  });
+  setTimeout(() => {
+    deferred.resolve('hello world');
+  }, 1000);
+  return deferred.promise;
+}
+
+@Controller()
+export class AppController {
+  constructor(private readonly appService: AppService) {}
+
+  // 以下两种写法都能运行，推荐使用第一种
+  @Get('/test')
+  getTest(): Promise<string> {
+    return test();
+  }
+
+  @Get('/test2')
+  async getTest2(): Promise<string> {
+    return await test();
+  }
+}
+```
+
+同理，除了在 Controller 中，在 Model、 Service 等其他地方内层方法均可以进行优化，因为外层调用的时候已经带上了 `await`。同时，还需要注意各个方法的返回类型，养成良好习惯。
+
 ## 使用 Fastify 框架
 
 该部分没有文档，只有一个示例项目： <https://github.com/nestjs/nest/tree/master/sample/10-fastify>
@@ -52,7 +92,6 @@ async function bootstrap() {
 }
 bootstrap();
 ```
-
 
 ## Open-API(Swagger)
 
@@ -116,7 +155,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
+  const app = (await NestFactory.create) < NestFastifyApplication > (AppModule, new FastifyAdapter());
   const options = new DocumentBuilder()
     .setTitle('Cats example')
     .setDescription('The cats API description')
@@ -130,7 +169,6 @@ async function bootstrap() {
 }
 bootstrap();
 ```
-
 
 ## E2E Testing
 
@@ -152,7 +190,7 @@ describe('AppController (e2e)', () => {
     }).compile();
 
     // 修改 app 创建
-    app = moduleFixture.createNestApplication<NestFastifyApplication>(new FastifyAdapter());
+    app = moduleFixture.createNestApplication < NestFastifyApplication > new FastifyAdapter();
 
     await app.init();
   });
