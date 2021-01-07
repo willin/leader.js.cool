@@ -216,6 +216,8 @@ describe('AppController (e2e)', () => {
 
 - 中文文档： <https://docs.nestjs.cn/7/graphql>
 - 英文文档： <https://docs.nestjs.com/graphql/quick-start>
+- Graphql Code First 项目示例： <https://github.com/nestjs/nest/tree/master/sample/23-graphql-code-first>
+- Graphql Schema First 项目示例： <https://github.com/nestjs/nest/tree/master/sample/12-graphql-schema-first>
 
 依赖于`apollo-server`。
 
