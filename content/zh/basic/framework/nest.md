@@ -23,7 +23,6 @@ yarn global add @nestjs/cli --ignore-engines
 - 属性转换： [class-transformer](https://github.com/typestack/class-transformer)
 - 属性校验： [class-validator](https://github.com/typestack/class-validator)
 
-
 ## 小技巧
 
 ### 异步方法优化
@@ -228,7 +227,7 @@ npm i --save-dev pino-pretty
 main.ts 入口文件引入：
 
 ```typescript
-import { Logger } from "nestjs-pino";
+import { Logger } from 'nestjs-pino';
 
 const app = await NestFactory.create(MyModule, { logger: false });
 app.useLogger(app.get(Logger));
@@ -237,7 +236,7 @@ app.useLogger(app.get(Logger));
 app.module.ts 文件引入：
 
 ```typescript
-import { LoggerModule } from "nestjs-pino";
+import { LoggerModule } from 'nestjs-pino';
 
 @Module({
   imports: [LoggerModule.forRoot()],
@@ -250,24 +249,47 @@ class MyModule {}
 Controller 中使用示例：
 
 ```typescript
-import { Logger } from "nestjs-pino";
+import { Logger } from 'nestjs-pino';
 
 @Controller()
 export class AppController {
-  constructor(
-    private readonly myService: MyService,
-    private readonly logger: Logger
-  ) {}
+  constructor(private readonly myService: MyService, private readonly logger: Logger) {}
 
   @Get()
   getHello(): string {
     // pass message
-    this.logger.log("getHello()");
+    this.logger.log('getHello()');
 
     // also we can pass context
-    this.logger.log("getHello()", AppController.name);
+    this.logger.log('getHello()', AppController.name);
 
     return `Hello ${this.myService.getWorld()}`;
+  }
+}
+```
+
+或者使用 `PinoLogger` （推荐）：
+
+```typescript
+// my.service.ts
+import { PinoLogger, InjectPinoLogger } from 'nestjs-pino';
+
+@Injectable()
+export class MyService {
+  // regular injecting
+  constructor(private readonly logger: PinoLogger) {}
+
+  // regular injecting and set context
+  constructor(private readonly logger: PinoLogger) {
+    logger.setContext(MyService.name);
+  }
+
+  // inject and set context via `InjectPinoLogger`
+  constructor(@InjectPinoLogger(MyService.name) private readonly logger: PinoLogger) {}
+
+  getWorld(...params: any[]) {
+    this.logger.info('getWorld(%o)', params);
+    return 'World!';
   }
 }
 ```
@@ -288,4 +310,3 @@ nest start --watch | pino-pretty
 依赖于`apollo-server`。
 
 TBD.
-
