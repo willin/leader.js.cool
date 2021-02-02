@@ -18,6 +18,12 @@ npm i -g @nestjs/cli --ignore-engines
 yarn global add @nestjs/cli --ignore-engines
 ```
 
+## 入门文档
+
+- 属性转换： [class-transformer](https://github.com/typestack/class-transformer)
+- 属性校验： [class-validator](https://github.com/typestack/class-validator)
+
+
 ## 小技巧
 
 ### 异步方法优化
@@ -212,6 +218,66 @@ describe('AppController (e2e)', () => {
 });
 ```
 
+## Logger
+
+```bash
+npm i --save nestjs-pino
+npm i --save-dev pino-pretty
+```
+
+main.ts 入口文件引入：
+
+```typescript
+import { Logger } from "nestjs-pino";
+
+const app = await NestFactory.create(MyModule, { logger: false });
+app.useLogger(app.get(Logger));
+```
+
+app.module.ts 文件引入：
+
+```typescript
+import { LoggerModule } from "nestjs-pino";
+
+@Module({
+  imports: [LoggerModule.forRoot()],
+  controllers: [AppController],
+  providers: [MyService]
+})
+class MyModule {}
+```
+
+Controller 中使用示例：
+
+```typescript
+import { Logger } from "nestjs-pino";
+
+@Controller()
+export class AppController {
+  constructor(
+    private readonly myService: MyService,
+    private readonly logger: Logger
+  ) {}
+
+  @Get()
+  getHello(): string {
+    // pass message
+    this.logger.log("getHello()");
+
+    // also we can pass context
+    this.logger.log("getHello()", AppController.name);
+
+    return `Hello ${this.myService.getWorld()}`;
+  }
+}
+```
+
+启动脚本修改：
+
+```bash
+nest start --watch | pino-pretty
+```
+
 ## Graphql
 
 - 中文文档： <https://docs.nestjs.cn/7/graphql>
@@ -222,3 +288,4 @@ describe('AppController (e2e)', () => {
 依赖于`apollo-server`。
 
 TBD.
+
