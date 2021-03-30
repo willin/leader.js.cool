@@ -10,7 +10,7 @@ category: 知识篇-Vanilla JS
 ### 语法
 
 ```js
-arr.reduce(callback,[initialValue]);
+arr.reduce(callback, [initialValue]);
 ```
 
 ### 参数
@@ -29,7 +29,7 @@ arr.reduce(callback,[initialValue]);
 
 > currentIndex
 
-数据中正在处理的元素索引，如果没有提供initialValues，默认从0开始
+数据中正在处理的元素索引，如果没有提供 initialValues，默认从 0 开始
 
 > array
 
@@ -42,6 +42,8 @@ arr.reduce(callback,[initialValue]);
 ### 返回值
 
 函数累计处理的结果。
+
+<adsbygoogle></adsbygoogle>
 
 ## 例题
 
@@ -60,5 +62,5 @@ Array will not be empty.
 答案：
 
 ```js
-const grow = x => x.reduce((r, i) => r * i, 1);
+const grow = (x) => x.reduce((r, i) => r * i, 1);
 ```

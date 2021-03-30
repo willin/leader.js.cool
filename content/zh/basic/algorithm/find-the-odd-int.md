@@ -5,7 +5,7 @@ position: 1803
 category: 知识篇-算法入门（使用ES 6/7）
 ---
 
-## 题目1
+## 题目 1
 
 Given an array, find the int that appears an odd number of times.
 
@@ -28,21 +28,20 @@ Examples:
 答案：
 
 ```js
-const findOdd = arr => arr.sort().filter(x=>(arr.lastIndexOf(x)-arr.indexOf(x))%2===0)[0]
+const findOdd = (arr) => arr.sort().filter((x) => (arr.lastIndexOf(x) - arr.indexOf(x)) % 2 === 0)[0];
 ```
 
 其中：
 
-* `Array.prototype.filter`是ES 6的特性。
+- `Array.prototype.filter`是 ES 6 的特性。
 
-## 题目2
+## 题目 2
 
 Given an array of integers, every element appears twice except for one. Find that single one.
 
 Note:
 
 > Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
-
 
 问题描述:
 
@@ -66,15 +65,17 @@ Note:
 4. d = a ^ b ^ c 可以推出 a = d ^ b ^ c
 5. a ^ b ^ a = b
 
-本题可以抽象成：int数组里有x1, x2 … xn（每个出现2次），和y（只出现一次），得出y的值。
+本题可以抽象成：int 数组里有 x1, x2 … xn（每个出现 2 次），和 y（只出现一次），得出 y 的值。
 
-由公式2可知，数组里面所有数异或的结果等于 x1^x1^x2^x2^…^xn^xn^y
+由公式 2 可知，数组里面所有数异或的结果等于 x1^x1^x2^x2^…^xn^xn^y
 
-由公式3可知，上式等于(x1^x1)^(x2^x2)^…^(xn^xn)^y
+由公式 3 可知，上式等于(x1^x1)^(x2^x2)^…^(xn^xn)^y
 
-由公式1可知，上式等于(0)^(0)^…(0)^y = y
+由公式 1 可知，上式等于(0)^(0)^…(0)^y = y
 
 因此只需要将所有数字异或，就可得到结果。
+
+<adsbygoogle></adsbygoogle>
 
 答案:
 
@@ -83,5 +84,5 @@ Note:
  * @param {number[]} nums
  * @return {number}
  */
-const singleNumber = (nums) => nums.reduce((x, y) => x^y);
+const singleNumber = (nums) => nums.reduce((x, y) => x ^ y);
 ```

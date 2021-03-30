@@ -10,7 +10,7 @@ category: '经验篇-进阶'
 
 Sandbox（沙盒）的在线文档可以在: <https://stagingdoc.airdwing.com/> 找到。
 
-Node.js版本SDK：<https://github.com/AirDwing/node-airx-sdk>
+Node.js 版本 SDK：<https://github.com/AirDwing/node-airx-sdk>
 
 ## SDK 使用
 
@@ -40,7 +40,7 @@ const sdk = new SDK({
 
 ### 签名相关参数
 
-签名相关参数不用通过前端传递,防止AK/SK的泄露,签名交给`Node.js`后端反代应用程序处理,所以以下几个签名相关参数不用传递:
+签名相关参数不用通过前端传递,防止 AK/SK 的泄露,签名交给`Node.js`后端反代应用程序处理,所以以下几个签名相关参数不用传递:
 
 - Nonce
 - SecretId
@@ -48,15 +48,15 @@ const sdk = new SDK({
 - SignatureMethod
 - Timestamp
 
-### 登录Auth Token
+### 登录 Auth Token
 
-由于反代应用程序支持 Cookie Session, 所以前端不用存储 Auth Token,也免去了 Auth Token被截获的风险.所以如果接口需要以下参数,不用传递:
+由于反代应用程序支持 Cookie Session, 所以前端不用存储 Auth Token,也免去了 Auth Token 被截获的风险.所以如果接口需要以下参数,不用传递:
 
 - auth
 
 ### 登录设备相关参数
 
-每个会话都会生成一个随机唯一的模拟登录设备id, 如果接口需要以下参数, 不用传递:
+每个会话都会生成一个随机唯一的模拟登录设备 id, 如果接口需要以下参数, 不用传递:
 
 - guid
 - device
@@ -83,8 +83,10 @@ const sdk = new SDK({
 建议的 `dist` 目录结构
 
 - index.html
-- 404.html 和 403,500... 等其他相关错误的html
+- 404.html 和 403,500... 等其他相关错误的 html
 - static/ 文件目录,或分类目录存放 css/js/图片等静态资源
+
+<adsbygoogle></adsbygoogle>
 
 ## 核心代码
 
@@ -118,7 +120,6 @@ app.use(async (ctx, next) => {
 ### 处理接口反向代理
 
 位于：`server/server.js`
-
 
 ```js
 app.use(async (ctx) => {
@@ -162,7 +163,7 @@ const getSwagger = async () => {
     paths: Object.keys(paths).reduce((p, x) => {
       /* eslint no-param-reassign:0 */
       const method = Object.keys(paths[x])[0];
-      p[x] = paths[x][method].parameters.map(t => t.name);
+      p[x] = paths[x][method].parameters.map((t) => t.name);
       return p;
     }, {})
   };

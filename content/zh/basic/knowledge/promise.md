@@ -58,6 +58,8 @@ mysql.query(sql1, function (err1, rows1) {
 
 等等
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例代码
 
 ```js

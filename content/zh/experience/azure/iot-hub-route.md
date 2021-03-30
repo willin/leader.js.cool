@@ -15,23 +15,25 @@ category: '经验篇-Azure(Node.js)'
 
 - 事件中心(Event Hubs): 用于服务器端侦听并处理的 EventHub 终结点
 - 终结点(IOT Hub): 关联到 Event Hubs 中的事件中心
-- 路由(IOT Hub): 关联到 IOT Hub中的终结点, 处理路由分发的主要配置环节
+- 路由(IOT Hub): 关联到 IOT Hub 中的终结点, 处理路由分发的主要配置环节
 
 ## 在 Azure 中创建并配置路由相关的基础服务
 
 首先需要分别创建 IOT Hub 和 EventHubs.
 
-### 1. 创建EventHubs事件中心
+<adsbygoogle></adsbygoogle>
+
+### 1. 创建 EventHubs 事件中心
 
 ![eventhub](https://user-images.githubusercontent.com/1890238/29015275-06999aa8-7b13-11e7-893c-2f75ca58bb14.png)
 
-### 2. 创建IOT Hub终结点
+### 2. 创建 IOT Hub 终结点
 
 ![endpoint](https://user-images.githubusercontent.com/1890238/29015320-334b5a00-7b13-11e7-8c12-dcc4d152e6e7.png)
 
 注意这里, `状态` 初始不显示, 首次消息通讯成功后再来这里看应该会变.
 
-系统可能会存在这样的Bug, 怎么也收不到消息. 这里的状态就会一直不显示:
+系统可能会存在这样的 Bug, 怎么也收不到消息. 这里的状态就会一直不显示:
 
 ![err](https://user-images.githubusercontent.com/1890238/29015355-4a0427c2-7b13-11e7-8a9c-24e6bc87144b.png)
 
@@ -112,9 +114,8 @@ const receiver = require('./eventhub');
 
 参考官方的示例: <https://github.com/azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device.js#L44>
 
-注意第44行位置, 下面添加一行, 加入路由属性
+注意第 44 行位置, 下面添加一行, 加入路由属性
 
 ```js
 message.properties.add('route', 'tt');
 ```
-

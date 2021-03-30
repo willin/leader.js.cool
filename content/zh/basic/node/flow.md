@@ -31,9 +31,7 @@ yarn run flow
 module.exports = {
   // extends: 'dwing',
   parser: 'babel-eslint',
-  plugins: [
-    'flowtype'
-  ]
+  plugins: ['flowtype']
 };
 ```
 
@@ -61,6 +59,8 @@ module.exports = {
   "prepublish": "yarn run build"
 }
 ```
+
+<adsbygoogle></adsbygoogle>
 
 ## 常用语法
 
@@ -100,7 +100,7 @@ function method(optionalValue?: string) {
 ### 解构赋值
 
 ```js
-function foo({ x } : {x? : number} = {}): string {
+function foo({ x }: { x?: number } = {}): string {
   if (x) {
     return String(x);
   }

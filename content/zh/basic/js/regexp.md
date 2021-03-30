@@ -13,7 +13,7 @@ category: 知识篇-Vanilla JS
 
 工具：
 
-* RegExp tester （Chrome插件）
+- RegExp tester （Chrome 插件）
 
 ## 例题
 
@@ -30,8 +30,10 @@ Don't forget the space after the closing parenthese!
 
 题目地址: <https://www.codewars.com/kata/create-phone-number>
 
+<adsbygoogle></adsbygoogle>
+
 答案：
 
 ```js
-const createPhoneNumber = n => n.join('').replace(/(\d{3})(\d{3})(\d{3})/,'($1) $2-$3');
+const createPhoneNumber = (n) => n.join('').replace(/(\d{3})(\d{3})(\d{3})/, '($1) $2-$3');
 ```

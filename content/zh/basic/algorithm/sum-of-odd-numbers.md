@@ -66,8 +66,10 @@ N： (N-1)*N+1 (N+1)*N-1
 = N^3   //(此处^不表示xor位运算，表示幂)
 ```
 
+<adsbygoogle></adsbygoogle>
+
 答案：
 
 ```js
-const rowSumOddNumbers = n => Math.pow(n, 3);
+const rowSumOddNumbers = (n) => Math.pow(n, 3);
 ```

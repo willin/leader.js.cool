@@ -10,15 +10,15 @@ category: 知识篇-Markdown
 
 ![mermaid1](https://user-images.githubusercontent.com/1890238/27322559-3217d3b8-5564-11e7-8d27-2d6de348aa5f.png)
 
-## 引入Mermaid
+## 引入 Mermaid
 
-在 `head` 中加入css:
+在 `head` 中加入 css:
 
 ```html
-<link rel="stylesheet" href="//unpkg.com/mermaid/dist/mermaid.min.css">
+<link rel="stylesheet" href="//unpkg.com/mermaid/dist/mermaid.min.css" />
 ```
 
-在 底部 引用js:
+在 底部 引用 js:
 
 ```html
 <script type="text/javascript" src="//unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -30,33 +30,33 @@ category: 知识篇-Markdown
 window.$docsify = {
   // ...
   plugins: [
-    function(hook, vm) {
+    function (hook, vm) {
       hook.ready(function () {
-        mermaid.initialize({startOnLoad: false});
+        mermaid.initialize({ startOnLoad: false });
       });
       hook.doneEach(function () {
-        mermaid.init(undefined,'.mermaid');
+        mermaid.init(undefined, '.mermaid');
       });
     }
   ],
   markdown: {
     renderer: {
-      code: function(code, lang) {
+      code: function (code, lang) {
         var html = '';
-        if(code.match(/^sequenceDiagram/) || code.match(/^graph/) || code.match(/^gantt/)){
+        if (code.match(/^sequenceDiagram/) || code.match(/^graph/) || code.match(/^gantt/)) {
           html = '<div class="mermaid">' + code + '</div>';
         }
-        var hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup)
-        return html + '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>'
+        var hl = Prism.highlight(code, Prism.languages[lang] || Prism.languages.markup);
+        return html + '<pre v-pre data-lang="' + lang + '"><code class="lang-' + lang + '">' + hl + '</code></pre>';
       }
     }
   }
-}
+};
 ```
 
 解释一下,两个关键步骤:
 
-### markdown代码解析器
+### markdown 代码解析器
 
 ```js
 markdown: {
@@ -77,31 +77,30 @@ markdown: {
 }
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ### 自定义插件
 
 ```js
 plugins: [
-  function(hook, vm) {
+  function (hook, vm) {
     hook.ready(function () {
       // 类似 jQuery.ready 初始化 mermaid, 禁用自动渲染
-      mermaid.initialize({startOnLoad: false});
+      mermaid.initialize({ startOnLoad: false });
     });
     hook.doneEach(function () {
       // 每个页面渲染完成后手动渲染 mermaid 图表
-      mermaid.init(undefined,'.mermaid');
+      mermaid.init(undefined, '.mermaid');
     });
   }
-]
+];
 ```
-
 
 最后再补一张甘特图:
 
-
 ![mermaid2](https://user-images.githubusercontent.com/1890238/27322558-31c84fbe-5564-11e7-9949-851fddbafa33.png)
 
-
-Mermaid支持:
+Mermaid 支持:
 
 - 流程图
 - 序列图
@@ -207,14 +206,14 @@ sequenceDiagram
 
 支持的箭头有:
 
-| 类型 | 说明     |
-|:---:|----------|
-| ->  | 无箭头实线 |
-| --> | 无箭头虚线 |
-| ->> | 箭头实线  |
-| -->>| 箭头虚线  |
-| -x  | 箭头实线带x(异步) |
-| --x | 箭头虚线带x(异步) |
+| 类型 | 说明               |
+| :--: | ------------------ |
+|  ->  | 无箭头实线         |
+| -->  | 无箭头虚线         |
+| ->>  | 箭头实线           |
+| -->> | 箭头虚线           |
+|  -x  | 箭头实线带 x(异步) |
+| --x  | 箭头虚线带 x(异步) |
 
 ```mermaid
 sequenceDiagram
@@ -268,4 +267,4 @@ Add another diagram to demo page    :48h
 
 ## 在线编辑器
 
- <https://knsv.github.io/mermaid/live_editor/>
+<https://knsv.github.io/mermaid/live_editor/>

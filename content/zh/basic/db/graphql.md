@@ -76,10 +76,10 @@ const graphQLServer = express();
 graphQLServer.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 graphQLServer.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
-graphQLServer.listen(GRAPHQL_PORT, () => console.log(
-  `GraphQL Server is now running on http://localhost:${GRAPHQL_PORT}/graphql`
-));
+graphQLServer.listen(GRAPHQL_PORT, () => console.log(`GraphQL Server is now running on http://localhost:${GRAPHQL_PORT}/graphql`));
 ```
+
+<adsbygoogle></adsbygoogle>
 
 ```js
 // koa
@@ -130,13 +130,17 @@ PostModel.belongsTo(AuthorModel);
 // create mock data with a seed, so we always get the same
 casual.seed(123);
 db.sync({ force: true }).then(() => {
-  _.times(10, () => AuthorModel.create({
-    firstName: casual.first_name,
-    lastName: casual.last_name
-  }).then(author => author.createPost({
-    title: `A post by ${author.firstName}`,
-    text: casual.sentences(3)
-  })));
+  _.times(10, () =>
+    AuthorModel.create({
+      firstName: casual.first_name,
+      lastName: casual.last_name
+    }).then((author) =>
+      author.createPost({
+        title: `A post by ${author.firstName}`,
+        text: casual.sentences(3)
+      })
+    )
+  );
 });
 
 const Author = db.models.author;
@@ -165,18 +169,17 @@ const View = Mongoose.model('views', ViewSchema);
 const FortuneCookie = {
   getOne() {
     return fetch('http://fortunecookieapi.herokuapp.com/v1/cookie')
-      .then(res => res.json())
-      .then(res => res[0].fortune.message);
+      .then((res) => res.json())
+      .then((res) => res[0].fortune.message);
   }
 };
 ```
-
 
 # 编写解决器(Resolver)
 
 ![graphql](https://user-images.githubusercontent.com/1890238/28000944-9c4c3f32-64ee-11e7-902e-cbf3a01d90e2.png)
 
-GraphQL后边可以连接各种持久化存储,甚至RESTful远程资源.
+GraphQL 后边可以连接各种持久化存储,甚至 RESTful 远程资源.
 
 ```js
 const { Author, View, FortuneCookie } = require('./connectors');
@@ -203,12 +206,10 @@ const resolvers = {
     },
     views(post) {
       // MongoDB
-      return View.findOne({ postId: post.id })
-        .then(view => view.views);
+      return View.findOne({ postId: post.id }).then((view) => view.views);
     }
   }
 };
 
 module.exports = resolvers;
 ```
-

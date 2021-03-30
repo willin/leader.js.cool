@@ -28,7 +28,9 @@ export default theme({
   },
   'google-adsense': {
     id: 'ca-pub-5059418763237956',
-    pageLevelAds: true
+    pageLevelAds: true,
+    onPageLoad: true,
+    overlayBottom: true
   },
   sitemap: {
     hostname: 'https://leader.js.cool'

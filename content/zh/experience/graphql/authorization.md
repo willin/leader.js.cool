@@ -5,7 +5,7 @@ position: 2502
 category: '经验篇-GraphQL'
 ---
 
-GraphQL项目的架构:
+GraphQL 项目的架构:
 
 ![架构](https://graphql.js.cool/img/diagrams/business_layer.png)
 
@@ -33,7 +33,7 @@ var postType = new GraphQLObjectType({
 });
 ```
 
-但有个问题在于, 鉴权的逻辑不被保留完全同步, 用户通过其他方式调用(如通过RESTful接口)时依然需要重新鉴权.
+但有个问题在于, 鉴权的逻辑不被保留完全同步, 用户通过其他方式调用(如通过 RESTful 接口)时依然需要重新鉴权.
 
 ```js
 //Authorization logic lives inside postRepository
@@ -54,9 +54,11 @@ var postType = new GraphQLObjectType({
 
 这样, 我们就可以将用户对象传递到下一层(业务逻辑层)去进行鉴权的处理.
 
+<adsbygoogle></adsbygoogle>
+
 ## 鉴权中间件
 
-Express中的GraphQL鉴权中间件示例: <https://graphql.js.cool/graphql-js/authentication-and-express-middleware/>
+Express 中的 GraphQL 鉴权中间件示例: <https://graphql.js.cool/graphql-js/authentication-and-express-middleware/>
 
 ## 示例项目
 

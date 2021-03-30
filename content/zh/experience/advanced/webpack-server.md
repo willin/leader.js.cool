@@ -15,12 +15,16 @@ category: '经验篇-进阶'
 new webpack.DefinePlugin({
   'process.env.NODE_ENV': '"production"',
   'process.env.API_ENV': `"${process.env.API_ENV || 'development'}"`
-})
+});
 ```
 
 像这样, `NODE_ENV` 始终为 `production`.
 
 而我们实际开发/产品环境, 用 `process.env.API_ENV` 变量来使用(由于该项目是一个 koa 接口服务项目, 所以这样进行命名, 可以改成任意的, 你开心就好).
+
+<adsbygoogle></adsbygoogle>
+
+<adsbygoogle></adsbygoogle>
 
 ## 动态配置打包
 
@@ -40,10 +44,10 @@ module.exports = options;
 
 在 webpack 打包的项目中直接这样做的话, 会产生一个问题. 比如我现在有多个配置:
 
-- _develpment.js
-- _test.js
-- _production.js
-- _staging.js
+- \_develpment.js
+- \_test.js
+- \_production.js
+- \_staging.js
 
 即便我传入的当前环境为 `development`, 依然所有的配置文件会被全部打包进来(只是永远不会被执行). 那么这样的话, 就存在敏感信息泄露的风险.
 
@@ -83,7 +87,7 @@ enabledModules.forEach((mod) => {
 那么就需要 `ContextReplacementPlugin` 插件来支持了.
 
 ```js
-new webpack.ContextReplacementPlugin(/src/, new RegExp(`^./(${enabledModules.join('|')})/.*$`))
+new webpack.ContextReplacementPlugin(/src/, new RegExp(`^./(${enabledModules.join('|')})/.*$`));
 ```
 
 ### 进阶使用
@@ -91,7 +95,7 @@ new webpack.ContextReplacementPlugin(/src/, new RegExp(`^./(${enabledModules.joi
 比如,`src`目录下除了各个模块的目录, 还有一些通用方法类,钩子的目录, 如: `lib` 和 `hook`. 这两个目录是可能被其他子模块共同引用的. 在插件正则中修改:
 
 ```js
-new webpack.ContextReplacementPlugin(/src/, new RegExp(`^./(lib|hook|${enabledModules.join('|')})/.*$`))
+new webpack.ContextReplacementPlugin(/src/, new RegExp(`^./(lib|hook|${enabledModules.join('|')})/.*$`));
 ```
 
 ## 压缩代码, 并添加 source-map 支持

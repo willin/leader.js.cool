@@ -5,7 +5,7 @@ position: 2208
 category: '经验篇-运维'
 ---
 
-# CloudFlare Nginx 获取真实ip地址
+# CloudFlare Nginx 获取真实 ip 地址
 
 ## 配置
 
@@ -41,9 +41,11 @@ set_real_ip_from 2a06：98c0 :: / 29;
 real_ip_header X-Forwarded-For;
 ```
 
-从这个网址获取IP列表的更新: <https://www.cloudflare.com/ips/>
+从这个网址获取 IP 列表的更新: <https://www.cloudflare.com/ips/>
+
+<adsbygoogle></adsbygoogle>
 
 ## 参考资料
 
-- Nginx模块`ngx_http_realip_module`: <http://nginx.org/en/docs/http/ngx_http_realip_module.html>
-- CloudFlare 原始访客ip: <https://support.cloudflare.com/hc/en-us/articles/200170706-How-do-I-restore-original-visitor-IP-with-Nginx->
+- Nginx 模块`ngx_http_realip_module`: <http://nginx.org/en/docs/http/ngx_http_realip_module.html>
+- CloudFlare 原始访客 ip: <https://support.cloudflare.com/hc/en-us/articles/200170706-How-do-I-restore-original-visitor-IP-with-Nginx->

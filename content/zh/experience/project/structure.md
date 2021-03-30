@@ -7,7 +7,7 @@ category: '经验篇-项目'
 
 目录分配尽可能简洁、清晰。
 
-## 服务器端：MVC模式
+## 服务器端：MVC 模式
 
 项目目录结构：
 
@@ -33,7 +33,7 @@ category: '经验篇-项目'
 └── test
 ```
 
-## 客户端：MVVM模式
+## 客户端：MVVM 模式
 
 ```bash
 .
@@ -58,4 +58,6 @@ category: '经验篇-项目'
 
 ![BDD](/experience/project/test.png)
 
-上图为BDD测试目录，非测试用例文件（或目录）以`_`开头。
+上图为 BDD 测试目录，非测试用例文件（或目录）以`_`开头。
+
+<adsbygoogle></adsbygoogle>

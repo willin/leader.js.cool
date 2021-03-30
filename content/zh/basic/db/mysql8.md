@@ -22,7 +22,7 @@ MySQL 8.0 挖坑指南。
 - <https://dev.mysql.com/doc/refman/8.0/en/document-store.html>
 - <https://dev.mysql.com/doc/x-devapi-userguide/en/>
 
-
+<adsbygoogle></adsbygoogle>
 
 ## 创建索引
 
@@ -41,14 +41,7 @@ await db.getCollection(TABLE).createIndex('card_id', {
 创建索引后会生成一个类似于 `$ix_t40_r_83B1B843CAF9C969DC1795BB1891E21C1BC12246` 的虚拟字段（VIRTUAL COLUMN）。
 
 ```js
-[
-  '$ix_t40_r_83B1B843CAF9C969DC1795BB1891E21C1BC12246',
-  'text',
-  'NO',
-  'MUL',
-  null,
-  'VIRTUAL GENERATED'
-]
+['$ix_t40_r_83B1B843CAF9C969DC1795BB1891E21C1BC12246', 'text', 'NO', 'MUL', null, 'VIRTUAL GENERATED'];
 ```
 
 ## 创建唯一索引
@@ -82,10 +75,9 @@ Error: Unique indexes are currently not supported.
 
 ```js
 if (constraint.unique === true) {
-    return Promise.reject(new Error('Unique indexes are currently not supported.'));
+  return Promise.reject(new Error('Unique indexes are currently not supported.'));
 }
 ```
-
 
 ## 文档数据操作
 
@@ -119,10 +111,7 @@ async function main(): Promise<void> {
   const db = session.getSchema('world_x');
 
   const collection = db.getCollection('demo');
-  const result = await collection
-    .add({ test: 'demo02' })
-    .add({ test: 'demo03' })
-    .execute();
+  const result = await collection.add({ test: 'demo02' }).add({ test: 'demo03' }).execute();
 
   console.log(result);
   // OperationResult {
@@ -192,7 +181,6 @@ ctx.success({ page, size, total, pages, list });
 
 封装 `Add`、`Modify`、`Remove`、`FindOne`和`getSession`，不包含 `Find `。
 
-
 ### Utils.js
 
 ```js
@@ -220,24 +208,26 @@ exports.updateObj = (obj) => ({
 const mysqlx = require('@mysql/xdevapi');
 
 // 创建连接池
-const client = mysqlx.getClient({
-  host: 'localhost',
-  port: 33060,
-  user: 'root',
-  password: 'root'
-}, {
-  pooling: {
-    enabled: true,
-    maxIdleTime: 30000,
-    maxSize: 25,
-    queueTimeout: 10000
+const client = mysqlx.getClient(
+  {
+    host: 'localhost',
+    port: 33060,
+    user: 'root',
+    password: 'root'
+  },
+  {
+    pooling: {
+      enabled: true,
+      maxIdleTime: 30000,
+      maxSize: 25,
+      queueTimeout: 10000
+    }
   }
-});
+);
 
 const { createObj, updateObj } = require('./_utils');
 
 const DB_NAME = 'DATABASE_TEST';
-
 
 const models = [];
 

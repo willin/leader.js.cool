@@ -6,11 +6,11 @@ position: 2303
 category: '经验篇-Azure(Node.js)'
 ---
 
-azure-storage官方文档: <http://azure.github.io/azure-storage-node/>
+azure-storage 官方文档: <http://azure.github.io/azure-storage-node/>
 
 ## 建立连接
 
-有3种方式(文档中未提及):
+有 3 种方式(文档中未提及):
 
 ### 1. 通过环境变量
 
@@ -25,6 +25,8 @@ const azure = require('azure-storage');
 const blobService = azure.createBlobService();
 // code here
 ```
+
+<adsbygoogle></adsbygoogle>
 
 ### 2.连接字符串
 
@@ -44,7 +46,7 @@ const blobService = azure.createBlobService('storageAccount', 'storageAccessKey'
 
 ## 上传示例
 
-因为POST请求接收到的大部分是Stream.所以采用Sream的方式上传.
+因为 POST 请求接收到的大部分是 Stream.所以采用 Sream 的方式上传.
 
 ```js
 // azure.js

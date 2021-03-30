@@ -24,13 +24,14 @@ yarn init -y
   "license": "MIT"
 }
 ```
-### 初始化NPM包
+
+### 初始化 NPM 包
 
 ```bash
 npm publish
 ```
 
-NPM包位于: https://www.npmjs.com/package/vchart
+NPM 包位于: https://www.npmjs.com/package/vchart
 
 ## 1. 配置 eslint, babel, webpack
 
@@ -51,13 +52,15 @@ NPM包位于: https://www.npmjs.com/package/vchart
 
 代码提交: https://github.com/willin/vchart/commit/0b875fcea03e2afed9955887e0b79097d2111adb
 
+<adsbygoogle></adsbygoogle>
+
 ## 3. 完成组件功能并测试
 
 ## 4. 完善文档, 并提供演示
 
 演示地址: https://vchart.js.cool
 
-3/4两步合并提交的代码: https://github.com/willin/vchart/commit/58b46ece2f19f7f5e07009dc46a71da3855c5bbf
+3/4 两步合并提交的代码: https://github.com/willin/vchart/commit/58b46ece2f19f7f5e07009dc46a71da3855c5bbf
 
 ## 参考资源
 

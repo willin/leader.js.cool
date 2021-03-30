@@ -11,8 +11,10 @@ category: '经验篇-运维'
 
 开放接口文档
 
-* NewRelic: <https://rpm.newrelic.com/api/explore/applications/list>
-* 阿里云: <https://help.aliyun.com/document_detail/28617.html>
+- NewRelic: <https://rpm.newrelic.com/api/explore/applications/list>
+- 阿里云: <https://help.aliyun.com/document_detail/28617.html>
+
+<adsbygoogle></adsbygoogle>
 
 ## 创建用户
 
@@ -21,7 +23,7 @@ adduser xxx
 # 输入密码
 ```
 
-***注***：还有一个`useradd`命令，不会创建用户目录。
+**_注_**：还有一个`useradd`命令，不会创建用户目录。
 
 ```bash
 sudo vi /etc/sudoers
@@ -53,7 +55,7 @@ sudo apt-get install zsh curl git
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-### 配置ssh免密码登录
+### 配置 ssh 免密码登录
 
 ```bash
 mkdir ~/.ssh
@@ -74,7 +76,7 @@ ssh-keygen
 cat ~/.ssh/id_rsa.pub
 ```
 
-### 安装node
+### 安装 node
 
 （示例，从官网获取最新版本源码编译安装）
 
@@ -91,9 +93,9 @@ node -v
 npm -v
 ```
 
-源码编译安装Redis、OpenSSL等步骤基本相同。具体可以参考官方文档。
+源码编译安装 Redis、OpenSSL 等步骤基本相同。具体可以参考官方文档。
 
-### Nginx安装配置
+### Nginx 安装配置
 
 Nginx 1.9.5 之后的版本支持了`HTTP/2`，同时，也取消了对`SPDY`的支持。
 
@@ -108,7 +110,7 @@ cd nginx-1.11.3/
 
 #### 异常处理
 
-1.没装PCRE
+1.没装 PCRE
 
 ```
 ./configure: error: the HTTP rewrite module requires the PCRE library.
@@ -119,7 +121,7 @@ statically from the source with nginx by using --with-pcre=<path> option.
 
 <ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/>
 
-查找并下载最新版本PCRE源码，并解压
+查找并下载最新版本 PCRE 源码，并解压
 
 ```bash
 wget -c ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.gz
@@ -135,7 +137,7 @@ pwd
 ./configure --with-pcre=/home/user/nginx-1.11.3/pcre-8.38 --with-http_ssl_module --with-http_v2_module
 ```
 
-2.没装OpenSSL
+2.没装 OpenSSL
 
 ```
 ./configure: error: SSL modules require the OpenSSL library.
@@ -146,7 +148,7 @@ with nginx by using --with-openssl=<path> option.
 
 <https://www.openssl.org/source/>
 
-查找并下载最新版本OpenSSL源码，并解压
+查找并下载最新版本 OpenSSL 源码，并解压
 
 ```bash
 wget -c https://www.openssl.org/source/openssl-1.0.2h.tar.gz
@@ -156,13 +158,13 @@ pwd
 # /home/user/nginx-1.11.3/openssl-1.0.2h
 ```
 
-***注***： `openssl-1.1.0-pre6` 版本经测试无法安装。
+**_注_**： `openssl-1.1.0-pre6` 版本经测试无法安装。
 
 ```bash
 ./configure --with-pcre=/home/user/nginx-1.11.3/pcre-8.38 --with-openssl=/home/user/nginx-1.11.3/openssl-1.0.2h --with-http_ssl_module --with-http_v2_module
 ```
 
-3. 没装zlib
+3. 没装 zlib
 
 ```
 ./configure: error: the HTTP gzip module requires the zlib library.
@@ -173,7 +175,7 @@ statically from the source with nginx by using --with-zlib=<path> option.
 
 <http://www.zlib.net/>
 
-查找并下载最新版本Zlib源码，并解压
+查找并下载最新版本 Zlib 源码，并解压
 
 ```bash
 wget -c http://zlib.net/zlib-1.2.8.tar.gz
@@ -194,7 +196,7 @@ make
 sudo make install
 ```
 
-#### apt-get 方式安装nginx
+#### apt-get 方式安装 nginx
 
 ```bash
 cd /etc/apt/
@@ -236,7 +238,6 @@ Va3l3WuB+rgKjsQ=
 
 然后`:wq`保存
 
-
 ```bash
 sudo apt-key add nginx_signing.key
 sudo vi sources.list
@@ -264,7 +265,7 @@ sudo dpkg -i --force-overwrite  /var/cache/apt/archives/nginx_1.12.1-1~trusty_am
 sudo apt-get -f install
 ```
 
-#### 配置Nginx
+#### 配置 Nginx
 
 参考修改安装目录下的默认配置 `conf/nginx.conf`：
 
@@ -293,7 +294,7 @@ http {
 }
 ```
 
-HTTP/2项目配置：
+HTTP/2 项目配置：
 
 ```
 server {

@@ -5,7 +5,9 @@ position: 2112
 category: '经验篇-项目'
 ---
 
-ER图，略。
+ER 图，略。
+
+<adsbygoogle></adsbygoogle>
 
 ## 用户基本信息表
 
@@ -28,7 +30,7 @@ CREATE TABLE `user` (
 
 说明：
 
-1. `uid` 主键没有设置自增id，可以随机分配，但需要在不同数据库上分号段注册，以及需要判断是否已注册
+1. `uid` 主键没有设置自增 id，可以随机分配，但需要在不同数据库上分号段注册，以及需要判断是否已注册
 2. `password` 密码不能直接`MD5`或`SHA1`加密存储，需要加盐加密
 3. `createdat`表示注册时间，`updatedat`表示密码修改、手机绑定等更新时间
 4. 用户名和手机号均为唯一字段
@@ -57,8 +59,7 @@ CREATE TABLE `usermeta` (
 
 ## 其他表
 
-部分信息不需要存入数据库，如日志，可以存在log文件中；登录信息，可以用Redis等缓存存储。综合考虑性能、成本及服务器配置决定。
-
+部分信息不需要存入数据库，如日志，可以存在 log 文件中；登录信息，可以用 Redis 等缓存存储。综合考虑性能、成本及服务器配置决定。
 
 再讲解一种，针对`开发者`的表设计。
 
@@ -74,4 +75,4 @@ CREATE TABLE `usermeta` (
 
 可以在系统的业务逻辑里加入一些限制，如个人开发者可以升级为企业开发者，企业开发者不能再改为个人开发者之类的。
 
-***Tips***：JavaScript中命名法则最好使用`驼峰法`，如`userActions`。而MySQL中不区分大小写，所以可以采用下划线命名法，如`user_actions`，在`SELECT`查询时使用`AS aliasName`设置别名即可。
+**_Tips_**：JavaScript 中命名法则最好使用`驼峰法`，如`userActions`。而 MySQL 中不区分大小写，所以可以采用下划线命名法，如`user_actions`，在`SELECT`查询时使用`AS aliasName`设置别名即可。

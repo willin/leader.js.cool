@@ -16,7 +16,7 @@ category: '知识篇-Node.js'
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 ```
 
-以10为例,假设服务器为4CPU,那么每个CPU处理的任务分别为:
+以 10 为例,假设服务器为 4CPU,那么每个 CPU 处理的任务分别为:
 
 - CPU1: [1, 2, 3]
 - CPU2: [4, 5, 6]
@@ -62,7 +62,7 @@ const cluster = require('cluster');
 })();
 ```
 
-Master任务: `./cluster/master.js`
+Master 任务: `./cluster/master.js`
 
 ```js
 const cluster = require('cluster');
@@ -89,7 +89,7 @@ module.exports = async () => {
 };
 ```
 
-Cluster任务: `./cluster/worker.js`
+Cluster 任务: `./cluster/worker.js`
 
 ```js
 const cluster = require('cluster');
@@ -113,6 +113,8 @@ module.exports = async () => {
 };
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ## 多服务器多核心分配调度
 
 假设处理的任务列表如下:
@@ -123,24 +125,23 @@ const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 
 
 有多台负载均衡器,仅确定服务器数量,不确定服务器硬件配置.
 
+假设目前有 3 台服务器,分别为 `4` 核心, `6` 核心, `8` 核心.
 
-假设目前有3台服务器,分别为 `4` 核心, `6` 核心, `8` 核心.
+按照核心性能进行优先调度,那么每个 CPU 处理的任务分别为:
 
-按照核心性能进行优先调度,那么每个CPU处理的任务分别为:
-
-- 服务器1 (`4` 核心, 1.8GHz)
+- 服务器 1 (`4` 核心, 1.8GHz)
   - CPU1: [ 29 ]
   - CPU2: [ 30 ]
   - CPU3: [ 31 ]
   - CPU4: [ 32 ]
-- 服务器2 (`6` 核心, 2.8GHz)
+- 服务器 2 (`6` 核心, 2.8GHz)
   - CPU1: [ 1, 2 ]
   - CPU2: [ 3, 4 ]
   - CPU3: [ 5, 6 ]
   - CPU4: [ 7, 8 ]
   - CPU5: [ 9, 10 ]
   - CPU6: [ 11, 12 ]
-- 服务器3 (`8` 核心, 2.0GHz)
+- 服务器 3 (`8` 核心, 2.0GHz)
   - CPU1: [ 13, 14 ]
   - CPU2: [ 15, 16 ]
   - CPU3: [ 17, 18 ]
@@ -164,19 +165,14 @@ const speed = os.cpus().reduce((sum, cpu) => sum + cpu.speed, 0) / numCPUs;
 const hostname = os.hostname();
 // 获取内网ip
 const eth0 = os.networkInterfaces().eth0;
-const ip = typeof eth0 === 'undefined' ? '' : eth0.filter(x => x.family === 'IPv4')[0].address;
+const ip = typeof eth0 === 'undefined' ? '' : eth0.filter((x) => x.family === 'IPv4')[0].address;
 
 // ./cluster/master.js
 module.exports = async () => {
   // 上报服务器信息到公共区域, 如 redis
-
   // 等待 `3` 台服务器全部上报完成
-
   // 性能最高的一台执行任务调度,得到任务列表
-
   // 写入公共区域,下派任务到其他服务器
-
   // 下派本地cluster任务
-
 };
 ```

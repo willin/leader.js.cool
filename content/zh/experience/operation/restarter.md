@@ -9,7 +9,7 @@ category: '经验篇-运维'
 
 ![Image](/experience/operation/restarter1.png)
 
-虽然CRP中工作流可以一个点流出至多个点，但只有第一个子任务会执行。
+虽然 CRP 中工作流可以一个点流出至多个点，但只有第一个子任务会执行。
 
 所以我将自动重启任务改为了串行执行。
 
@@ -21,7 +21,7 @@ category: '经验篇-运维'
 
 后续的每个工作流可以是每一台单独服务器或是每几台相同环境的负载均衡机器。
 
-## 重启Shell脚本
+## 重启 Shell 脚本
 
 ```
 pm2 kill
@@ -30,3 +30,5 @@ rm -f /home/xxx-user/xxx-project2/logs/*.log
 pm2 start /home/xxx-user/xxx-project1/app.json
 pm2 start /home/xxx-user/xxx-project2/app.json
 ```
+
+<adsbygoogle></adsbygoogle>

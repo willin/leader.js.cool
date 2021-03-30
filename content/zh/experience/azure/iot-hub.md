@@ -6,14 +6,12 @@ position: 2301
 category: '经验篇-Azure(Node.js)'
 ---
 
-
-!> IOT Hub应用实际开发过程中的一些注意细节
-
+!> IOT Hub 应用实际开发过程中的一些注意细节
 
 资源:
 
 - 创建设备: <https://www.npmjs.com/package/azure-iothub>
-- IoT Hub(基于Event Hubs)消息管理: <https://www.npmjs.com/package/azure-event-hubs>
+- IoT Hub(基于 Event Hubs)消息管理: <https://www.npmjs.com/package/azure-event-hubs>
 - 开发调试工具: <https://www.npmjs.com/package/iothub-explorer>
 
 ## 简单发送接收示例
@@ -47,6 +45,8 @@ registry.create(device, (err, deviceInfo, res) => {
 });
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ### 2. 模拟设备发送消息
 
 ```js
@@ -72,7 +72,7 @@ const connectCallback = function (err) {
 
     // Create a message and send it to the IoT Hub every second
     setInterval(() => {
-      const windSpeed = 10 + (Math.random() * 4);
+      const windSpeed = 10 + Math.random() * 4;
       const data = JSON.stringify({ deviceId: 'myFirstNodeDevice', windSpeed });
       const message = new Message(data);
       console.log(`Sending message: ${message.getData()}`);
@@ -106,14 +106,19 @@ const printMessage = function (message) {
 
 const client = EventHubClient.fromConnectionString(connectionString);
 
-client.open()
-    .then(client.getPartitionIds.bind(client))
-    .then(partitionIds => partitionIds.map(partitionId => client.createReceiver('$Default', partitionId, { startAfterTime: Date.now()}).then((receiver) => {
-      console.log(`Created partition receiver: ${partitionId}`);
-      receiver.on('errorReceived', printError);
-      receiver.on('message', printMessage);
-    })))
-    .catch(printError);
+client
+  .open()
+  .then(client.getPartitionIds.bind(client))
+  .then((partitionIds) =>
+    partitionIds.map((partitionId) =>
+      client.createReceiver('$Default', partitionId, { startAfterTime: Date.now() }).then((receiver) => {
+        console.log(`Created partition receiver: ${partitionId}`);
+        receiver.on('errorReceived', printError);
+        receiver.on('message', printMessage);
+      })
+    )
+  )
+  .catch(printError);
 ```
 
 注意:
@@ -123,15 +128,7 @@ client.open()
 - `message`包含的属性如下:
 
 ```js
-[ 'partitionKey',
-  'body',
-  'enqueuedTimeUtc',
-  'offset',
-  'properties',
-  'applicationProperties',
-  'sequenceNumber',
-  'annotations',
-  'systemProperties' ]
+['partitionKey', 'body', 'enqueuedTimeUtc', 'offset', 'properties', 'applicationProperties', 'sequenceNumber', 'annotations', 'systemProperties'];
 ```
 
 消息体示例:
@@ -156,9 +153,9 @@ annotations { 'x-opt-sequence-number': 182,
 systemProperties undefined
 ```
 
-## 配置路由(需要Event Hubs)
+## 配置路由(需要 Event Hubs)
 
-### 1. 创建Event Hubs
+### 1. 创建 Event Hubs
 
 ### 2. 从事件中心创建实体
 
@@ -176,7 +173,7 @@ systemProperties undefined
 Endpoint=sb://xxxx.servicebus.chinacloudapi.cn/;SharedAccessKeyName=iothubroutes_xxxx;SharedAccessKey=xxxx;EntityPath=xxxx
 ```
 
-### 4. 创建Endpoint
+### 4. 创建 Endpoint
 
 ![iothub-endpoints](https://user-images.githubusercontent.com/1890238/27019555-23edcb5a-4eff-11e7-89e6-57f88d241612.png)
 
@@ -213,7 +210,7 @@ const connectCallback = function (err) {
 
     // Create a message and send it to the IoT Hub every second
     setInterval(() => {
-      const windSpeed = 10 + (Math.random() * 4);
+      const windSpeed = 10 + Math.random() * 4;
       const data = JSON.stringify({ deviceId: 'myFirstNodeDevice', windSpeed });
       const message = new Message(data);
       // 随机发送到路由或默认事件上
@@ -237,12 +234,12 @@ client.open(connectCallback);
 
 复制 IoT Hub 侦听源码,修改连接字符串:
 
-
 ```js
 const EventHubClient = require('azure-event-hubs').Client;
 
 // const connectionString = 'HostName=[修改连接主机];SharedAccessKeyName=iothubowner;SharedAccessKey=[修改连接密钥]';
-const connectionString = 'Endpoint=[sb://修改连接主机.servicebus.chinacloudapi.cn/];SharedAccessKeyName=[修改连接策略];SharedAccessKey=[x修改连接密钥];EntityPath=[事件实体]'
+const connectionString =
+  'Endpoint=[sb://修改连接主机.servicebus.chinacloudapi.cn/];SharedAccessKeyName=[修改连接策略];SharedAccessKey=[x修改连接密钥];EntityPath=[事件实体]';
 
 const printError = function (err) {
   console.log(err.message);
@@ -257,19 +254,24 @@ const printMessage = function (message) {
 
 const client = EventHubClient.fromConnectionString(connectionString);
 
-client.open()
-    .then(client.getPartitionIds.bind(client))
-    .then(partitionIds => partitionIds.map(partitionId => client.createReceiver('$Default', partitionId, { startAfterTime: Date.now()}).then((receiver) => {
-      console.log(`Created partition receiver: ${partitionId}`);
-      receiver.on('errorReceived', printError);
-      receiver.on('message', printMessage);
-    })))
-    .catch(printError);
+client
+  .open()
+  .then(client.getPartitionIds.bind(client))
+  .then((partitionIds) =>
+    partitionIds.map((partitionId) =>
+      client.createReceiver('$Default', partitionId, { startAfterTime: Date.now() }).then((receiver) => {
+        console.log(`Created partition receiver: ${partitionId}`);
+        receiver.on('errorReceived', printError);
+        receiver.on('message', printMessage);
+      })
+    )
+  )
+  .catch(printError);
 ```
 
 #### 测试结果
 
-- 发送到默认路由的,只能被IoT Hub侦听应用捕获.
-- 发送到刚才配置的测试路由的,只能被Event Hubs侦听应用捕获.
+- 发送到默认路由的,只能被 IoT Hub 侦听应用捕获.
+- 发送到刚才配置的测试路由的,只能被 Event Hubs 侦听应用捕获.
 
 至此,完成路由转发.

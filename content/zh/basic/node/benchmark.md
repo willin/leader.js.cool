@@ -9,11 +9,11 @@ category: '知识篇-Node.js'
 
 ## 使用场景
 
-技术选型，如图形验证码，在NPM包选取使用`canvas`还是`ccap`时可以用。
+技术选型，如图形验证码，在 NPM 包选取使用`canvas`还是`ccap`时可以用。
 
 或，一个问题，有多种解决方案，选择采用哪一种方案的时候。
 
-***注意：*** 所有需要做选择的场景，最好都先做一下对比。
+**_注意：_** 所有需要做选择的场景，最好都先做一下对比。
 
 ## 结果报告示例
 
@@ -29,30 +29,32 @@ Left Shift (ATL v1.0.0)
   << < (false) ................................... 2,458,286 op/s
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ## 示例代码
 
 ```js
-suite('ATL', function() {
-  bench('if > (true)', function(){
-    atl('1.6.7','1.4.4');
+suite('ATL', function () {
+  bench('if > (true)', function () {
+    atl('1.6.7', '1.4.4');
   });
-  bench('if = (true)', function(){
-    atl('1.4.4','1.4.4');
+  bench('if = (true)', function () {
+    atl('1.4.4', '1.4.4');
   });
-  bench('if < (false)', function(){
-    atl('1.1.6','1.4.4');
+  bench('if < (false)', function () {
+    atl('1.1.6', '1.4.4');
   });
 });
 
-suite('Left Shift', function(){
-  bench('<< > (true)', function(){
-    atls('1.6.7','1.4.4');
+suite('Left Shift', function () {
+  bench('<< > (true)', function () {
+    atls('1.6.7', '1.4.4');
   });
-  bench('<< = (true)', function(){
-    atls('1.4.4','1.4.4');
+  bench('<< = (true)', function () {
+    atls('1.4.4', '1.4.4');
   });
-  bench('<< < (false)', function(){
-    atls('1.1.6','1.4.4');
+  bench('<< < (false)', function () {
+    atls('1.1.6', '1.4.4');
   });
 });
 ```

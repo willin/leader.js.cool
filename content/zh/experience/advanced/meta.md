@@ -6,7 +6,7 @@ position: 2403
 category: '经验篇-进阶'
 ---
 
-ECMAScript 6中引入了相关 API —— `Proxy`。
+ECMAScript 6 中引入了相关 API —— `Proxy`。
 
 参考文档： <https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy>
 
@@ -14,8 +14,8 @@ ECMAScript 6中引入了相关 API —— `Proxy`。
 
 ```js
 var loggedObj = new Proxy(obj, {
-  set: function(target, name, value, receiver) {
-    var success = Reflect.set(target,name, value, receiver);
+  set: function (target, name, value, receiver) {
+    var success = Reflect.set(target, name, value, receiver);
     if (success) {
       console.log('property ' + name + ' on ' + target + ' set to ' + value);
     }
@@ -38,9 +38,11 @@ var loggedObj = new Proxy(obj, {
 
 下面用例个示例来讲解何为优雅的元编程解决方案。
 
-## API接口 SDK 封装
+<adsbygoogle></adsbygoogle>
 
-本章节以 ***腾讯云/QCloud*** 为例。
+## API 接口 SDK 封装
+
+本章节以 **_腾讯云/QCloud_** 为例。
 
 ### 云服务器 CVM
 
@@ -112,7 +114,26 @@ class Cvm(){
 import request from './request';
 
 // 列举 API 别名，包括 QCloud CVM、CDN、CDB 等所有服务
-const SDKS = ['bm', 'cdn', 'cdb', 'cvm', 'cbs', 'csec', 'dayu', 'lb', 'monitor', 'scaling', 'sqlserver', 'redis', 'cmem', 'trade', 'tdsql', 'vpc', 'wenzhi', 'yunsou'];
+const SDKS = [
+  'bm',
+  'cdn',
+  'cdb',
+  'cvm',
+  'cbs',
+  'csec',
+  'dayu',
+  'lb',
+  'monitor',
+  'scaling',
+  'sqlserver',
+  'redis',
+  'cmem',
+  'trade',
+  'tdsql',
+  'vpc',
+  'wenzhi',
+  'yunsou'
+];
 
 // 默认参数
 const DEFAULTS = {
@@ -123,7 +144,7 @@ const DEFAULTS = {
   Timestamp: parseInt(new Date() / 1000, 10)
 };
 
-const lazyLoad = service => (options) => {
+const lazyLoad = (service) => (options) => {
   // 设置各服务的 api host
   const settings = {
     api: `https://${service}.api.qcloud.com/v2/index.php`,
@@ -134,20 +155,22 @@ const lazyLoad = service => (options) => {
   // 核心代码开始
   // 核心代码开始
   // 核心代码开始
-  return new Proxy({}, {  // 创建代理
-    // 定义 get 方法
-    // 例子：
-    // const obj = new Obj();
-    // obj.prop 获取属性，用的 get 方法
-    // obj.prop() 获取方法，用的依然是 get 方法
-    get: (target, property) =>
-      (opts) => {
+  return new Proxy(
+    {},
+    {
+      // 创建代理
+      // 定义 get 方法
+      // 例子：
+      // const obj = new Obj();
+      // obj.prop 获取属性，用的 get 方法
+      // obj.prop() 获取方法，用的依然是 get 方法
+      get: (target, property) => (opts) => {
         // 非重要，将 Action 改为首字母大写，如 'ListRegions'
         const action = property.replace(property.charAt(0), property.charAt(0).toUpperCase());
 
         // 拼装请求参数
         let params = Object.assign({}, DEFAULTS, options);
-        params = Object.assign({Action: property}, params, opts);
+        params = Object.assign({ Action: property }, params, opts);
         // 预留了 GET/POST 自定义
         params.method = settings.actions[action] || 'post';
 
@@ -155,7 +178,8 @@ const lazyLoad = service => (options) => {
         // 由于不同接口均是 HTTP/S 方式请求，只需将对应方法封装完成，即可实现复用
         return request(settings.api, params);
       }
-  });
+    }
+  );
 };
 
 // LazyLoad 懒加载优化性能，但对于元编程来讲收益并不太大
@@ -167,11 +191,11 @@ SDKS.forEach((item) => {
 使用示例：
 
 ```js
-import {TRADE} from 'wqcloud';
+import { TRADE } from 'wqcloud';
 const trade = TRADE(options);
 
 // ES7 Async/Await 方式
-(async() => {
+(async () => {
   const userInfo = await trade.DescribeUserInfo(params);
   console.log(userInfo);
 })();
@@ -183,4 +207,3 @@ trade.DescribeUserInfo(params).then((userInfo) => {
 ```
 
 完整项目源码： <https://github.com/willin/wqcloud>
-

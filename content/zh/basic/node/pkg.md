@@ -27,7 +27,7 @@ npm install -O package-name
 
 ### 命令
 
-Package.json里：
+Package.json 里：
 
 ```js
 "scripts": {
@@ -59,8 +59,10 @@ npm run test
 
 避免使用`npm install -g`安装的`CLI`工具，推荐：
 
-* 通过`npm install --save-dev CLI`安装
-* 使用`./node_modules/.bin/CLI`
+- 通过`npm install --save-dev CLI`安装
+- 使用`./node_modules/.bin/CLI`
+
+<adsbygoogle></adsbygoogle>
 
 ## Yarn
 
@@ -118,4 +120,4 @@ yarn remove [package]
 yarn
 ```
 
-前提项目目录下存在 `yarn.lock` 文件，npm添加的项目无法直接安装，需要通过yarn安装生成该lock文件。
+前提项目目录下存在 `yarn.lock` 文件，npm 添加的项目无法直接安装，需要通过 yarn 安装生成该 lock 文件。

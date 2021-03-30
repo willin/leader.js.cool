@@ -5,15 +5,15 @@ position: 1104
 category: '知识篇-必备神器'
 ---
 
-# 安装配置IDE
+# 安装配置 IDE
 
-适合前端、后端、全栈工程师，尤其以Javascript（Node.js）为主。
+适合前端、后端、全栈工程师，尤其以 Javascript（Node.js）为主。
 
-目前我个人用的最多的是VS Code。
+目前我个人用的最多的是 VS Code。
 
-该章节不过多对比，根据个人喜好选择。入门请使用WebStorm，进阶Atom、VS Code， Sublime Text不适合项目开发使用，比较适合调试使用。
+该章节不过多对比，根据个人喜好选择。入门请使用 WebStorm，进阶 Atom、VS Code， Sublime Text 不适合项目开发使用，比较适合调试使用。
 
-具体配置及按键映射，如Atom和VS Code的，也需要根据个人喜好来设置，可以在安装后查看全局配置，自行修改调整。记得做好备份。
+具体配置及按键映射，如 Atom 和 VS Code 的，也需要根据个人喜好来设置，可以在安装后查看全局配置，自行修改调整。记得做好备份。
 
 ## WebStorm
 
@@ -21,27 +21,29 @@ category: '知识篇-必备神器'
 
 适合新手入门。
 
+<adsbygoogle></adsbygoogle>
+
 ## Sublime Text 3
 
 ### 安装
 
 下载地址: <http://www.sublimetext.com/3>
 
-### 配置subl快捷命令(OS X)
+### 配置 subl 快捷命令(OS X)
 
-图省事的话可以直接先尝试在终端(或iTerm)里 执行：
+图省事的话可以直接先尝试在终端(或 iTerm)里 执行：
 
 ```
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 ```
 
--------------------
+---
 
 #### 详细过程分解
 
-Finder中打开应用程序目录,找到 `Sublime Text`应用,右键菜单选择 `显示包内容`，
+Finder 中打开应用程序目录,找到 `Sublime Text`应用,右键菜单选择 `显示包内容`，
 
-进入 `Contents -> SharedSupport -> bin` 目录,看到一个subl文件
+进入 `Contents -> SharedSupport -> bin` 目录,看到一个 subl 文件
 
 打开终端,输入：
 
@@ -57,20 +59,19 @@ mkdir /usr/local/bin
 
 然后再重新执行上一条命令。
 
-
 ### 安装 Package Control
 
-安装完成后,打开Sublime , 按下 `ctrl + ~`,在弹出的控制台中输入:
+安装完成后,打开 Sublime , 按下 `ctrl + ~`,在弹出的控制台中输入:
 
 ```python
 import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
 ```
 
-以后使用快捷键 `⌘(command) + ⇧(shift) + p` 输入 Install, 就能够调出Package Install进行Sublime的插件主题安装了.
+以后使用快捷键 `⌘(command) + ⇧(shift) + p` 输入 Install, 就能够调出 Package Install 进行 Sublime 的插件主题安装了.
 
 ### 安装配置主题
 
-调出Package Install, 输入 `theme`, 大多数主题都是以 `Theme:` 开头,可以鼠标或键盘上下键选择,点击或回车便开始进行安装。
+调出 Package Install, 输入 `theme`, 大多数主题都是以 `Theme:` 开头,可以鼠标或键盘上下键选择,点击或回车便开始进行安装。
 
 安装完成后从 `Preference (左上角苹果按钮旁边点Sublime Text) -> Color Scheme` 选择你所安装的主题并启用。
 
@@ -88,7 +89,6 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 为
 
-
 ```
 	"terminal": "iTerm.sh",
 ```
@@ -99,9 +99,9 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 下载地址： <https://atom.io/>
 
-进阶使用，或VS Code。
+进阶使用，或 VS Code。
 
-之前我个人一直用的WebStorm，一方面这是个付费的IDE；另一方面是该环境内存开销比较大，自带功能太多，对于新人来讲是不错的选择，但是慢慢的对开发熟悉后，并不太需要那些辅助的功能和插件，所以会尝试一些更轻量级、灵活的编辑器。
+之前我个人一直用的 WebStorm，一方面这是个付费的 IDE；另一方面是该环境内存开销比较大，自带功能太多，对于新人来讲是不错的选择，但是慢慢的对开发熟悉后，并不太需要那些辅助的功能和插件，所以会尝试一些更轻量级、灵活的编辑器。
 
 ### 插件列表 / Plugin List
 
@@ -363,7 +363,6 @@ Community Packages (49) /Users/willin/.atom/packages
 
 (`快捷键`根据个人喜好和习惯设定 / up to your habit)
 
-
 ```
 'atom-text-editor':
   'cmd-alt-l': 'atom-beautify:beautify-editor'
@@ -387,17 +386,17 @@ Community Packages (49) /Users/willin/.atom/packages
 
 下载地址： <https://code.visualstudio.com/>
 
-在用了半年多Atom之后，一次更新导致了Terminal插件失效，所以转到了VS Code。
+在用了半年多 Atom 之后，一次更新导致了 Terminal 插件失效，所以转到了 VS Code。
 
-在1.6之后的版本中内置了终端，所以还算不错。
+在 1.6 之后的版本中内置了终端，所以还算不错。
 
-比Atom快了很多，尤其是压缩过的js代码，在Atom中打开简直就是噩梦，可能是因为代码自动格式化引起的，原因不详。
+比 Atom 快了很多，尤其是压缩过的 js 代码，在 Atom 中打开简直就是噩梦，可能是因为代码自动格式化引起的，原因不详。
 
-VS Code不足在于：
+VS Code 不足在于：
 
-* ESLint 报错不能直接跳转到网站详细说明
-* 没有MiniMap插件
-* 没有Power Mode插件，当然这个只是自嗨用的，无关痛痒
+- ESLint 报错不能直接跳转到网站详细说明
+- 没有 MiniMap 插件
+- 没有 Power Mode 插件，当然这个只是自嗨用的，无关痛痒
 
 整体来讲，还是头一次对微软的东西这么满意。
 
@@ -439,12 +438,12 @@ VS Code不足在于：
 
 ### 插件
 
-* Auto Close Tag
-* ESLint
-* exports autocomplete
-* Material Icon Theme
-* Material-theme
-* Project Manager
-* Sass
-* TODO Highlight
-* VS Color Picker
+- Auto Close Tag
+- ESLint
+- exports autocomplete
+- Material Icon Theme
+- Material-theme
+- Project Manager
+- Sass
+- TODO Highlight
+- VS Color Picker

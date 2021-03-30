@@ -6,7 +6,7 @@ position: 1301
 category: 知识篇-Vanilla JS
 ---
 
-你也许并不需要jQuery之类的库来协助开发。
+你也许并不需要 jQuery 之类的库来协助开发。
 
 ## 事件委派
 
@@ -14,15 +14,13 @@ category: 知识篇-Vanilla JS
 
 ```js
 var handleClick = function (e) {
-	if (e.target && e.target.nodeName.toLowerCase() === 'button') {
-		// Codes Here
-
-	}
-}
+  if (e.target && e.target.nodeName.toLowerCase() === 'button') {
+    // Codes Here
+  }
+};
 
 parentNode.addEventListener('click', handleClick);
 ```
-
 
 ## Deep Clone
 
@@ -36,8 +34,8 @@ var obj1 = {
     key3: 'value3',
     key4: 'value4'
   }
-}
-var obj2 = Object.assign({},obj1);
+};
+var obj2 = Object.assign({}, obj1);
 obj2.children.key3 = 'test';
 console.log(obj1.children);
 // { key3: 'test', key4: 'value4' }
@@ -46,8 +44,10 @@ console.log(obj1.children);
 快速解决方案：
 
 ```js
-const obj2 = JSON.parse(JSON.stringify( obj1 ));
+const obj2 = JSON.parse(JSON.stringify(obj1));
 ```
+
+<adsbygoogle></adsbygoogle>
 
 ## Scroll Debounce
 
@@ -58,9 +58,10 @@ const obj2 = JSON.parse(JSON.stringify( obj1 ));
 ```js
 function debounce(func, wait = 20, immediate = true) {
   var timeout;
-  return function() {
-    var context = this, args = arguments;
-    var later = function() {
+  return function () {
+    var context = this,
+      args = arguments;
+    var later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
@@ -69,9 +70,8 @@ function debounce(func, wait = 20, immediate = true) {
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
   };
-};
+}
 ```
-
 
 示例代码：
 
@@ -80,13 +80,13 @@ function testFunc(e) {
   console.count(e);
 }
 
-window.addEventListener('scroll', ()=>console.count('bounce'));
+window.addEventListener('scroll', () => console.count('bounce'));
 window.addEventListener('scroll', debounce(testFunc));
 ```
 
 在浏览器中测试。
 
-## 遍历用Map还是For
+## 遍历用 Map 还是 For
 
 同是遍历，但实际有很大不同。
 
@@ -97,7 +97,7 @@ window.addEventListener('scroll', debounce(testFunc));
 改变自身。
 
 ```js
-[1,2,3,4,5].map(x => x+1)
+[1, 2, 3, 4, 5].map((x) => x + 1);
 // [ 2, 3, 4, 5, 6 ]
 ```
 
@@ -105,9 +105,9 @@ window.addEventListener('scroll', debounce(testFunc));
 
 只是循环。
 
-### Benchmark测试
+### Benchmark 测试
 
-benchmark脚本：
+benchmark 脚本：
 
 ```js
 suite('iterator', function () {
@@ -131,7 +131,7 @@ suite('iterator', function () {
   });
   bench('map', function () {
     const a = [1, 2, 3, 4, 5];
-    a.map(x => x);
+    a.map((x) => x);
   });
 });
 ```
@@ -162,14 +162,13 @@ suite('iterator', function () {
 ## 触发 react onchange 事件并赋值
 
 ```js
-  var setValue = function (element, value) {
-    element.value = value;
-    if ('createEvent' in document) {
-      var event = new Event('input', { bubbles: true });
-      element.dispatchEvent(event);
-    }
-    else {
-      element.fireEvent('onchange');
-    }
-  };
+var setValue = function (element, value) {
+  element.value = value;
+  if ('createEvent' in document) {
+    var event = new Event('input', { bubbles: true });
+    element.dispatchEvent(event);
+  } else {
+    element.fireEvent('onchange');
+  }
+};
 ```

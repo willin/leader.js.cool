@@ -5,7 +5,7 @@ position: 1407
 category: '知识篇-Node.js'
 ---
 
-注册npm账号，并登陆。
+注册 npm 账号，并登陆。
 
 ```bash
 npm login
@@ -32,7 +32,7 @@ package.json：
 }
 ```
 
-## 发布至NPM
+## 发布至 NPM
 
 ### 1.检查`.gitignore`和`.npmignore`文件是否配置好
 
@@ -62,7 +62,9 @@ npm publish
 npm publish --tag beta
 ```
 
-## 发布私有模块到NPM
+<adsbygoogle></adsbygoogle>
+
+## 发布私有模块到 NPM
 
 初始化项目的时候可以加入参数：
 

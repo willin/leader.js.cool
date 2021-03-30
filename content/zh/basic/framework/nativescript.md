@@ -7,9 +7,9 @@ category: 知识篇-常用框架
 
 ## 安装
 
-***注意***：
+**_注意_**：
 
-MacOS 10.12 及之前版本 系统ruby的版本为2.0.0，其中有一个依赖项的最新版本需要2.2.2以上。
+MacOS 10.12 及之前版本 系统 ruby 的版本为 2.0.0，其中有一个依赖项的最新版本需要 2.2.2 以上。
 
 先手动安装该依赖的旧版本：
 
@@ -19,13 +19,13 @@ gem install activesupport -v 4.2.7.1
 
 然后参考文档进行安装：<http://docs.nativescript.org/start/ns-setup-os-x>
 
-安装cocoapods之后，执行：
+安装 cocoapods 之后，执行：
 
 ```bash
 pod setup --verbose
 ```
 
-进行cocoapods初始化。
+进行 cocoapods 初始化。
 
 最终执行 `tns doctor` 检查是否安装成功。
 
@@ -48,6 +48,8 @@ pod setup --verbose
 └── tsconfig.json
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ### 运行脚本
 
 ```bash
@@ -55,7 +57,7 @@ tns run android
 tns livesync android
 ```
 
-tns run命令参数：
+tns run 命令参数：
 
 ```
 * --watch - If set, when you save changes to the project, changes are automatically synchronized to the connected device.

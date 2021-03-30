@@ -35,7 +35,9 @@ category: '经验篇-运维'
 
 ![Image](/experience/operation/workflow3-2.png)
 
-提示：CRP提供的测试环境是Ubuntu，未安装数据库，但据说可以自己安装，目前还没有尝试过。
+提示：CRP 提供的测试环境是 Ubuntu，未安装数据库，但据说可以自己安装，目前还没有尝试过。
+
+<adsbygoogle></adsbygoogle>
 
 ### 注意点
 
@@ -49,7 +51,7 @@ category: '经验篇-运维'
 
 ##### 目标机器
 
-填入测试服务器ip。
+填入测试服务器 ip。
 
 ##### 部署路径
 
@@ -71,7 +73,7 @@ category: '经验篇-运维'
 3. 更新依赖项
 4. 启动测试脚本
 
-Shell命令
+Shell 命令
 
 ```bash
 cd /home/xxx-user/xxx-project/
@@ -89,7 +91,7 @@ npm test
 
 SSH 登入服务的用户名称
 
-提示: 系统需要您的目标机器添加部署公钥方可执行部署任务。请将公钥拷贝到服务器部署用户目录的$HOME/.ssh/authorized_keys文件中。
+提示: 系统需要您的目标机器添加部署公钥方可执行部署任务。请将公钥拷贝到服务器部署用户目录的$HOME/.ssh/authorized_keys 文件中。
 
 ## 4.自动部署
 

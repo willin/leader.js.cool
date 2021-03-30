@@ -39,6 +39,8 @@ callback 的第三个参数，调用 map 方法的数组。
 
 由回调函数的返回值组成的新数组。
 
+<adsbygoogle></adsbygoogle>
+
 ## 例题
 
 <https://www.codewars.com/kata/double-char>
@@ -58,5 +60,9 @@ Good Luck!
 答案：
 
 ```js
-const doubleChar = str => str.split('').map(i => i.repeat(2)).join('');
+const doubleChar = (str) =>
+  str
+    .split('')
+    .map((i) => i.repeat(2))
+    .join('');
 ```

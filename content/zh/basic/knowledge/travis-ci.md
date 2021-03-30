@@ -39,6 +39,8 @@ after_success:
 
 另外， git 用户的邮箱决定了你的贡献度是否显示在 github 上，也可以随便写一个，如 `deploy@travis-ci.org`。
 
+<adsbygoogle></adsbygoogle>
+
 ## 创建计划任务
 
 - Branch: 一般 Master

@@ -37,13 +37,15 @@ list.forEach((item) => {
 yarn add PackageName --ignore-engines
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ## dependency 版本落后
 
 以 `tim-event-processor-host` 包为例, 其中用到了一个子模块 `cerulean` 来处理 `azure-storage`
 
-我们想要用最新版本的`azure-storage`,但如果要一级级向上去提交`Pull Request`并且去等 npm包作者更新, 实在是太慢太傻了.
+我们想要用最新版本的`azure-storage`,但如果要一级级向上去提交`Pull Request`并且去等 npm 包作者更新, 实在是太慢太傻了.
 
-那么我们就可以利用 `postinstall` 特性来删除旧版本的 npm包并使用新版本的.
+那么我们就可以利用 `postinstall` 特性来删除旧版本的 npm 包并使用新版本的.
 
 ### 原理讲解
 

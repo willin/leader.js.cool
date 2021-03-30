@@ -9,7 +9,6 @@ OS X 进行泛域名解析的开发环境搭建。
 
 前置要求：`Brew`。
 
-
 ```bash
 # 安装
 brew install dnsmasq
@@ -33,3 +32,5 @@ sudo cp -fv /usr/local/opt/dnsmasq/*.plist \
 sudo launchctl load \
   /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 ```
+
+<adsbygoogle></adsbygoogle>

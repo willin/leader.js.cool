@@ -70,6 +70,8 @@ export ZSH=/root/.oh-my-zsh
 export ZSH=/home/username/.oh-my-zsh
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ## 配置 OhMyZsh 主题和插件
 
 配置文件路径:
@@ -86,7 +88,6 @@ export ZSH=/home/username/.oh-my-zsh
 
 可用插件列表: <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins>
 
-
 ## 配置 iTerm 主题
 
 ![iterm](/basic/source/iterm.png)
@@ -97,7 +98,7 @@ export ZSH=/home/username/.oh-my-zsh
 
 解压后`iterm2-colors-solarized`目录下,双击即可安装
 
-安装完成后 在iTerm的 `Preference (左上角苹果按钮旁边点Sublime Text) -> Profiles 顶部大选项卡 -> Colors 偏右小选项卡 -> Load Presets 底部下拉菜单` 启用主题
+安装完成后 在 iTerm 的 `Preference (左上角苹果按钮旁边点Sublime Text) -> Profiles 顶部大选项卡 -> Colors 偏右小选项卡 -> Load Presets 底部下拉菜单` 启用主题
 
 ## 配置 Hyper 主题和插件
 
@@ -106,8 +107,5 @@ export ZSH=/home/username/.oh-my-zsh
 推荐插件:
 
 ```js
-plugins: [
-  'hyperpower',
-  'hyper-blink'
-]
+plugins: ['hyperpower', 'hyper-blink'];
 ```

@@ -42,8 +42,9 @@ SELECT t1.`type`,t1.did,t2.username,t2.email FROM ??
 WHERE --xxx
 ```
 
+<adsbygoogle></adsbygoogle>
 
-## 多次JOIN
+## 多次 JOIN
 
 ```sql
 SELECT
@@ -63,7 +64,7 @@ FROM (((?? `t1`
 WHERE --xxx;
 ```
 
-80条记录结果的查询约40s，拆分查询，t1-t3主要查询，t4、t5表的数据只在部分记录中需要，分别做两次查询，共计三次查询，优化后查询总耗时1s以内。
+80 条记录结果的查询约 40s，拆分查询，t1-t3 主要查询，t4、t5 表的数据只在部分记录中需要，分别做两次查询，共计三次查询，优化后查询总耗时 1s 以内。
 
 ## 表结构优化
 
@@ -77,13 +78,13 @@ WHERE --xxx;
 
 基于 `MyISAM` 引擎。
 
-* 避免使用自增ID；
-* 避免使用`datetime`，而用`int`(Unix Timestamp)；
-* `char`与`varchar`的选择，追求极致查询性能用`char`，追求空间成本用`varchar`；
-* 避免使用`text`，而用`blob`；
-* 避免使用`外键`；
-* 不允许空 `null`；
-* 如果查询的WHERE条件有多个字段，应该创建`联合索引`。
+- 避免使用自增 ID；
+- 避免使用`datetime`，而用`int`(Unix Timestamp)；
+- `char`与`varchar`的选择，追求极致查询性能用`char`，追求空间成本用`varchar`；
+- 避免使用`text`，而用`blob`；
+- 避免使用`外键`；
+- 不允许空 `null`；
+- 如果查询的 WHERE 条件有多个字段，应该创建`联合索引`。
 
 ## 百万量级性能比较
 
@@ -114,37 +115,42 @@ WHERE --xxx;
 插入和查询均为 `Timestamp` 更优。
 
 ```js
-  bench('insert with_timestamp', (next) => {
-    let sql = 'INSERT INTO `with_timestamp`(timestamp) VALUES ';
-    for (let i = 0; i < 1000; i += 1) {
-      sql += `(${parseInt((new Date() / 1000) - (i * 86400), 10)})`;
-      if (i !== 999) {
-        sql += ',';
-      }
+bench('insert with_timestamp', (next) => {
+  let sql = 'INSERT INTO `with_timestamp`(timestamp) VALUES ';
+  for (let i = 0; i < 1000; i += 1) {
+    sql += `(${parseInt(new Date() / 1000 - i * 86400, 10)})`;
+    if (i !== 999) {
+      sql += ',';
     }
-    connection.query(sql, next);
-  });
+  }
+  connection.query(sql, next);
+});
 
-  bench('insert with_datetime', (next) => {
-    let sql = 'INSERT INTO `with_datetime`(datetime) VALUES ';
-    for (let i = 0; i < 1000; i += 1) {
-      sql += `('${new Date(new Date() - (i * 86400000)).format('yyyy-MM-dd hh:mm:ss')}')`;
-      if (i !== 999) {
-        sql += ',';
-      }
+bench('insert with_datetime', (next) => {
+  let sql = 'INSERT INTO `with_datetime`(datetime) VALUES ';
+  for (let i = 0; i < 1000; i += 1) {
+    sql += `('${new Date(new Date() - i * 86400000).format('yyyy-MM-dd hh:mm:ss')}')`;
+    if (i !== 999) {
+      sql += ',';
     }
-    connection.query(sql, next);
-  });
+  }
+  connection.query(sql, next);
+});
 
-  bench('select with_timestamp', (next) => {
-    const sql = `SELECT * FROM \`with_timestamp\` WHERE \`timestamp\` > ${parseInt((new Date() / 1000) - (2 * 86400), 10)} AND \`timestamp\` < ${parseInt((new Date() / 1000) - 86400, 10)}`;
-    connection.query(sql, next);
-  });
+bench('select with_timestamp', (next) => {
+  const sql = `SELECT * FROM \`with_timestamp\` WHERE \`timestamp\` > ${parseInt(new Date() / 1000 - 2 * 86400, 10)} AND \`timestamp\` < ${parseInt(
+    new Date() / 1000 - 86400,
+    10
+  )}`;
+  connection.query(sql, next);
+});
 
-  bench('select with_datetime', (next) => {
-    const sql = `SELECT * FROM \`with_datetime\` WHERE \`datetime\` BETWEEN '${new Date(new Date() - (2 * 86400000)).format('yyyy-MM-dd hh:mm:ss')}' AND '${new Date(new Date() - 86400000).format('yyyy-MM-dd hh:mm:ss')}'`;
-    connection.query(sql, next);
-  });
+bench('select with_datetime', (next) => {
+  const sql = `SELECT * FROM \`with_datetime\` WHERE \`datetime\` BETWEEN '${new Date(new Date() - 2 * 86400000).format(
+    'yyyy-MM-dd hh:mm:ss'
+  )}' AND '${new Date(new Date() - 86400000).format('yyyy-MM-dd hh:mm:ss')}'`;
+  connection.query(sql, next);
+});
 ```
 
 ### Char vs VarChar
@@ -159,11 +165,10 @@ WHERE --xxx;
 查询性能平分秋色。多次测试发现`char`的查询性能略高于`varchar`。
 而主要区别在于：
 
-* VarChar存储空间：27.5MB
-* Varchar索引空间：19.5MB
-* Char 存储空间：34.6MB
-* Char 索引空间：51.6MB
-
+- VarChar 存储空间：27.5MB
+- Varchar 索引空间：19.5MB
+- Char 存储空间：34.6MB
+- Char 索引空间：51.6MB
 
 MyISAM 引擎查询性能结果：
 
@@ -174,7 +179,7 @@ MyISAM 引擎查询性能结果：
   185 op/s » select with_varchar
 ```
 
-MyISAM下查询性能`char`更优。（实例代码中将`ENGINE`替换，并删除已有表跑测试即可）
+MyISAM 下查询性能`char`更优。（实例代码中将`ENGINE`替换，并删除已有表跑测试即可）
 
 ### Blob vs Text
 
@@ -189,8 +194,8 @@ MyISAM下查询性能`char`更优。（实例代码中将`ENGINE`替换，并删
 
 ## 其他
 
-阿里云RDS DMS工具： <https://dms-rds.aliyun.com/>
+阿里云 RDS DMS 工具： <https://dms-rds.aliyun.com/>
 
-阿里云RDS性能优化工具：
+阿里云 RDS 性能优化工具：
 
 ![Image](/basic/db/mysql.png)

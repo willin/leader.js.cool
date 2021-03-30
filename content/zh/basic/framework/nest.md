@@ -63,6 +63,8 @@ export class AppController {
 
 同理，除了在 Controller 中，在 Model、 Service 等其他地方内层方法均可以进行优化，因为外层调用的时候已经带上了 `await`。同时，还需要注意各个方法的返回类型，养成良好习惯。
 
+<adsbygoogle></adsbygoogle>
+
 ## 使用 Fastify 框架
 
 该部分没有文档，只有一个示例项目： <https://github.com/nestjs/nest/tree/master/sample/10-fastify>

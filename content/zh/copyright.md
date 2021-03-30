@@ -14,3 +14,5 @@ category: ''
 ![支付宝捐赠](https://cloud.githubusercontent.com/assets/1890238/15489630/fccbb9cc-2193-11e6-9fed-b93c59d6ef37.png)
 
 支付宝捐赠请扫码.
+
+<adsbygoogle></adsbygoogle>

@@ -5,7 +5,7 @@ position: 1307
 category: 知识篇-Vanilla JS
 ---
 
-## ES5  中的传统做法
+## ES5 中的传统做法
 
 假设代码块执行抛出错误 fail，那么捕获该错误的写法为：
 
@@ -24,10 +24,10 @@ try {
 
 ```js
 try {
-  setTimeout(()=>{
+  setTimeout(() => {
     throw new Error('fail');
     // Uncaught Error: fail
- 	}, 1000);
+  }, 1000);
 } catch (e) {
   console.log(e);
 }
@@ -38,13 +38,13 @@ try {
 正确的做法应该是：
 
 ```js
- setTimeout(()=>{
-  try{
+setTimeout(() => {
+  try {
     throw new Error('fail');
   } catch (e) {
     console.log(e);
   }
-},1000);
+}, 1000);
 ```
 
 ### Promise
@@ -73,7 +73,7 @@ function doSomething() {
   return new Promise((resolve, reject) => {
     // 异步代码中的 throw 不能被 Promise 的 catch 捕捉到
     setTimeout(() => {
-      throw new Error("fail");
+      throw new Error('fail');
     }, 1000);
   });
 }
@@ -94,11 +94,13 @@ function doSomething(x) {
   return new Promise((resolve, reject) => reject(x));
 }
 
-doSomething('fail').then((x) => {
-  console.log('success:', x);
-}).catch((err) => {
-  console.log('fail:', err);
-});
+doSomething('fail')
+  .then((x) => {
+    console.log('success:', x);
+  })
+  .catch((err) => {
+    console.log('fail:', err);
+  });
 // fail: fail
 ```
 
@@ -109,17 +111,22 @@ function doSomething(x) {
   return new Promise((resolve, reject) => reject(x));
 }
 
-doSomething('fail').then((x) => {
-  console.log('success:', x);
-}).catch((err) => {
-  console.log('fail:', err);
-  // 这里可以写 return 给下面的方法继续执行
-}).then((x) => {
-  console.log('continue:', x);
-});
+doSomething('fail')
+  .then((x) => {
+    console.log('success:', x);
+  })
+  .catch((err) => {
+    console.log('fail:', err);
+    // 这里可以写 return 给下面的方法继续执行
+  })
+  .then((x) => {
+    console.log('continue:', x);
+  });
 // fail: fail
 // continue: undefined
 ```
+
+<adsbygoogle></adsbygoogle>
 
 ### Async/Await
 

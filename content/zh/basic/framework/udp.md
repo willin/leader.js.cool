@@ -23,7 +23,7 @@ server.on('error', (err) => {
   server.bind(6666);
 });
 
-server.on('message', async(msg, info) => {
+server.on('message', async (msg, info) => {
   // 处理消息
 });
 
@@ -33,3 +33,5 @@ server.on('listening', () => {
 });
 server.bind(6666);
 ```
+
+<adsbygoogle></adsbygoogle>

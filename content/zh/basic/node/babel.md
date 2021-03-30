@@ -48,6 +48,8 @@ npm install babel-cli -g
 babel-node xxx.js
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ### 编译 ES5 代码
 
 ```bash

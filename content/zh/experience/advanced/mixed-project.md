@@ -5,7 +5,6 @@ position: 2405
 category: '经验篇-进阶'
 ---
 
-
 本项目实例代码： <https://github.com/js-cool/up.js.cool>
 
 ## 设计
@@ -14,12 +13,14 @@ category: '经验篇-进阶'
 
 输出：
 
-* 图表按时间展示在线状况及效率
-* 接口、图片输出当前在线状态
+- 图表按时间展示在线状况及效率
+- 接口、图片输出当前在线状态
 
 输入：
 
-* WRescueTime 插件获取在线行为数据
+- WRescueTime 插件获取在线行为数据
+
+<adsbygoogle></adsbygoogle>
 
 ### 存储设计
 
@@ -64,7 +65,7 @@ yarn add --dev eslint eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-
 const ENV = process.env.NODE_ENV || 'dev';
 
 const users = require(`./users.${ENV}`);
-const {redis, mysql, cdn} = require(`./server.${ENV}`);
+const { redis, mysql, cdn } = require(`./server.${ENV}`);
 
 module.exports = {
   cdn,
@@ -120,17 +121,27 @@ const TABLENAME = `${DB}.data`;
 
 exports.dataAdd = async (user, [date, active, , , efficiency]) => {
   const mysql = await pool(mysqlOptions);
-  const sql = format('INSERT INTO ?? (user,active,efficiency,date) VALUES (?,?,?,?)',
-    [TABLENAME, user, active, efficiency, parseInt(new Date(date) / 1000, 10)]);
+  const sql = format('INSERT INTO ?? (user,active,efficiency,date) VALUES (?,?,?,?)', [
+    TABLENAME,
+    user,
+    active,
+    efficiency,
+    parseInt(new Date(date) / 1000, 10)
+  ]);
   const result = await mysql.query(sql);
   mysql.release();
   return isEmpty(result) ? -1 : result.affectedRows;
 };
 
-exports.dataUpdate = async (user, [date, active,,, efficiency]) => {
+exports.dataUpdate = async (user, [date, active, , , efficiency]) => {
   const mysql = await pool(mysqlOptions);
-  const sql = format('UPDATE ?? SET active = ?, efficiency = ? WHERE user = ? AND date = ?',
-    [TABLENAME, active, efficiency, user, parseInt(new Date(date) / 1000, 10)]);
+  const sql = format('UPDATE ?? SET active = ?, efficiency = ? WHERE user = ? AND date = ?', [
+    TABLENAME,
+    active,
+    efficiency,
+    user,
+    parseInt(new Date(date) / 1000, 10)
+  ]);
   const result = await mysql.query(sql);
   mysql.release();
   return isEmpty(result) ? -1 : result.affectedRows;
@@ -145,9 +156,9 @@ exports.dataUpdate = async (user, [date, active,,, efficiency]) => {
 
 ```js
 const later = require('later');
-const {users} = require('../config');
-const {random} = require('../lib');
-const {lastClear, historyClear} = require('../model/data');
+const { users } = require('../config');
+const { random } = require('../lib');
+const { lastClear, historyClear } = require('../model/data');
 const crab = require('./crab');
 const updateCertbot = require('./certbot');
 
@@ -185,8 +196,8 @@ later.setInterval(updateCertbot, later.parse.cron('0 2 * * 1 ?'));
 
 ```js
 const path = require('path');
-const {readFileSync} = require('fs');
-const {cdn} = require('../../config');
+const { readFileSync } = require('fs');
+const { cdn } = require('../../config');
 
 module.exports = (view, params = {}) => {
   let html = readFileSync(path.join(__dirname, `${view}.html`), 'utf8').replace(/{{cdn}}/g, cdn);

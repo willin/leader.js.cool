@@ -15,7 +15,7 @@ category: '知识篇-基础知识'
 
 ## 使用
 
-***注：*** 上面的两家服务是免费的。
+**_注：_** 上面的两家服务是免费的。
 
 以阿里云在 Mac 下使用为例：
 
@@ -27,7 +27,7 @@ category: '知识篇-基础知识'
 docker-machine create --engine-registry-mirror=https://xxxx.mirror.aliyuncs.com -d virtualbox default
 ```
 
-查看机器的环境配置，并配置到本地，并通过Docker客户端访问Docker服务。
+查看机器的环境配置，并配置到本地，并通过 Docker 客户端访问 Docker 服务。
 
 ```bash
 docker-machine env default
@@ -35,9 +35,10 @@ eval "$(docker-machine env default)"
 docker info
 ```
 
-阿里云9折推荐码：
+阿里云 9 折推荐码：
 
 > 0kbwsn
 
 注册地址： <http://t.cn/zjxZrUk>
 
+<adsbygoogle></adsbygoogle>

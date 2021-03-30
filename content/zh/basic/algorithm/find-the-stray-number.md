@@ -23,6 +23,8 @@ Examples:
 
 题目地址: <https://www.codewars.com/kata/find-the-stray-number>
 
+<adsbygoogle></adsbygoogle>
+
 ## 思路一
 
 数组过滤，散杂数的特征是首次出现的下标和最后一次出现的下标应保持一致（仅出现一次）。
@@ -30,13 +32,13 @@ Examples:
 答案：
 
 ```js
-const stray = arr => ~~arr.filter(x => arr.indexOf(x) === arr.lastIndexOf(x)).join('');
+const stray = (arr) => ~~arr.filter((x) => arr.indexOf(x) === arr.lastIndexOf(x)).join('');
 ```
 
 其中：
 
-* `Array.prototype.filter`是ES 6的特性。
-* 结果为数组，先变成字符串（用`Array.prototype.join`），再强制类型转换为数字（用`~~`）
+- `Array.prototype.filter`是 ES 6 的特性。
+- 结果为数组，先变成字符串（用`Array.prototype.join`），再强制类型转换为数字（用`~~`）
 
 ## 思路二
 
@@ -45,9 +47,9 @@ const stray = arr => ~~arr.filter(x => arr.indexOf(x) === arr.lastIndexOf(x)).jo
 答案：
 
 ```js
-const stray = nums => nums.reduce((a, b) => a ^ b);
+const stray = (nums) => nums.reduce((a, b) => a ^ b);
 ```
 
 其中：
 
-* `Array.prototype.reduce` 为ES 6特性，可以参考 Map/Reduce 相关教程。
+- `Array.prototype.reduce` 为 ES 6 特性，可以参考 Map/Reduce 相关教程。

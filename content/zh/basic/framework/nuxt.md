@@ -25,6 +25,8 @@ module.exports = {
 
 下面从几个简单的实讲解各个核心功能的使用。
 
+<adsbygoogle></adsbygoogle>
+
 ## 插件 Plugins
 
 实现 `router.beforeEach` 钩子：
@@ -42,7 +44,7 @@ export default ({ app }) => {
 其他示例：
 
 - 插入谷歌统计： <https://nuxtjs.org/faq/google-analytics>
-- 注入i18n组件：<https://nuxtjs.org/examples/i18n>
+- 注入 i18n 组件：<https://nuxtjs.org/examples/i18n>
 
 ## Store（Vuex）
 
@@ -75,40 +77,34 @@ export const mutations = {
 
 `/store/index.js` 需要以类似的结构抛出，即：
 
-
 ```js
 // /store/index.js
-export const state = () => ({
+export const state = () => ({});
 
-});
-
-export const mutations = {
-
-};
+export const mutations = {};
 
 // export const ...
 ```
 
 ## 中间件 Middlewares
 
-
 ```js
 // middleware/authenticate.js
 export default ({ store, redirect }) => {
   const user = store.getters['user/user'];
-  if (user === null || (parseInt(new Date() / 1000, 10) - user.expires > 0)) {
+  if (user === null || parseInt(new Date() / 1000, 10) - user.expires > 0) {
     return redirect('/login');
   }
 };
 ```
 
-使用（layout、pages或components中）：
+使用（layout、pages 或 components 中）：
 
 ```js
 // 以 layouts/dashboard.vue 为例
 export default {
   name: 'Layout',
-  middleware: 'authenticate',
+  middleware: 'authenticate'
   // ...
 };
 ```

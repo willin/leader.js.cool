@@ -5,12 +5,11 @@ position: 1705
 category: 知识篇-常用框架
 ---
 
-
 遵循`MVP`原则, 即`最简化可实行产品`原则, 示例:
 
 ## 既有项目引入新的组件/库
 
-假设现有项目用到了 `react`, `react-router` ,  `antd` 等库, 并且 `controller`, `router`, `model`, `view` 已基本成型.
+假设现有项目用到了 `react`, `react-router` , `antd` 等库, 并且 `controller`, `router`, `model`, `view` 已基本成型.
 
 此时如果要引入 `mobx`, 最佳实践步骤为:
 
@@ -20,16 +19,18 @@ category: 知识篇-常用框架
 
 ## 既有项目打包优化
 
-假设现有项目用到了 `react`, `react-router` ,  `antd`, `mobx` 等库, 并且 `controller`, `router`, `model`, `view` 已基本成型. webpack打包过大, 应用性能较差.
+假设现有项目用到了 `react`, `react-router` , `antd`, `mobx` 等库, 并且 `controller`, `router`, `model`, `view` 已基本成型. webpack 打包过大, 应用性能较差.
 
 最佳实践步骤:
 
-1. 新建一个空项目, 新建一个空的webpack配置
+1. 新建一个空项目, 新建一个空的 webpack 配置
 2. 安装 `react` (或 `antd`, 或 `mobx`等) 写一个简单示例引入项目
 3. 针对单一库进行 `webpack` 打包优化, 一般情况下, 除了 loader rules / vendor 需要每个库单独优化, 其他配置都能保证通用
-4. 一项优化完成后重复2,3步骤, 直到所有库优化完成
+4. 一项优化完成后重复 2,3 步骤, 直到所有库优化完成
 5. 对原有项目的 webpack 配置进行替换, 不动项目源码
 6. 进一步优化, 比如 `react-router-loader` 之类的引入, 开始针对项目源码进行优化
+
+<adsbygoogle></adsbygoogle>
 
 ## 示例: React/Antd 项目初始化
 
@@ -41,14 +42,8 @@ category: 知识篇-常用框架
 ```js
 // .eslintrc.js
 module.exports = {
-  extends: [
-    'eslint-config-dwing',
-    'eslint-config-airbnb-base/rules/strict',
-    'eslint-config-airbnb/rules/react'
-  ].map(require.resolve),
-  plugins: [
-    'react'
-  ],
+  extends: ['eslint-config-dwing', 'eslint-config-airbnb-base/rules/strict', 'eslint-config-airbnb/rules/react'].map(require.resolve),
+  plugins: ['react'],
   parser: 'babel-eslint',
   env: {
     browser: true
@@ -90,7 +85,7 @@ module.exports = {
 ### 3. 安装 react/antd 等
 
 - 安装: `yarn add react react-dom react-router antd mobx`
-- webpack相关: `yarn add --dev babel-loader less less-loader css-loader postcss-loader autoprefixer`
+- webpack 相关: `yarn add --dev babel-loader less less-loader css-loader postcss-loader autoprefixer`
 
 ### 4. 配置 webpack
 
@@ -105,11 +100,11 @@ module.exports = {
 
 原因有如下几点:
 
-1. 臃肿,夹杂了一大堆没用的第三方npm包,结构混乱, 难维护!!
-2. `webpack`更新速度较快, 现在已经到了 `3.x` 版本了, 很多脚手架还停留在 1.x 或 2.x的阶段
+1. 臃肿,夹杂了一大堆没用的第三方 npm 包,结构混乱, 难维护!!
+2. `webpack`更新速度较快, 现在已经到了 `3.x` 版本了, 很多脚手架还停留在 1.x 或 2.x 的阶段
 3. 知其然知其所以然, 不能仅做代码搬运的机器, 这样的话就失去了人的价值了. 只有在频繁地接触和使用过程中才能挖掘更优的配置
 
-### 2.webpack配置最佳实践
+### 2.webpack 配置最佳实践
 
 个人推荐以一个配置为`base`(基准),其他进行微调.
 
@@ -145,16 +140,13 @@ module.exports = {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract(
           `${require.resolve('css-loader')}?sourceMap&-autoprefixer!` +
-          `${require.resolve('less-loader')}?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`
+            `${require.resolve('less-loader')}?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`
         )
       }
     ]
   },
   resolve: {
-    modules: [
-      'node_modules',
-      path.resolve(__dirname, '../src')
-    ],
+    modules: ['node_modules', path.resolve(__dirname, '../src')],
     extensions: ['.js', '.json', '.jsx', '.css']
   },
   plugins: [

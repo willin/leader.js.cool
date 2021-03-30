@@ -9,7 +9,7 @@ category: '经验篇-项目'
 
 ## 配置数据库
 
-开启MySQL和Redis服务。
+开启 MySQL 和 Redis 服务。
 
 创建数据库 `bdd`。根据`数据库设计`章节创建`user`、`usermeta`两张表。
 
@@ -20,7 +20,7 @@ git init
 npm init
 ```
 
-### 安装ESLint和Babel环境
+### 安装 ESLint 和 Babel 环境
 
 ```bash
 cnpm i --save-dev eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react
@@ -46,14 +46,14 @@ Tree：
 
 创建配置文件。
 
-### 配置ava、nyc
+### 配置 ava、nyc
 
 ```
 npm install ava nyc --save-dev
 ./node_modules/.bin/ava --init
 ```
 
-Package.json修改：
+Package.json 修改：
 
 ```js
 "scripts": {
@@ -87,7 +87,9 @@ Package.json修改：
 }
 ```
 
-参考项目init代码：  <https://coding.net/u/willin/p/bdd-practice/git/tree/5c42541a2985b54619d09372ef05fc999b108f9a>
+参考项目 init 代码： <https://coding.net/u/willin/p/bdd-practice/git/tree/5c42541a2985b54619d09372ef05fc999b108f9a>
+
+<adsbygoogle></adsbygoogle>
 
 ## 用户登陆接口实现
 
@@ -156,12 +158,12 @@ Result：
 
 根据测试用例，开始编写功能模块代码。
 
-另外，有一种情况是测试无法覆盖的，就是登录半小时的限制，我们也没有必要让测试用例一直运行等待半个小时再测。可以直接检查Redis里的缓存是否正常，以及TTL超时是否在合理范围内。
+另外，有一种情况是测试无法覆盖的，就是登录半小时的限制，我们也没有必要让测试用例一直运行等待半个小时再测。可以直接检查 Redis 里的缓存是否正常，以及 TTL 超时是否在合理范围内。
 
 示例：
 
 ```js
-test('Login trial redis ttl', async(t) => {
+test('Login trial redis ttl', async (t) => {
   const value = await client.get('trial:guid-xxx');
   // 循环错误3次，加上已经限制还再继续尝试的1次
   t.is(value, 4);
@@ -175,9 +177,9 @@ test('Login trial redis ttl', async(t) => {
 
 注意点：
 
-* 数据库连接，使用连接池，并在所有查询完成后释放；
-* 数据库查询禁止  `select field1, (select xxx) as field2` 嵌套查询；
-* 慢SQL，如多张表`JOIN`的查询，根据业务逻辑，考虑加Redis缓存；
-* 代码覆盖率要求`95%`以上，分支覆盖`90%`以上，只有异常捕获的代码和测试环境下的分支可以ignore；
-* 不要用 `[].forEach()` 方法做轮询，直接用`for`；
-* 算法、逻辑细节。
+- 数据库连接，使用连接池，并在所有查询完成后释放；
+- 数据库查询禁止 `select field1, (select xxx) as field2` 嵌套查询；
+- 慢 SQL，如多张表`JOIN`的查询，根据业务逻辑，考虑加 Redis 缓存；
+- 代码覆盖率要求`95%`以上，分支覆盖`90%`以上，只有异常捕获的代码和测试环境下的分支可以 ignore；
+- 不要用 `[].forEach()` 方法做轮询，直接用`for`；
+- 算法、逻辑细节。

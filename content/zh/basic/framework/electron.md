@@ -5,7 +5,7 @@ position: 1710
 category: 知识篇-常用框架
 ---
 
-目前支持：Mac、Win、Linux三个平台。
+目前支持：Mac、Win、Linux 三个平台。
 
 快速示例： <https://github.com/electron/electron-quick-start>
 
@@ -36,6 +36,8 @@ electron-packager: <https://github.com/electron-userland/electron-packager>
     ├── webpack.config.js
     └── webpack.config.prod.js
 ```
+
+<adsbygoogle></adsbygoogle>
 
 ### 运行脚本
 

@@ -43,32 +43,32 @@ npm i -g docsify-cli
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <title>不可替代的团队领袖培养计划</title>
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
-</head>
-<body>
-  <div id="app"></div>
-</body>
-<script type="text/javascript">
-window.$docsify = {
-  name: '《团队领袖培养计划》',
-  repo: 'https://github.com/js-cool/leader.js.cool.git',
-  loadSidebar: true,
-  subMaxLevel: 2,
-  formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}',
-  executeScript: true,
-  alias: {
-
-  }
-}
-</script>
-<script type="text/javascript" src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <title>不可替代的团队领袖培养计划</title>
+    <meta name="description" content="Description" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script type="text/javascript">
+    window.$docsify = {
+      name: '《团队领袖培养计划》',
+      repo: 'https://github.com/js-cool/leader.js.cool.git',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}',
+      executeScript: true,
+      alias: {}
+    };
+  </script>
+  <script type="text/javascript" src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 </html>
 ```
+
+<adsbygoogle></adsbygoogle>
 
 注意这里的 `alias`, 是设置别名用的. 我们需要为每个创建的目录重定向`_sidebar.md`, 因为 Docsify 默认是从当前目录下去找这个文件的.
 

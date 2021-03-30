@@ -10,7 +10,7 @@ category: '经验篇-进阶'
 
 ## Webpack
 
-`vue-cli`及诸多脚手架生成的项目里, 配置项非常繁琐, 结构也非常混乱, 实际上webpack常规配置就需要两个, 分别给开发环境和产品环境使用.
+`vue-cli`及诸多脚手架生成的项目里, 配置项非常繁琐, 结构也非常混乱, 实际上 webpack 常规配置就需要两个, 分别给开发环境和产品环境使用.
 
 而且像 `webpack-merge` 这样的插件, 可以通过简单的 `Object.assign` 或 `[].concat` 完成.
 
@@ -19,7 +19,6 @@ category: '经验篇-进阶'
 `base.js` 基础设置:
 
 ```js
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -98,10 +97,11 @@ module.exports = Object.assign({}, base, {
 });
 ```
 
+<adsbygoogle></adsbygoogle>
+
 prod 配置:
 
 ```js
-
 const webpack = require('webpack');
 const base = require('./base');
 
@@ -136,9 +136,7 @@ module.exports = Object.assign({}, base, {
 
 ```js
 module.exports = {
-  presets: [
-     ['env', { modules: false }]
-  ],
+  presets: [['env', { modules: false }]],
   plugins: ['transform-runtime'],
   comments: false
 };
@@ -156,17 +154,12 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: [
-    'dwing'
-  ],
-  plugins: [
-    'html',
-    'vue'
-  ],
+  extends: ['dwing'],
+  plugins: ['html', 'vue'],
   rules: {
     'no-new': 0,
     'no-bitwise': 0,
-    'import/extensions': ['error', 'always', { 'js': 'never', 'vue': 'never' }],
+    'import/extensions': ['error', 'always', { js: 'never', vue: 'never' }],
     'import/no-extraneous-dependencies': 0
   },
   settings: {
@@ -261,12 +254,12 @@ const send = require('koa-send');
 router.get('/(.*)', async (ctx) => {
   try {
     await send(ctx, '/index.html', { root: path.resolve(__dirname, '../dist') });
-  } catch (e) { }
+  } catch (e) {}
 });
 router.get('/(.*)', async (ctx) => {
   try {
     await send(ctx, ctx.path, { root: path.resolve(__dirname, '../dist') });
-  } catch (e) { }
+  } catch (e) {}
 });
 ```
 

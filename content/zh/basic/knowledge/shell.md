@@ -12,7 +12,7 @@ category: '知识篇-基础知识'
 df -h
 ```
 
-> -h, --human-readable  print sizes in human readable format (e.g., 1K 234M 2G)
+> -h, --human-readable print sizes in human readable format (e.g., 1K 234M 2G)
 
 ```
 Filesystem      Size  Used Avail Use% Mounted on
@@ -44,6 +44,8 @@ Mem:         32105       1503      30602          0        223        631
 -/+ buffers/cache:        648      31457
 Swap:        61034          0      61034
 ```
+
+<adsbygoogle></adsbygoogle>
 
 ## 性能分析
 
@@ -77,7 +79,7 @@ top -d 2 -c -p 123456 #//每隔2秒显示pid是12345的进程的资源使用情�
 find . -name *.log  #//在当前目录下查找.log日志
 ```
 
-## SSH远程执行命令
+## SSH 远程执行命令
 
 命令格式
 
@@ -85,22 +87,21 @@ find . -name *.log  #//在当前目录下查找.log日志
 ssh -p $port $user@$p 'cmd'
 ```
 
-> $port : ssh连接端口号
+> $port : ssh 连接端口号
 
-> $user: ssh连接用户名
+> $user: ssh 连接用户名
 
-> $ip:ssh连接的ip地址
+> $ip:ssh 连接的 ip 地址
 
 > cmd:远程服务器需要执行的操作
 
-ssh的-t参数
+ssh 的-t 参数
 
-
-> -t      Force pseudo-tty allocation.  This can be used to execute arbitrary screen-based programs on a remote machine, which can be very useful, e.g. when implementing menu services.  Multiple -t options force tty allocation, even if ssh has no local tty.
+> -t Force pseudo-tty allocation. This can be used to execute arbitrary screen-based programs on a remote machine, which can be very useful, e.g. when implementing menu services. Multiple -t options force tty allocation, even if ssh has no local tty.
 
 中文翻译一下：
 
-> 就是可以提供一个远程服务器的虚拟tty终端，加上这个参数我们就可以在远程服务器的虚拟终端上输入自己的提权密码了，非常安全
+> 就是可以提供一个远程服务器的虚拟 tty 终端，加上这个参数我们就可以在远程服务器的虚拟终端上输入自己的提权密码了，非常安全
 
 ### 脚本批量执行远程命令
 
@@ -133,7 +134,7 @@ do
 done
 ```
 
-这个方法还是很方便的，-t虚拟出一个远程服务器的终端，在多台服务器同时部署时确实节约了不少时间啊！
+这个方法还是很方便的，-t 虚拟出一个远程服务器的终端，在多台服务器同时部署时确实节约了不少时间啊！
 
 ## 递归删除日志
 

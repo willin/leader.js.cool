@@ -7,7 +7,7 @@ category: '知识篇-必备神器'
 
 官方网址： <http://brew.sh/>
 
-用于安装各类 *nix 依赖包和应用。
+用于安装各类 \*nix 依赖包和应用。
 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -21,27 +21,29 @@ category: '知识篇-必备神器'
 brew install wget
 ```
 
+<adsbygoogle></adsbygoogle>
+
 常用命令：
 
-* wget
-* tree
-* autojump 配合zsh使用
-* thefuck
+- wget
+- tree
+- autojump 配合 zsh 使用
+- thefuck
 
-Node.js相关：
+Node.js 相关：
 
-* node
-* yarn
-* pkg-config
+- node
+- yarn
+- pkg-config
 
 代理：
 
-* proxychains-ng
+- proxychains-ng
 
 数据库、缓存：
 
-* mysql
-* redis
+- mysql
+- redis
 
 ## Brew Cask
 
@@ -59,15 +61,15 @@ brew tap caskroom/cask
 brew cask install google-chrome
 ```
 
-* launchrocket 可以管理服务，如Redis、MySQL、Nginx等
-* filezilla
-* macdown
+- launchrocket 可以管理服务，如 Redis、MySQL、Nginx 等
+- filezilla
+- macdown
 
 查找可用应用： <https://caskroom.github.io/search>
 
-## 本地DNS配置
+## 本地 DNS 配置
 
-Localhost下的泛域名指定
+Localhost 下的泛域名指定
 
 ```
 brew install dnsmasq
@@ -81,7 +83,7 @@ sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/cxl'
 
 ## 百度网盘下载工具 Aria2
 
-### 通过Brew安装Aria2
+### 通过 Brew 安装 Aria2
 
 ```bash
 brew install aria2
@@ -143,11 +145,11 @@ dir=~/Downloads
 file-allocation=prealloc
 ```
 
-### GUI界面
+### GUI 界面
 
 <http://binux.github.io/yaaw/demo/>
 
-设置URL：
+设置 URL：
 
 ```
 http://127.0.0.1:6800/jsonrpc

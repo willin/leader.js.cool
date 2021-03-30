@@ -5,25 +5,24 @@ position: 2404
 category: '经验篇-进阶'
 ---
 
-
-本章节以 Mac OS X下 Hosts 文件管理 App 为例。
+本章节以 Mac OS X 下 Hosts 文件管理 App 为例。
 
 技术栈包含：
 
-* Electron （仅 OS X 平台）
-* Webpack 2
-* Vue 2
-* Vuex
-* Vue-Router
-* Vue-Material （UI组件）
-* Babel
-* ESLint
-* Yarn（包管理）
+- Electron （仅 OS X 平台）
+- Webpack 2
+- Vue 2
+- Vuex
+- Vue-Router
+- Vue-Material （UI 组件）
+- Babel
+- ESLint
+- Yarn（包管理）
 
 ## 初始化项目
 
-* 安装所需的各种 NPM 包。
-* 引入 ESLint、Babel 配置文件。
+- 安装所需的各种 NPM 包。
+- 引入 ESLint、Babel 配置文件。
 
 ## 配置 Vue2 + Webpack2
 
@@ -31,9 +30,9 @@ category: '经验篇-进阶'
 
 可以参考迁移文档： <https://webpack.js.org/guides/migrating/> 进行学习。
 
-### 坑1： extract-text-webpack-plugin
+### 坑 1： extract-text-webpack-plugin
 
-该插件 NPM 最新版本为1.0.1，不支持 Webpack2，所以需要通过安装 RC3 版本来获得对应支持。
+该插件 NPM 最新版本为 1.0.1，不支持 Webpack2，所以需要通过安装 RC3 版本来获得对应支持。
 
 ```
 yarn add --dev extract-text-webpack-plugin@2.0.0-rc3
@@ -41,7 +40,7 @@ yarn add --dev extract-text-webpack-plugin@2.0.0-rc3
 npm i --save-dev extract-text-webpack-plugin@2.0.0-rc3
 ```
 
-### 坑2：babel-plugin-transform-runtime 与 extract-text-webpack-plugin 插件有冲突
+### 坑 2：babel-plugin-transform-runtime 与 extract-text-webpack-plugin 插件有冲突
 
 会导致 extract-text 插件报错崩溃。
 
@@ -49,9 +48,7 @@ npm i --save-dev extract-text-webpack-plugin@2.0.0-rc3
 
 ```json
 {
-  "presets": [
-    "latest"
-  ],
+  "presets": ["latest"],
   "plugins": [
     [
       "transform-runtime",
@@ -68,13 +65,13 @@ npm i --save-dev extract-text-webpack-plugin@2.0.0-rc3
 
 其中 设置`compact`属性还能阻止 500kb 限制的警告。
 
-### 坑3：postcss-loader 与 extract-text-webpack-plugin 插件有冲突
+### 坑 3：postcss-loader 与 extract-text-webpack-plugin 插件有冲突
 
 目前无解，去掉了`postcss-loader`的使用。
 
 下一阶段尝试。
 
-### 坑4：在 Vue 中使用 Electron
+### 坑 4：在 Vue 中使用 Electron
 
 首先，需要在 webpack config 中设置：
 
@@ -100,6 +97,8 @@ Vue.use({
 ```js
 this.$electron.ipcRenderer.send('resizePreferencesWindow', { width: 400, height: 300 });
 ```
+
+<adsbygoogle></adsbygoogle>
 
 ## Electron 配置
 
@@ -141,14 +140,14 @@ import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer';
 module.exports = installExtension(VUEJS_DEVTOOLS);
 ```
 
-
 窗口加载：
 
 ```js
 if (process.env.NODE_ENV === 'development') {
   // 开发模式加载 devtools
   const devtools = require('../lib/devtools');
-  devtools.then(() => { // 注意调用方式
+  devtools.then(() => {
+    // 注意调用方式
     this.preferencesWindow.loadURL('http://localhost:3000/build/app.html');
   });
 } else {
@@ -173,14 +172,14 @@ const locales = readdirSync(__dirname);
  or otherwise `default`
  */
 module.exports = (lang = 'default') => {
-  let locale = locales.filter(x => x.indexOf(lang) !== -1)[0];
+  let locale = locales.filter((x) => x.indexOf(lang) !== -1)[0];
   /* eslint import/no-dynamic-require:0,global-require:0 */
   if (locale !== undefined) {
     const file = require(`./${locale}`);
     return file;
   }
   const langPrefix = lang.split('-')[0];
-  locale = locales.filter(x => x.indexOf(langPrefix) !== -1)[0];
+  locale = locales.filter((x) => x.indexOf(langPrefix) !== -1)[0];
   if (locale !== undefined) {
     const file = require(`./${locale}`);
     return file;
@@ -203,14 +202,14 @@ module.exports = (lang = 'default') => {
 
 ### Hosts.js 分级列表
 
-Hosts.js项目源码： <https://github.com/js-cool/Hosts.js>
+Hosts.js 项目源码： <https://github.com/js-cool/Hosts.js>
 
 特点：
 
-* 支持顶级项目
-* 支持二级目录项目
-* 目录不含有启动状态，目录下的子项目有
-* 支持排序
+- 支持顶级项目
+- 支持二级目录项目
+- 目录不含有启动状态，目录下的子项目有
+- 支持排序
 
 ```js
 [
@@ -257,7 +256,7 @@ Hosts.js项目源码： <https://github.com/js-cool/Hosts.js>
       }
     ]
   }
-]
+];
 ```
 
 ### 排序算法
@@ -266,16 +265,21 @@ Hosts.js项目源码： <https://github.com/js-cool/Hosts.js>
 2. 对子菜单项目进行排序
 
 ```js
-const reorderItems = arr => arr.sort((x, y) => x.order - y.order > 0 ? 1 : -1).map((i, iIndex) => {
-  i.order = iIndex + 1;
-  if (i.type === 'folder') {
-    i.children = i.children.sort((x, y) => x.order - y.order > 0 ? 1 : -1).map((j, jIndex) => {
-      j.order = jIndex + 1;
-      return j;
+const reorderItems = (arr) =>
+  arr
+    .sort((x, y) => (x.order - y.order > 0 ? 1 : -1))
+    .map((i, iIndex) => {
+      i.order = iIndex + 1;
+      if (i.type === 'folder') {
+        i.children = i.children
+          .sort((x, y) => (x.order - y.order > 0 ? 1 : -1))
+          .map((j, jIndex) => {
+            j.order = jIndex + 1;
+            return j;
+          });
+      }
+      return i;
     });
-  }
-  return i;
-});
 ```
 
 ### 删除元素算法
@@ -286,10 +290,10 @@ const reorderItems = arr => arr.sort((x, y) => x.order - y.order > 0 ? 1 : -1).m
 
 ```js
 const deleteItem = (arr, id, pid = '') => {
-  if(id==='default') return false;
+  if (id === 'default') return false;
   let index;
   if (pid === '') {
-    index = arr.findIndex(x => x.id === id);
+    index = arr.findIndex((x) => x.id === id);
     // 异常捕获
     if (index === -1) return false;
     // 子菜单超过两个项目禁止删除
@@ -297,7 +301,7 @@ const deleteItem = (arr, id, pid = '') => {
     arr.splice(index, 1);
     return reorderItems(arr);
   }
-  index = arr.findIndex(x => x.id === pid);
+  index = arr.findIndex((x) => x.id === pid);
   // 异常捕获
   if (index === -1) return false;
   arr[index].children = deleteItem(arr[index].children, id);
@@ -318,7 +322,7 @@ const insertItem = (arr, name, pid = '', type = 'item') => {
     name,
     type,
     order: -1,
-    id: uuid.v4(),
+    id: uuid.v4()
   };
   if (type === 'item') {
     item.enabled = false;
@@ -329,7 +333,7 @@ const insertItem = (arr, name, pid = '', type = 'item') => {
     item.order = arr.length;
     arr.push(item);
   } else {
-    const index = arr.findIndex(x => x.id === pid);
+    const index = arr.findIndex((x) => x.id === pid);
     // 异常捕获
     if (index === -1) return false;
     item.order = arr[index].length;
@@ -352,14 +356,14 @@ const moveUpItem = (arrOrigin, id, pid = '') => {
   const arr = reorderItems(arrOrigin);
   let index;
   if (pid === '') {
-    index = arr.findIndex(x => x.id === id);
+    index = arr.findIndex((x) => x.id === id);
     if (index === -1) return false;
     if (index - 1 === -1) return arr;
     arr[index].order -= 1;
     arr[index - 1].order += 1;
     return arr;
   }
-  index = arr.findIndex(x => x.id === pid);
+  index = arr.findIndex((x) => x.id === pid);
   // 异常捕获
   if (index === -1) return false;
   arr[index].children = moveUpItem(arr[index].children, id);
@@ -375,14 +379,14 @@ const moveDownItem = (arrOrigin, id, pid = '') => {
   const arr = reorderItems(arrOrigin);
   let index;
   if (pid === '') {
-    index = arr.findIndex(x => x.id === id);
+    index = arr.findIndex((x) => x.id === id);
     if (index === -1) return false;
     if (index + 1 === arr.length) return arr;
     arr[index].order += 1;
     arr[index + 1].order -= 1;
     return arr;
   }
-  index = arr.findIndex(x => x.id === pid);
+  index = arr.findIndex((x) => x.id === pid);
   // 异常捕获
   if (index === -1) return false;
   arr[index].children = moveUpItem(arr[index].children, id);
@@ -394,8 +398,8 @@ const moveDownItem = (arrOrigin, id, pid = '') => {
 
 ### 优化
 
-* 以 class 形式封装
-* 抛出简单的外部接口
+- 以 class 形式封装
+- 抛出简单的外部接口
 
 ```js
 /* eslint class-methods-use-this: [2, { "exceptMethods": ["_deleteItem","_moveUpItem","_moveDownItem"] }] */
@@ -413,13 +417,15 @@ module.exports = class Category {
   }
 
   init() {
-    const defaultData = [{
-      name: this.locale.default,
-      order: 1,
-      id: 'default',
-      type: 'item',
-      enabled: true
-    }];
+    const defaultData = [
+      {
+        name: this.locale.default,
+        order: 1,
+        id: 'default',
+        type: 'item',
+        enabled: true
+      }
+    ];
     if (!existsSync(this.DIR_PATH)) {
       mkdirSync(this.DIR_PATH);
     }
@@ -436,14 +442,17 @@ module.exports = class Category {
   }
 
   reorder() {
-    this.data = this.data.sort((x, y) => x.order - y.order > 0 ? 1 : -1)
+    this.data = this.data
+      .sort((x, y) => (x.order - y.order > 0 ? 1 : -1))
       .map((i, iIndex) => {
         i.order = iIndex + 1;
         if (i.type === 'folder') {
-          i.children = i.children.sort((x, y) => x.order - y.order > 0 ? 1 : -1).map((j, jIndex) => {
-            j.order = jIndex + 1;
-            return j;
-          });
+          i.children = i.children
+            .sort((x, y) => (x.order - y.order > 0 ? 1 : -1))
+            .map((j, jIndex) => {
+              j.order = jIndex + 1;
+              return j;
+            });
         }
 
         return i;
@@ -452,7 +461,7 @@ module.exports = class Category {
   }
 
   _deleteItem(arr, id) {
-    const index = arr.findIndex(x => x.id === id);
+    const index = arr.findIndex((x) => x.id === id);
     // 异常捕获
     if (index === -1) return false;
     // 子菜单超过两个项目禁止删除
@@ -462,7 +471,7 @@ module.exports = class Category {
   }
 
   _moveUpItem(arr, id) {
-    const index = arr.findIndex(x => x.id === id);
+    const index = arr.findIndex((x) => x.id === id);
     if (index === -1) return false;
     if (index - 1 === -1) return false;
     arr[index].order -= 1;
@@ -471,7 +480,7 @@ module.exports = class Category {
   }
 
   _moveDownItem(arr, id) {
-    const index = arr.findIndex(x => x.id === id);
+    const index = arr.findIndex((x) => x.id === id);
     if (index === -1) return false;
     if (index + 1 === arr.length) return false;
     arr[index].order += 1;
@@ -485,7 +494,7 @@ module.exports = class Category {
       if (data === false) return false;
       this.data = data;
     } else {
-      const index = this.data.findIndex(x => x.id === pid);
+      const index = this.data.findIndex((x) => x.id === pid);
       // 异常捕获
       if (index === -1) return false;
       const data = this._deleteItem(this.data[index].children, id);
@@ -512,7 +521,7 @@ module.exports = class Category {
       item.order = this.data.length + 1;
       this.data.push(item);
     } else {
-      const index = this.data.findIndex(x => x.id === pid);
+      const index = this.data.findIndex((x) => x.id === pid);
       // 异常捕获
       if (index === -1) return false;
       item.order = this.data[index].children.length + 1;
@@ -525,14 +534,14 @@ module.exports = class Category {
     if (id === 'default') return false;
     let index;
     if (pid === '') {
-      index = this.data.findIndex(x => x.id === id);
+      index = this.data.findIndex((x) => x.id === id);
       if (index === 1 || index === -1) return false;
       const data = this._moveUpItem(this.data, id);
       if (data === false) return false;
       this.data = data;
       return this.reorder();
     }
-    index = this.data.findIndex(x => x.id === pid);
+    index = this.data.findIndex((x) => x.id === pid);
     // 异常捕获
     if (index === -1) return false;
     const data = this._moveUpItem(this.data[index].children, id);
@@ -549,7 +558,7 @@ module.exports = class Category {
       this.data = data;
       return this.reorder();
     }
-    const index = this.data.findIndex(x => x.id === pid);
+    const index = this.data.findIndex((x) => x.id === pid);
     // 异常捕获
     if (index === -1) return false;
     const data = this._moveDownItem(this.data[index].children, id);
@@ -560,15 +569,15 @@ module.exports = class Category {
 
   rename(name, id, pid = '') {
     if (pid === '') {
-      const index = this.data.findIndex(x => x.id === id);
+      const index = this.data.findIndex((x) => x.id === id);
       // 异常捕获
       if (index === -1) return false;
       this.data[index].name = name;
     } else {
-      const index = this.data.findIndex(x => x.id === pid);
+      const index = this.data.findIndex((x) => x.id === pid);
       // 异常捕获
       if (index === -1) return false;
-      const indexChildren = this.data[index].children.findIndex(x => x.id === id);
+      const indexChildren = this.data[index].children.findIndex((x) => x.id === id);
       // 异常捕获
       if (indexChildren === -1) return false;
       this.data[index].children[indexChildren].name = name;
@@ -579,15 +588,15 @@ module.exports = class Category {
   toggle(id, pid = '') {
     if (id === 'default') return false;
     if (pid === '') {
-      const index = this.data.findIndex(x => x.id === id);
+      const index = this.data.findIndex((x) => x.id === id);
       // 异常捕获
       if (index === -1 || !Reflect.has(this.data[index], 'enabled')) return false;
       this.data[index].enabled = !this.data[index].enabled;
     } else {
-      const index = this.data.findIndex(x => x.id === pid);
+      const index = this.data.findIndex((x) => x.id === pid);
       // 异常捕获
       if (index === -1) return false;
-      const indexChildren = this.data[index].children.findIndex(x => x.id === id);
+      const indexChildren = this.data[index].children.findIndex((x) => x.id === id);
       // 异常捕获
       if (indexChildren === -1) return false;
       this.data[index].children[indexChildren].enabled = !this.data[index].children[indexChildren].enabled;

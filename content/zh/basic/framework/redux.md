@@ -5,7 +5,7 @@ position: 1707
 category: 知识篇-常用框架
 ---
 
-> view层发出actions通知触发store里的reducer从而来更新state；state的改变会将更新反馈给我们的view层，从而让我们的view层发生相应的反应给用户。
+> view 层发出 actions 通知触发 store 里的 reducer 从而来更新 state；state 的改变会将更新反馈给我们的 view 层，从而让我们的 view 层发生相应的反应给用户。
 
 中文文档： <https://github.com/camsong/redux-in-chinese>
 
@@ -27,11 +27,14 @@ app
   |_main.js
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ## 核心代码
 
-举例核心代码。值得注意的是其中有一个state的传递有一些迷惑的地方，在下面的注释中可以找到思路。
+举例核心代码。值得注意的是其中有一个 state 的传递有一些迷惑的地方，在下面的注释中可以找到思路。
 
 ### components
+
 ```js
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
@@ -45,17 +48,13 @@ class Counter extends Component {
   }
   componentWillMount = () => {
     this.startCount();
-  }
+  };
   startCount = () => {
     const { actions } = this.props;
     actions.listen('INC');
-  }
+  };
   render() {
-    return (
-      <div>
-        {this.props.counter.count}
-      </div>
-    );
+    return <div>{this.props.counter.count}</div>;
   }
 }
 Counter.propTypes = {
@@ -81,7 +80,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Counter);
 
 ### actions
 
-action函数必须返回一个带有type属性的plain object。
+action 函数必须返回一个带有 type 属性的 plain object。
 
 ```js
 import * as constants from '../../constants/counter';
@@ -101,10 +100,10 @@ export function listen(type) {
 
 ### reducers
 
-reducer就是迎接action函数返回的线索的数据再处理函数，action是预处理函数。
+reducer 就是迎接 action 函数返回的线索的数据再处理函数，action 是预处理函数。
 
 ```js
-import {INC, DEC} from '../../constants/counter';
+import { INC, DEC } from '../../constants/counter';
 // 初始状态
 const initState = {
   count: 1
@@ -114,15 +113,15 @@ const initState = {
 export default function start(state = initState, action) {
   switch (action.type) {
     case INC:
-    // 对这个action做出响应
-      state.count += 1 ; // 改变状态
+      // 对这个action做出响应
+      state.count += 1; // 改变状态
       // return {count: 2} 返回给页面;
       return state;
     case DEC:
-    // 对这个action做出响应
+      // 对这个action做出响应
       state.count -= 1; // 改变状态
       // return {count: 0} 返回给页面;
-      return state
+      return state;
     default:
       return state;
   }

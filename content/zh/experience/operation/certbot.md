@@ -5,7 +5,7 @@ position: 2207
 category: '经验篇-运维'
 ---
 
-在阿里云 ECS 上安装的话，Python 版本是包含2、3两个的，所以需要升级 pip 到9.0之后版本。
+在阿里云 ECS 上安装的话，Python 版本是包含 2、3 两个的，所以需要升级 pip 到 9.0 之后版本。
 
 如果是`Ubuntu 16.04`版本，千万不要用`Root`安装。
 
@@ -33,6 +33,7 @@ pip -V
 # pip 9.0.1 from /usr/local/lib/python2.7/dist-packages (python 2.7)
 ```
 
+<adsbygoogle></adsbygoogle>
 
 安装`certbot-auto`
 

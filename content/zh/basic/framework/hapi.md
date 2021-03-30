@@ -17,13 +17,16 @@ import vision from 'vision';
 
 const server = new hapi.Server();
 
-server.connection({
-  host: '127.0.0.1',
-  port: 4000,
-  router: {
-    stripTrailingSlash: true
-  }
-}, { timeout: { server: 5000, socket: 5000 } });
+server.connection(
+  {
+    host: '127.0.0.1',
+    port: 4000,
+    router: {
+      stripTrailingSlash: true
+    }
+  },
+  { timeout: { server: 5000, socket: 5000 } }
+);
 
 // 根据需要注册插件
 server.register([inert, vision], () => {
@@ -55,13 +58,14 @@ server.views({
 module.exports = server;
 ```
 
+<adsbygoogle></adsbygoogle>
+
 ## Plugins
 
-* 自动文档： <https://github.com/WulianCC/hapi-swagger>
-* 用户鉴权： <http://hapijs.com/api#serverauthapi>
-* 表单校验： <https://github.com/hapijs/joi>
-* HTTP错误： <https://github.com/hapijs/boom>
-* 渲染模板页面： <https://github.com/hapijs/vision>
-* 打印错误： <https://github.com/hapijs/good>
-* 静态文件引用： <https://github.com/hapijs/inert>
-
+- 自动文档： <https://github.com/WulianCC/hapi-swagger>
+- 用户鉴权： <http://hapijs.com/api#serverauthapi>
+- 表单校验： <https://github.com/hapijs/joi>
+- HTTP 错误： <https://github.com/hapijs/boom>
+- 渲染模板页面： <https://github.com/hapijs/vision>
+- 打印错误： <https://github.com/hapijs/good>
+- 静态文件引用： <https://github.com/hapijs/inert>

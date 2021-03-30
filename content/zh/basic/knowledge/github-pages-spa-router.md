@@ -8,14 +8,14 @@ category: '知识篇-基础知识'
 
 Github Pages 特性的几点说明：
 
-- 不支持 Rewrite，所以原则上来说，静态单页应用路由是无法实现的，因为刷新页面后就会报404错误
-- 支持自定义404，那么我们就可以通过 404.html 来做点文章
+- 不支持 Rewrite，所以原则上来说，静态单页应用路由是无法实现的，因为刷新页面后就会报 404 错误
+- 支持自定义 404，那么我们就可以通过 404.html 来做点文章
 
 参考该评论：[Github #408](https://github.com/isaacs/github/issues/408#issuecomment-216721113)
 
 ---
 
-无论是 Vue、Angular、React，打包生成的静态单页应用，理论上来讲都是可以利用 404的特性 部署到 Github Pages 上的。
+无论是 Vue、Angular、React，打包生成的静态单页应用，理论上来讲都是可以利用 404 的特性 部署到 Github Pages 上的。
 
 这里我做了一个示例： <https://js-cool.github.io/github-spa-demo/>
 
@@ -36,6 +36,7 @@ Github Pages 特性的几点说明：
 /about
 /topics
 ```
+
 这样一级的路由是可以访问的，但如果是
 
 ```
@@ -49,13 +50,15 @@ Github Pages 特性的几点说明：
 <script src="./app.js">
 ```
 
-从当前目录下寻找，所以 js 资源也404了，就自然加载不出来。把引用路径改为绝对路径后就 OK 了。
+从当前目录下寻找，所以 js 资源也 404 了，就自然加载不出来。把引用路径改为绝对路径后就 OK 了。
+
+<adsbygoogle></adsbygoogle>
 
 ---
 
 贴上源码，位于：<https://github.com/js-cool/github-spa-demo>
 
-顺带着说明一波，该示例是用 HyperApp 实现，Parcel 打包。包含程序框架、路由、页面（JSX Templates）所有打包后，仅有10kb 大小。
+顺带着说明一波，该示例是用 HyperApp 实现，Parcel 打包。包含程序框架、路由、页面（JSX Templates）所有打包后，仅有 10kb 大小。
 
 - Hyperapp 是一个仅有 1kb 的双向数据绑定框架，有 State 管理和统一的 Actions 入口，支持路由插件（2kb）。
 - Parcel 是一个 Webpack 的替代方案，免去了配置的烦恼，打包效率很高。

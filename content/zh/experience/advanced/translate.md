@@ -5,19 +5,19 @@ position: 2402
 category: '经验篇-进阶'
 ---
 
-日常开发中,我们经常会在Github上发现一些好用的新框架, 如何对这些项目文档进行翻译, 其实这个问题困扰了我很久. 这里,我总结了一些不同情况下所谓的最佳实践, 供大家参考:
+日常开发中,我们经常会在 Github 上发现一些好用的新框架, 如何对这些项目文档进行翻译, 其实这个问题困扰了我很久. 这里,我总结了一些不同情况下所谓的最佳实践, 供大家参考:
 
 ## 独立文档项目
 
 举例: <https://github.com/graphql/graphql.github.io>
 
-GraphQL文档的网站, 是一个独立的项目, source分支是源码目录, master分支(可以理解为gh-pages分支)是静态站点.
+GraphQL 文档的网站, 是一个独立的项目, source 分支是源码目录, master 分支(可以理解为 gh-pages 分支)是静态站点.
 
 ### 1. 初始化翻译项目
 
 直接`Fork`该项目, 示例: <https://github.com/willin/graphql.js.cool>
 
-Fork之后可以给该项目改名, 如我换到了 `graphql.js.cool` 域名, 并以该域名进行命名.
+Fork 之后可以给该项目改名, 如我换到了 `graphql.js.cool` 域名, 并以该域名进行命名.
 
 然后, 将项目`Clone`至本地.
 
@@ -30,6 +30,8 @@ git push -u origin cn
 ```
 
 至此, 可以开始翻译工作了.
+
+<adsbygoogle></adsbygoogle>
 
 ### 2. 从源站更新内容
 
@@ -86,12 +88,10 @@ git pull remote dev
 git pull remote dev
 ```
 
-
 ## 注意事项
 
 - `CNAME`等配置文件需要替换
 - `pull`后可能会有冲突. 解决后再提交代码.
-
 
 ## p.s.
 

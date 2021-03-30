@@ -7,7 +7,7 @@ category: '经验篇-运维'
 
 <http://bunkat.github.io/later/index.html>
 
-应用场景：计划任务，类似Crontab。
+应用场景：计划任务，类似 Crontab。
 
 ```js
 import later from 'later';
@@ -27,3 +27,5 @@ later.setInterval(()=>{
 
 }), later.parse.cron('1 */1 * * * ?'));
 ```
+
+<adsbygoogle></adsbygoogle>

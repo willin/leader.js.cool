@@ -20,7 +20,7 @@ function exclaim(str) {
   return `${str}!`;
 }
 
-let result = "hello" |> doubleSay |> capitalize |> exclaim;
+let result = 'hello' |> doubleSay |> capitalize |> exclaim;
 
 result |> console.log;
 //=> "Hello, hello!"
@@ -31,14 +31,14 @@ result |> console.log;
 ## Async (ES 7)
 
 ```js
-async function fn(args){
+async function fn(args) {
   // ...
 }
 
 // 等同于
 
-function fn(args){
-  return spawn(function*() {
+function fn(args) {
+  return spawn(function* () {
     // ...
   });
 }
@@ -66,30 +66,36 @@ let bar = await barPromise;
 
 上面两种写法，`getFoo`和`getBar`都是同时触发，这样就会缩短程序的执行时间。
 
+<adsbygoogle></adsbygoogle>
+
 ## Proxy (ES 6)
 
-经测试Node v6.1.0之后版本已集成。
+经测试 Node v6.1.0 之后版本已集成。
 
 示例代码：
 
-
 ```js
-const proxy = new Proxy({}, {
-  get: (target, property) => [target, property]
-});
+const proxy = new Proxy(
+  {},
+  {
+    get: (target, property) => [target, property]
+  }
+);
 
-console.log(proxy.func);          // [ {}, 'func' ]
-console.log(proxy.func('123'));   // TypeError: proxy.func is not a function
+console.log(proxy.func); // [ {}, 'func' ]
+console.log(proxy.func('123')); // TypeError: proxy.func is not a function
 ```
 
 ```js
-const proxy = new Proxy({}, {
-  get: (target, property) =>
-    (test) => [target, property, test]
-});
+const proxy = new Proxy(
+  {},
+  {
+    get: (target, property) => (test) => [target, property, test]
+  }
+);
 
-console.log(proxy.func);          // [Function]
-console.log(proxy.func('123'));   // [ {}, 'func', '123' ]
+console.log(proxy.func); // [Function]
+console.log(proxy.func('123')); // [ {}, 'func', '123' ]
 ```
 
 ## ES 6 作用域
@@ -100,10 +106,12 @@ console.log(proxy.func('123'));   // [ {}, 'func', '123' ]
 var funcs = [];
 
 for (var i = 0; i < 10; i += 1) {
-  funcs.push(function(){ console.log(i); });
+  funcs.push(function () {
+    console.log(i);
+  });
 }
 
-funcs.forEach(func => func());
+funcs.forEach((func) => func());
 // 输出 10 十次
 ```
 
@@ -129,21 +137,21 @@ for (let i = 0; i < 10; i += 1) {
   funcs.push(() => console.log(i));
 }
 
-funcs.forEach(func => func());
+funcs.forEach((func) => func());
 // 0 到 9 依次输出
 ```
 
 ## Function 创建函数
 
 ```js
-var add = new Function("first", "second = first", "return first + second");
-console.log(add(1, 1));// 2
-console.log(add(1));// 2
+var add = new Function('first', 'second = first', 'return first + second');
+console.log(add(1, 1)); // 2
+console.log(add(1)); // 2
 ```
 
 ```js
-var pickFirst = new Function("..args", "return args[0]");
-console.log(pickFirst(1,2)); // 1
+var pickFirst = new Function('..args', 'return args[0]');
+console.log(pickFirst(1, 2)); // 1
 ```
 
 ## ES6 中互换值
@@ -156,4 +164,3 @@ let b = 2;
 
 console.log(a, b); // 2 1
 ```
-
