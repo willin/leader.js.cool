@@ -112,6 +112,13 @@ Git 的 checkout 有两个作用，其一是在不同的 branch 之间进行切�
 
 利用这个命令可以新增、更改 Git 的各种设置，例如'git config branch.master.remote origin'就将 master 的远程版本库设置为别名叫做 origin 版本库，后面在技巧篇会利用这个命令个性化设置你的 Git，为你打造独一无二的 Git
 
+设置默认分支：
+
+```
+[init]
+    defaultBranch = main
+```
+
 #### git tag：
 
 可以将某个具体的版本打上一个标签，这样你就不需要记忆复杂的版本号哈希值了，例如你可以使用'git tag revert_version bbaf6fb5060b4875b18ff9ff637ce118256d6f20'来标记这个被你还原的版本，那么以后你想查看该版本时，就可以使用 revert_version 标签名，而不是哈希值了
