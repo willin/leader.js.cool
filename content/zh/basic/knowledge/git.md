@@ -114,9 +114,8 @@ Git 的 checkout 有两个作用，其一是在不同的 branch 之间进行切�
 
 设置默认分支：
 
-```
-[init]
-    defaultBranch = main
+```bash
+git config --global init.defaultBranch main
 ```
 
 #### git tag：
