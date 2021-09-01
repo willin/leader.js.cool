@@ -1,0 +1,11 @@
+{
+  "name": "团队领袖计划",
+  "short_name": "leader.js.cool",
+  "description": "不可替代的团队领袖培养计划",
+  "icons": [],
+  "start_url": "/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00CD81",
+  "lang": "en"
+}
