@@ -2,7 +2,8 @@ name: Generate leader.js.cool
 
 on:
   push:
-    branches: master
+    branches:
+      - master
 
 jobs:
   build:
@@ -19,12 +20,8 @@ jobs:
           sudo timedatectl set-timezone Asia/Shanghai
           yarn install
           yarn generate
-      - name: Commit and push
-        run: |-
-          git config --global user.email "i@js.cool" && git config --global user.name "Github Bot"
-          cd dist
-          git init
-          git add . && git commit -m ":memo: Auto Generate" || exit 0
-          git push --force "https://${GH_TOKEN}@github.com/willin/leader.js.cool.git" master:gh-pages
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.6
+        with:
+          branch: gh-pages
+          folder: dist
